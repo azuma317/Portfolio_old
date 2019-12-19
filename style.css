@@ -8,14 +8,18 @@
     height: 100%;
     background: #D8D5D2;
 }
+.header {
+    text-align: right;
+}
 .header ul {
     display: inline-flex;
+    margin-right: 32px;
     height: 10vh;
 }
 .header ul li {
     z-index: 100;
     list-style: none;
-    margin: auto 20px;
+    margin: auto 24px;
     color: black;
     cursor: pointer;
 }
@@ -66,10 +70,14 @@
 .profile-bottom {
     width: 100%;
     height: 50%;
+    display: flex;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
-.profile-bottom p {
-    vertical-align: middle;
+.profile-bottom_contents {
+    margin: auto;
+    cursor: pointer;
 }
 .right-side {
     float: right;
