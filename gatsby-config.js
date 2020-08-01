@@ -1,15 +1,16 @@
 module.exports = {
   pathPrefix: "/Portfolio",
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `タイトル考え中`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `あずま`,
+      summary: `本職: インフラエンジニア, 趣味: iOSアプリ開発`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `azumax_develop`,
+      github: `azuma317`,
     },
   },
   plugins: [
