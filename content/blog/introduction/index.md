@@ -10,13 +10,13 @@ description: ""
 
 ## 個人開発
 
-### ReWrite
+### [ReWrite](https://apps.apple.com/jp/app/id1505143601)
 
 Firebase(Firestore, Storage, Hosting) を使った日記アプリです.
 このアプリでは, 日記の自動保存やロック機能, テーマ適用, フォント適用などを行うことができます.
 ![ReWrite](./ReWrite_Preview.png)
 
-### Log
+### [Log](https://apps.apple.com/jp/app/id1469767260)
 
 バレットジャーナルというタスク管理手法を利用したアプリです.
 タスクの種別を 4 種類（Priority, Task, Event, Memo）に細分化して管理します.
