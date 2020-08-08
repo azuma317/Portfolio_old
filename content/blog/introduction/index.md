@@ -2,7 +2,10 @@
 title: Portfolio
 date: "2020-08-01T18:00:00.000Z"
 description: ""
+group: "introduction"
 ---
+
+本職: インフラエンジニア, 趣味: iOSアプリ開発.
 
 2019 年に福岡の大学を卒業後, インフラエンジニアとして新卒入社.
 業務では, AWS によるサービス保守やミドルウェア（ Apache, Tomcat, Docker, Jenkins 等）の管理を行っています.
@@ -14,13 +17,13 @@ description: ""
 
 Firebase(Firestore, Storage, Hosting) を使った日記アプリです.
 このアプリでは, 日記の自動保存やロック機能, テーマ適用, フォント適用などを行うことができます.
-![ReWrite](../assets/ReWrite_Preview.png)
+![ReWrite](../../assets/ReWrite_Preview.png)
 
 ### [Log](https://apps.apple.com/jp/app/id1469767260)
 
 バレットジャーナルというタスク管理手法を利用したアプリです.
 タスクの種別を 4 種類（Priority, Task, Event, Memo）に細分化して管理します.
-![Log](../assets/Log_Preview.png)
+![Log](../../assets/Log_Preview.png)
 
 ## インフラ業務
 
