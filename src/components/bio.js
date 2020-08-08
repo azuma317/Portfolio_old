@@ -6,10 +6,14 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, Link, graphql } from "gatsby"
 import Image from "gatsby-image"
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons"
 import { rhythm } from "../utils/typography"
+
+library.add(faTwitter, faGithub)
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -25,7 +29,6 @@ const Bio = () => {
         siteMetadata {
           author {
             name
-            summary
           }
           social {
             twitter
@@ -33,10 +36,29 @@ const Bio = () => {
           }
         }
       }
+      allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: { frontmatter: { group: { eq: "introduction" } } }
+      ) {
+        edges {
+          node {
+            excerpt
+            fields {
+              slug
+            }
+            frontmatter {
+              date(formatString: "MMMM DD, YYYY")
+              title
+              description
+            }
+          }
+        }
+      }
     }
   `)
 
   const { author, social } = data.site.siteMetadata
+  const introduction = data.allMarkdownRemark.edges[0].node
   return (
     <div
       style={{
@@ -59,11 +81,30 @@ const Bio = () => {
       />
       <p>
         <strong>{author.name}</strong>
-        <br /> {author.summary}
         <br />
-        <a href={`https://github.com/${social.github}`}>Github</a>
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
+        <Link style={{ boxShadow: `none` }} to={introduction.fields.slug}>
+          {introduction.frontmatter.title}
+        </Link>
+        &nbsp;&nbsp;&nbsp;
+        <Link
+          style={{ boxShadow: `none` }}
+          to={`https://github.com/${social.github}`}
+        >
+          <FontAwesomeIcon icon={faGithub} />
+        </Link>
+        &nbsp;&nbsp;&nbsp;
+        <Link
+          style={{ boxShadow: `none` }}
+          to={`https://twitter.com/${social.twitter}`}
+        >
+          <FontAwesomeIcon icon={faTwitter} />
+        </Link>
+        <p
+          dangerouslySetInnerHTML={{
+            __html:
+              introduction.frontmatter.description || introduction.excerpt,
+          }}
+        />
       </p>
     </div>
   )
