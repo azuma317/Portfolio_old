@@ -1,7 +1,7 @@
 ---
 title: Portfolio
 date: "2020-08-01T18:00:00.000Z"
-description: "ポートフォリオです。"
+description: "本職: インフラエンジニア, 趣味: iOS アプリ開発."
 group: "introduction"
 ---
 
