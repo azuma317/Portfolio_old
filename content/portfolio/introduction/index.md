@@ -17,13 +17,13 @@ group: "introduction"
 
 Firebase(Firestore, Storage, Hosting) を使った日記アプリです.
 このアプリでは, 日記の自動保存やロック機能, テーマ変更, フォント変更などを行うことができます.
-![ReWrite](../../assets/ReWrite_Preview.png)
+![ReWrite](../../assets/introduction/ReWrite_Preview.png)
 
 ### [Log](https://apps.apple.com/jp/app/id1469767260)
 
 バレットジャーナルというタスク管理手法を利用したアプリです.
 タスクの種別を 4 種類（Priority, Task, Event, Memo）に細分化して管理します.
-![Log](../../assets/Log_Preview.png)
+![Log](../../assets/introduction/Log_Preview.png)
 
 ## インフラ業務
 

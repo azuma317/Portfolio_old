@@ -14,7 +14,7 @@ group: "blog"
 
 ### プレビュー
 
-![ReWrite](../../assets/ReWrite_Preview.png)
+![ReWrite](../../assets/introduction/ReWrite_Preview.png)
 
 ### 使用ライブラリ
 
@@ -44,7 +44,7 @@ group: "blog"
 
 ### プレビュー
 
-![Log](../../assets/Log_Preview.png)
+![Log](../../assets/introduction/Log_Preview.png)
 
 ### 使用ライブラリ
 
