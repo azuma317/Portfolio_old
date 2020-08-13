@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/",
+  pathPrefix: '/',
   siteMetadata: {
     title: `タイトル考え中`,
     author: {
