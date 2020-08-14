@@ -1,17 +1,10 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from "react"
-import { useStaticQuery, Link, graphql } from "gatsby"
-import Image from "gatsby-image"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons"
-import { rhythm } from "../utils/typography"
+import React from 'react'
+import { useStaticQuery, Link, graphql } from 'gatsby'
+import Image from 'gatsby-image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { rhythm } from '../utils/typography'
 
 library.add(faTwitter, faGithub)
 

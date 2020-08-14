@@ -1,18 +1,22 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import type { WindowLocation } from '@reach/router'
+import type { IndexPageQuery } from '../../types/graphql-types'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import { rhythm } from '../utils/typography'
+import Layout from '../components/layout'
+import Bio from '../components/bio'
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+type Props = {
+  location: WindowLocation
+  data: IndexPageQuery
+}
+
+const BlogIndex: React.FC<Props> = ({ location, data }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="Azuma Blog" />
+    <Layout location={location}>
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
@@ -47,7 +51,7 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
+  query IndexPage {
     site {
       siteMetadata {
         title

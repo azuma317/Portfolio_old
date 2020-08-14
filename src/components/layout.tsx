@@ -1,9 +1,14 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link } from 'gatsby'
+import type { WindowLocation } from '@reach/router'
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm, scale } from '../utils/typography'
 
-const Layout = ({ location, title, children }) => {
+type Props = {
+  location: WindowLocation
+}
+
+const Layout: React.FC<Props> = ({ location, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
@@ -23,7 +28,7 @@ const Layout = ({ location, title, children }) => {
           }}
           to={`/`}
         >
-          {title}
+          {`Azuma Blog`}
         </Link>
       </h1>
     )
@@ -42,7 +47,7 @@ const Layout = ({ location, title, children }) => {
           }}
           to={`/`}
         >
-          {title}
+          {`Azuma Blog`}
         </Link>
       </h3>
     )

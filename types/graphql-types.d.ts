@@ -2553,6 +2553,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___disableBgImageOnAlpha'
   | 'pluginCreator___pluginOptions___disableBgImage'
   | 'pluginCreator___pluginOptions___ignoreFileExtensions'
+  | 'pluginCreator___pluginOptions___trackingId'
   | 'pluginCreator___pluginOptions___short_name'
   | 'pluginCreator___pluginOptions___start_url'
   | 'pluginCreator___pluginOptions___background_color'
@@ -2788,6 +2789,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___disableBgImageOnAlpha'
   | 'pluginOptions___disableBgImage'
   | 'pluginOptions___ignoreFileExtensions'
+  | 'pluginOptions___trackingId'
   | 'pluginOptions___short_name'
   | 'pluginOptions___start_url'
   | 'pluginOptions___background_color'
@@ -2930,6 +2932,7 @@ export type SitePluginPluginOptions = {
   disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
   disableBgImage?: Maybe<Scalars['Boolean']>;
   ignoreFileExtensions?: Maybe<Array<Maybe<Scalars['String']>>>;
+  trackingId?: Maybe<Scalars['String']>;
   short_name?: Maybe<Scalars['String']>;
   start_url?: Maybe<Scalars['String']>;
   background_color?: Maybe<Scalars['String']>;
@@ -2963,6 +2966,7 @@ export type SitePluginPluginOptionsFilterInput = {
   disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
   disableBgImage?: Maybe<BooleanQueryOperatorInput>;
   ignoreFileExtensions?: Maybe<StringQueryOperatorInput>;
+  trackingId?: Maybe<StringQueryOperatorInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;
   background_color?: Maybe<StringQueryOperatorInput>;
@@ -3093,6 +3097,14 @@ export type StringQueryOperatorInput = {
   regex?: Maybe<Scalars['String']>;
   glob?: Maybe<Scalars['String']>;
 };
+
+export type BioQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type BioQueryQuery = { avatar?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }>, site?: Maybe<{ siteMetadata?: Maybe<{ author?: Maybe<Pick<SiteSiteMetadataAuthor, 'name'>>, social?: Maybe<Pick<SiteSiteMetadataSocial, 'twitter' | 'github'>> }> }>, allMarkdownRemark: { edges: Array<{ node: (
+        Pick<MarkdownRemark, 'excerpt'>
+        & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'description'>> }
+      ) }> } };
 
 export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
