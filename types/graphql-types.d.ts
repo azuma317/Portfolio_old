@@ -3114,6 +3114,11 @@ export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<(
       & { social?: Maybe<Pick<SiteSiteMetadataSocial, 'twitter'>> }
     )> }> };
 
+export type LayoutQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type LayoutQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
 export type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 

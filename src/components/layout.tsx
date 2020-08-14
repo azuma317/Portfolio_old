@@ -28,7 +28,7 @@ const Layout: React.FC<Props> = ({ location, children }) => {
           }}
           to={`/`}
         >
-          {`Azuma Blog`}
+          Azuma Blog
         </Link>
       </h1>
     )
@@ -47,7 +47,7 @@ const Layout: React.FC<Props> = ({ location, children }) => {
           }}
           to={`/`}
         >
-          {`Azuma Blog`}
+          Azuma Blog
         </Link>
       </h3>
     )

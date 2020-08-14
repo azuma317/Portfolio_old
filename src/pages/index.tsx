@@ -5,6 +5,7 @@ import type { IndexPageQuery } from '../../types/graphql-types'
 
 import { rhythm } from '../utils/typography'
 import Layout from '../components/layout'
+import Title from '../components/title'
 import Bio from '../components/bio'
 
 type Props = {
@@ -17,6 +18,7 @@ const BlogIndex: React.FC<Props> = ({ location, data }) => {
 
   return (
     <Layout location={location}>
+      <Title />
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
