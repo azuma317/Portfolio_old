@@ -1,8 +1,11 @@
 import React from 'react'
+import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 import type { WindowLocation } from '@reach/router'
 
 import { rhythm, scale } from '../utils/typography'
+import config from '../config/blog-config'
+import Footer from './footer'
 
 type Props = {
   location: WindowLocation
@@ -28,7 +31,7 @@ const Layout: React.FC<Props> = ({ location, children }) => {
           }}
           to={`/`}
         >
-          Azuma Blog
+          {config.title}
         </Link>
       </h1>
     )
@@ -47,25 +50,27 @@ const Layout: React.FC<Props> = ({ location, children }) => {
           }}
           to={`/`}
         >
-          Azuma Blog
+          {config.title}
         </Link>
       </h3>
     )
   }
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
+    <div css={styles.root_container}>
       <header>{header}</header>
       <main>{children}</main>
-      <footer>© 2020 Azuma Sato. All Right Reserved.</footer>
+      <Footer />
     </div>
   )
 }
 
 export default Layout
+
+const styles = {
+  root_container: css`
+    margin-left: auto;
+    margin-right: auto;
+    max-width: ${rhythm(24)};
+    padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
+  `,
+}
