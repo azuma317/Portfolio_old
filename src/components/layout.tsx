@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 import type { WindowLocation } from '@reach/router'
@@ -12,49 +12,33 @@ type Props = {
 }
 
 const Layout: React.FC<Props> = ({ location, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  let header
+  const prefix: string = __PATH_PREFIX__ || ''
+  const rootPath = `${prefix}/`
 
-  if (location.pathname === rootPath) {
-    header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {config.title}
-        </Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {config.title}
-        </Link>
-      </h3>
-    )
-  }
+  const isRoot = useMemo(() => {
+    return location.pathname === rootPath
+  }, [rootPath])
+
+  const header = useMemo(() => {
+    if (isRoot) {
+      return (
+        <h1 css={styles.blog_title_area}>
+          <Link css={styles.blog_title} to={`/`}>
+            {config.title}
+          </Link>
+        </h1>
+      )
+    } else {
+      return (
+        <h3 css={styles.blog_title_area}>
+          <Link css={styles.blog_title} to={`/`}>
+            {config.title}
+          </Link>
+        </h3>
+      )
+    }
+  }, [isRoot])
+
   return (
     <div css={styles.root_container}>
       <header>{header}</header>
@@ -72,5 +56,21 @@ const styles = {
     margin-right: auto;
     max-width: ${rhythm(24)};
     padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
+  `,
+  blog_title_area: css`
+    margin-top: 0;
+
+    h1 {
+      transform: scale(1.5);
+      margin-bottom: ${rhythm(1.5)};
+    }
+
+    h3 {
+      font-family: Montserrat, sans-serif;
+    }
+  `,
+  blog_title: css`
+    box-shadow: none;
+    color: inherit;
   `,
 }
