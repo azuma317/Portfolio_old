@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
-    title: `タイトル考え中`,
+    title: `Azuma Blog`,
     author: {
       name: `あずま`,
       summary: `本職: インフラエンジニア, 趣味: iOSアプリ開発`,
