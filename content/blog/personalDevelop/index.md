@@ -1,8 +1,8 @@
 ---
 title: 個人開発
-date: "2020-08-08T14:00:00.000Z"
-description: "個人開発についての内容です。"
-group: "blog"
+date: '2020-08-08T14:00:00.000Z'
+description: '個人開発についての内容です。'
+group: 'blog'
 ---
 
 ## [ReWrite](https://apps.apple.com/jp/app/id1505143601)
