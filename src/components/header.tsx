@@ -1,6 +1,6 @@
 import React from 'react'
 import config from '../config/blog-config'
-import { Props } from '@fortawesome/react-fontawesome'
+import { css } from '@emotion/core'
 
 type Props = {
   activePage: string
