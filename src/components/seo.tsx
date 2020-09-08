@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 type Props = {
   description: string
   lang: string
-  mata: object[]
+  meta: object[]
   title: string
 }
 
