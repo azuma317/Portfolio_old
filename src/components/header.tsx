@@ -1,5 +1,5 @@
 import React from 'react'
-import config from '../config/blog-config'
+import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 
 type Props = {
@@ -7,7 +7,14 @@ type Props = {
 }
 
 const Header: React.FC<Props> = activePage => {
-  return <header css={style.header_container}></header>
+  return (
+    <header css={style.header_container}>
+      <nav aria-label="Main Navigation" css={style.header_logo}>
+        <Link to="/" aria-label="Website logo, go back to homepage."></Link>
+        <span css={style.header_home}></span>
+      </nav>
+    </header>
+  )
 }
 
 export default Header
@@ -32,4 +39,6 @@ const style = {
       padding-right: 5rem;
     }
   `,
+  header_logo: css``,
+  header_home: css``,
 }
