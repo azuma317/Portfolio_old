@@ -1,17 +1,20 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
+import { NavLink } from './atoms'
 
 type Props = {
   activePage: string
 }
 
-const Header: React.FC<Props> = activePage => {
+const Header: React.FC<Props> = ({ activePage }) => {
   return (
     <header css={style.header_container}>
       <nav aria-label="Main Navigation" css={style.header_logo}>
         <Link to="/" aria-label="Website logo, go back to homepage."></Link>
-        <span css={style.header_home}></span>
+        <span css={style.header_home}>
+          <NavLink to="/" title="Home" selected={activePage === '/'}></NavLink>
+        </span>
       </nav>
     </header>
   )
