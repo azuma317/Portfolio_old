@@ -12,8 +12,20 @@ const Header: React.FC<Props> = ({ activePage }) => {
     <header css={style.header_container}>
       <nav aria-label="Main Navigation" css={style.header_logo}>
         <Link to="/" aria-label="Website logo, go back to homepage."></Link>
-        <span css={style.header_home}>
-          <NavLink to="/" title="Home" selected={activePage === '/'}></NavLink>
+        <span css={style.header_link}>
+          <NavLink to="/" title="Home" selected={activePage === '/'}>
+            Home
+          </NavLink>
+          <NavLink
+            to="/projects"
+            title="Projects"
+            selected={activePage === 'projects'}
+          >
+            Projects
+          </NavLink>
+          <NavLink to="/about" title="About" selected={activePage === 'about'}>
+            About
+          </NavLink>
         </span>
       </nav>
     </header>
