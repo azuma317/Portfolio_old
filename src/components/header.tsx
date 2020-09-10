@@ -39,6 +39,7 @@ const style = {
     center: true;
     margin: auto;
     max-width: 1280px;
+    width: 100%;
     height: 8rem;
     overflow: hidden;
     @media (max-width: 640px) {
@@ -46,14 +47,36 @@ const style = {
       padding-right: 1.25rem;
     }
     @media (min-width: 640px) and (max-width: 768px) {
+      max-width: 640px;
       padding-left: 3rem;
       padding-right: 3rem;
     }
     @media (min-width: 768px) {
+      max-width: 768px;
       padding-left: 5rem;
       padding-right: 5rem;
     }
+    @media (min-width: 1024px) {
+      max-width: 1024px;
+    }
   `,
-  header_logo: css``,
-  header_home: css``,
+  header_logo: css`
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    font-size: 0.875rem;
+    height: 100%;
+    justify-content: center;
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
+  `,
+  header_link: css`
+    display: none;
+    align-items: center;
+    flex-grow: 1;
+    @media (min-width: 640px) {
+      display: flex;
+    }
+  `,
 }
