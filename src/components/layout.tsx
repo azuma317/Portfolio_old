@@ -1,10 +1,5 @@
-import React, { useMemo } from 'react'
-import { css } from '@emotion/core'
-import { Link } from 'gatsby'
+import React from 'react'
 import type { WindowLocation } from '@reach/router'
-
-import { rhythm, scale } from '../utils/typography'
-import config from '../config/blog-config'
 import Header from './header'
 import Footer from './footer'
 
