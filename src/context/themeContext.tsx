@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeContext } from '@emotion/core'
 
 type Props = {
-  initialTheme: string
+  initialTheme?: string
 }
 
 const getInitialTheme: () => string = () => {
