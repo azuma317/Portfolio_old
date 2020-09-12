@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import config from '../config/blog-config'
-import { NavLink } from './atoms'
+import NavLink from './atoms/navLink'
 import {
   AiFillTwitterCircle,
   AiFillGithub,

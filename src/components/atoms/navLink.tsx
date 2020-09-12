@@ -8,7 +8,7 @@ type Props = {
   selected?: boolean
 }
 
-export const NavLink: React.FC<Props> = ({
+const NavLink: React.FC<Props> = ({
   to,
   children,
   title = 'Link',
@@ -20,6 +20,8 @@ export const NavLink: React.FC<Props> = ({
     </Link>
   )
 }
+
+export default NavLink
 
 const style = {
   nav_link: css``,
