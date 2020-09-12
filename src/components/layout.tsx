@@ -31,8 +31,10 @@ const styles = {
     width: 100%;
     overflow: hidden;
     margin-top: 4rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    @media (max-width: 640px) {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
     @media (min-width: 640px) and (max-width: 768px) {
       max-width: 640px;
       padding-left: 3rem;

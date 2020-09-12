@@ -78,5 +78,8 @@ const style = {
     @media (min-width: 640px) {
       display: flex;
     }
+    a:nth-of-type(n + 2) {
+      margin-left: 1.5rem;
+    }
   `,
 }

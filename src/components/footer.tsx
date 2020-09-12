@@ -131,6 +131,9 @@ const style = {
     @media (min-width: 1024px) {
       display: flex;
     }
+    a:nth-of-type(n + 2) {
+      margin-left: 1rem;
+    }
   `,
   footer_info: css`
     display: flex;
