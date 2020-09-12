@@ -1,12 +1,11 @@
 import React from 'react'
-import { ThemeContext } from '@emotion/core'
 
 type Props = {
   initialTheme?: string
 }
 
 const getInitialTheme: () => string = () => {
-  if (window.localStorage) {
+  if (typeof window !== 'undefined' && window.localStorage) {
     const storedPrefs = window.localStorage.getItem('color-theme')
     if (typeof storedPrefs === 'string') {
       return storedPrefs
@@ -20,7 +19,7 @@ const getInitialTheme: () => string = () => {
   return 'dark'
 }
 
-// export const ThemeContext = React.createContext()
+export const ThemeContext = React.createContext({})
 
 const ThemeProvider: React.FC<Props> = ({ initialTheme, children }) => {
   const [theme, setTheme] = React.useState(getInitialTheme)
