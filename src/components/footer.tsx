@@ -8,11 +8,7 @@ import {
   AiFillInstagram,
 } from 'react-icons/ai'
 
-type Props = {
-  isRoot: boolean
-}
-
-const Footer: React.FC<Props> = ({ isRoot }) => {
+const Footer = () => {
   return (
     <footer css={style.footer}>
       <div css={style.footer_container}>
