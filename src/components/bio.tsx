@@ -1,12 +1,8 @@
 import React from 'react'
 import { useStaticQuery, Link, graphql } from 'gatsby'
 import Image from 'gatsby-image'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { rhythm } from '../utils/typography'
-
-library.add(faTwitter, faGithub)
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -82,16 +78,12 @@ const Bio = () => {
         <Link
           style={{ boxShadow: `none` }}
           to={`https://github.com/${social.github}`}
-        >
-          <FontAwesomeIcon icon={faGithub} />
-        </Link>
+        ></Link>
         &nbsp;&nbsp;&nbsp;
         <Link
           style={{ boxShadow: `none` }}
           to={`https://twitter.com/${social.twitter}`}
-        >
-          <FontAwesomeIcon icon={faTwitter} />
-        </Link>
+        ></Link>
         <p
           dangerouslySetInnerHTML={{
             __html:
