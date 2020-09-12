@@ -4,8 +4,8 @@ import { css } from '@emotion/core'
 
 type Props = {
   to: string
-  title: string
-  selected: boolean
+  title?: string
+  selected?: boolean
 }
 
 export const NavLink: React.FC<Props> = ({
