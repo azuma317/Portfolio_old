@@ -99,13 +99,13 @@ const style = {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 14rem;
+    height: 12rem;
     color: var(--color-text-secondary);
     background-color: var(--color-bg-secondary);
   `,
   footer_container: css`
     display: block;
-    padding-top: 6rem;
+    padding-top: 3rem;
     padding-bottom: 3rem;
     margin: auto;
     height: 100%;
