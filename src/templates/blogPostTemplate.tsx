@@ -15,13 +15,14 @@ type Props = {
 
 const BlogPostTemplate: React.FC<Props> = ({ location, pageContext, data }) => {
   const post = data.markdownRemark
+  const title = data.site?.siteMetadata?.title
   const { previous, next } = pageContext
 
   return (
     <Layout location={location}>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={post?.frontmatter?.title || title || ''}
+        description={post?.frontmatter?.description || post?.excerpt || ''}
       />
       <article>
         <header>
@@ -31,7 +32,7 @@ const BlogPostTemplate: React.FC<Props> = ({ location, pageContext, data }) => {
               marginBottom: 0,
             }}
           >
-            {post.frontmatter.title}
+            {post?.frontmatter?.title}
           </h1>
           <p
             style={{
@@ -40,10 +41,10 @@ const BlogPostTemplate: React.FC<Props> = ({ location, pageContext, data }) => {
               marginBottom: rhythm(1),
             }}
           >
-            {post.frontmatter.date}
+            {post?.frontmatter?.date}
           </p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section dangerouslySetInnerHTML={{ __html: post?.html || '' }} />
         <hr
           style={{
             marginBottom: rhythm(1),
