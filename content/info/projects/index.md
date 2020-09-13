@@ -2,7 +2,7 @@
 title: Projects
 date: '2020-08-08T14:00:00.000Z'
 description: '個人開発についての内容です。'
-group: 'blog'
+group: 'projects'
 ---
 
 ## [ReWrite](https://apps.apple.com/jp/app/id1505143601)
