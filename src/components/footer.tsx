@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import config from '../config/blog-config'
+import { useStaticQuery, graphql } from 'gatsby'
 import NavLink from './atoms/navLink'
 import {
   AiFillTwitterCircle,
@@ -9,6 +9,24 @@ import {
 } from 'react-icons/ai'
 
 const Footer = () => {
+  const data = useStaticQuery(graphql`
+    query FooterQuery {
+      site {
+        siteMetadata {
+          author {
+            blogAuthor
+          }
+          social {
+            twitter
+            github
+            instagram
+          }
+        }
+      }
+    }
+  `)
+
+  const { author, social } = data.site.siteMetadata
   return (
     <footer css={style.footer}>
       <div css={style.footer_container}>
@@ -26,12 +44,12 @@ const Footer = () => {
           </nav>
           <div css={style.footer_info}>
             <span css={style.footer_copyright} aria-label="Copyright">
-              © 2020 {config.blogAuthor}. All Right Reserved.
+              © 2020 {author.blogAuthor}. All Right Reserved.
             </span>
             <div css={style.footer_sns}>
               <span>
                 <a
-                  href="https://github.com/azuma317"
+                  href={'https://github.com/' + social.github}
                   css={style.footer_icon}
                   aria-label="Visit Github profile"
                   title="Visit Github profile"
@@ -43,7 +61,7 @@ const Footer = () => {
               </span>
               <span>
                 <a
-                  href="https://twitter.com/azumax_develop"
+                  href={'https://twitter.com/' + social.twitter}
                   css={style.footer_icon}
                   aria-label="Visit Twitter profile"
                   title="Visit Twitter profile"
@@ -55,7 +73,7 @@ const Footer = () => {
               </span>
               <span>
                 <a
-                  href="https://www.instagram.com/azuma317"
+                  href={'https://www.instagram.com/' + social.github}
                   css={style.footer_icon}
                   aria-label="Visit Instagram profile"
                   title="Visit Instagram profile"

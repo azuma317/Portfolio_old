@@ -5,12 +5,14 @@ module.exports = {
     author: {
       name: `あずま`,
       summary: `本職: インフラエンジニア, 趣味: iOSアプリ開発`,
+      blogAuthor: `Azuma Sato`,
     },
     description: `インフラやiOSアプリ開発についての個人的な知見をためておく場所です。`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
       twitter: `azumax_develop`,
       github: `azuma317`,
+      instagram: `azuma317`,
     },
   },
   plugins: [
@@ -24,8 +26,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `content/portfolio`,
-        name: `portfolio`,
+        path: `content/info`,
+        name: `info`,
       },
     },
     {
