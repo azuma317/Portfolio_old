@@ -3,13 +3,11 @@ import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
 type Props = {
-  description: string
-  lang: string
-  meta: object[]
-  title: string
+  title?: string
+  description?: string
 }
 
-const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
+const SEO: React.FC<Props> = ({ title, description }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -26,15 +24,11 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
     `
   )
 
+  const metaTitle = title || site.siteMetadata.title
   const metaDescription = description || site.siteMetadata.description
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -42,7 +36,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
@@ -62,21 +56,15 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ]}
     />
   )
-}
-
-SEO.defaultProps = {
-  lang: `ja`,
-  meta: [],
-  description: ``,
 }
 
 export default SEO

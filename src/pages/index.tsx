@@ -2,9 +2,9 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import type { WindowLocation } from '@reach/router'
 import type { IndexPageQuery } from '../../types/graphql-types'
-
 import { rhythm } from '../utils/typography'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 import Title from '../components/title'
 import Bio from '../components/bio'
 
@@ -18,6 +18,7 @@ const BlogIndex: React.FC<Props> = ({ location, data }) => {
 
   return (
     <Layout location={location}>
+      <SEO />
       <Title />
       <Bio />
       {posts.map(({ node }) => {

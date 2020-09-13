@@ -2,6 +2,7 @@ import React from 'react'
 import type { WindowLocation } from '@reach/router'
 import { css } from '@emotion/core'
 import ThemeProvider from '../context/themeContext'
+import SEO from './seo'
 import Header from './header'
 import Footer from './footer'
 
