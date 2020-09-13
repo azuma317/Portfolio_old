@@ -2171,10 +2171,12 @@ export type SiteFieldsEnum =
   | 'siteMetadata___title'
   | 'siteMetadata___author___name'
   | 'siteMetadata___author___summary'
+  | 'siteMetadata___author___blogAuthor'
   | 'siteMetadata___description'
   | 'siteMetadata___siteUrl'
   | 'siteMetadata___social___twitter'
   | 'siteMetadata___social___github'
+  | 'siteMetadata___social___instagram'
   | 'port'
   | 'host'
   | 'pathPrefix'
@@ -3059,11 +3061,13 @@ export type SiteSiteMetadata = {
 export type SiteSiteMetadataAuthor = {
   name?: Maybe<Scalars['String']>;
   summary?: Maybe<Scalars['String']>;
+  blogAuthor?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataAuthorFilterInput = {
   name?: Maybe<StringQueryOperatorInput>;
   summary?: Maybe<StringQueryOperatorInput>;
+  blogAuthor?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSiteMetadataFilterInput = {
@@ -3077,11 +3081,13 @@ export type SiteSiteMetadataFilterInput = {
 export type SiteSiteMetadataSocial = {
   twitter?: Maybe<Scalars['String']>;
   github?: Maybe<Scalars['String']>;
+  instagram?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataSocialFilterInput = {
   twitter?: Maybe<StringQueryOperatorInput>;
   github?: Maybe<StringQueryOperatorInput>;
+  instagram?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSortInput = {
@@ -3105,10 +3111,15 @@ export type StringQueryOperatorInput = {
 export type BioQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type BioQueryQuery = { avatar?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }>, site?: Maybe<{ siteMetadata?: Maybe<{ author?: Maybe<Pick<SiteSiteMetadataAuthor, 'name'>>, social?: Maybe<Pick<SiteSiteMetadataSocial, 'twitter' | 'github'>> }> }>, allMarkdownRemark: { edges: Array<{ node: (
+export type BioQueryQuery = { avatar?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }>, site?: Maybe<{ siteMetadata?: Maybe<{ author?: Maybe<Pick<SiteSiteMetadataAuthor, 'name'>> }> }>, allMarkdownRemark: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'excerpt'>
         & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'description'>> }
       ) }> } };
+
+export type FooterQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FooterQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<{ author?: Maybe<Pick<SiteSiteMetadataAuthor, 'blogAuthor'>>, social?: Maybe<Pick<SiteSiteMetadataSocial, 'twitter' | 'github' | 'instagram'>> }> }> };
 
 export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
