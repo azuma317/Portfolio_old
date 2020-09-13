@@ -1,18 +1,24 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import type { WindowLocation } from '@reach/router'
+import { Link, graphql } from 'gatsby'
+import Bio from '../components/bio'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import { rhythm, scale } from '../utils/typography'
+import { BlogPostBySlugQuery } from '../../types/graphql-types'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+type Props = {
+  location: WindowLocation
+  pageContext: any
+  data: BlogPostBySlugQuery
+}
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
+const BlogPostTemplate: React.FC<Props> = ({ location, pageContext, data }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
