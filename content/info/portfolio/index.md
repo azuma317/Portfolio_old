@@ -2,7 +2,7 @@
 title: Portfolio
 date: '2020-08-01T02:00:00.000Z'
 description: '本職: インフラエンジニア, 趣味: iOS アプリ開発.'
-group: 'Portfolio'
+group: 'portfolio'
 ---
 
 本職: インフラエンジニア, 趣味: iOS アプリ開発.
