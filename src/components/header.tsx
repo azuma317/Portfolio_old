@@ -45,6 +45,7 @@ const style = {
     @media (max-width: 640px) {
       padding-left: 1.25rem;
       padding-right: 1.25rem;
+      height: 0rem;
     }
     @media (min-width: 640px) and (max-width: 768px) {
       max-width: 640px;
