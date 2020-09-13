@@ -19,12 +19,16 @@ const Header: React.FC<Props> = ({ activePage }) => {
           <NavLink
             to="/projects"
             title="Projects"
-            selected={activePage === 'projects'}
+            selected={activePage === '/projects'}
           >
             Projects
           </NavLink>
-          <NavLink to="/about" title="About" selected={activePage === 'about'}>
-            About
+          <NavLink
+            to="/portfolio"
+            title="Portfolio"
+            selected={activePage === '/portfolio'}
+          >
+            Portfolio
           </NavLink>
         </span>
       </nav>

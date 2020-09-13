@@ -38,8 +38,8 @@ const Footer = () => {
             <NavLink to="/projects" title="Projects">
               Projects
             </NavLink>
-            <NavLink to="/about" title="About">
-              About
+            <NavLink to="/portfolio" title="Portfolio">
+              Portfolio
             </NavLink>
           </nav>
           <div css={style.footer_info}>
