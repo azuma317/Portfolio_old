@@ -1,7 +1,6 @@
 import React from 'react'
 import { useStaticQuery, Link, graphql } from 'gatsby'
 import Image from 'gatsby-image'
-import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { rhythm } from '../utils/typography'
 
 const Bio = () => {
@@ -27,7 +26,7 @@ const Bio = () => {
       }
       allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { group: { eq: "introduction" } } }
+        filter: { frontmatter: { group: { eq: "Portfolio" } } }
       ) {
         edges {
           node {
@@ -47,7 +46,7 @@ const Bio = () => {
   `)
 
   const { author, social } = data.site.siteMetadata
-  const introduction = data.allMarkdownRemark.edges[0].node
+  const portfolio = data.allMarkdownRemark.edges[0].node
   return (
     <div
       style={{
@@ -71,8 +70,8 @@ const Bio = () => {
       <p>
         <strong>{author.name}</strong>
         <br />
-        <Link style={{ boxShadow: `none` }} to={introduction.fields.slug}>
-          {introduction.frontmatter.title}
+        <Link style={{ boxShadow: `none` }} to={portfolio.fields.slug}>
+          {portfolio.frontmatter.title}
         </Link>
         &nbsp;&nbsp;&nbsp;
         <Link
@@ -86,8 +85,7 @@ const Bio = () => {
         ></Link>
         <p
           dangerouslySetInnerHTML={{
-            __html:
-              introduction.frontmatter.description || introduction.excerpt,
+            __html: portfolio.frontmatter.description || portfolio.excerpt,
           }}
         />
       </p>
