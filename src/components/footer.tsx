@@ -28,10 +28,10 @@ const Footer = () => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <footer css={style.footer}>
-      <div css={style.footer_container}>
+    <footer css={styles.footer}>
+      <div css={styles.footer_container}>
         <div>
-          <nav css={style.footer_nav}>
+          <nav css={styles.footer_nav}>
             <NavLink to="/" title="Home">
               Home
             </NavLink>
@@ -42,15 +42,15 @@ const Footer = () => {
               Portfolio
             </NavLink>
           </nav>
-          <div css={style.footer_info}>
-            <span css={style.footer_copyright} aria-label="Copyright">
+          <div css={styles.footer_info}>
+            <span css={styles.footer_copyright} aria-label="Copyright">
               © 2020 {author.blogAuthor}. All Right Reserved.
             </span>
-            <div css={style.footer_sns}>
+            <div css={styles.footer_sns}>
               <span>
                 <a
                   href={'https://github.com/' + social.github}
-                  css={style.footer_icon}
+                  css={styles.footer_icon}
                   aria-label="Visit Github profile"
                   title="Visit Github profile"
                   target="_blank"
@@ -62,7 +62,7 @@ const Footer = () => {
               <span>
                 <a
                   href={'https://twitter.com/' + social.twitter}
-                  css={style.footer_icon}
+                  css={styles.footer_icon}
                   aria-label="Visit Twitter profile"
                   title="Visit Twitter profile"
                   target="_blank"
@@ -74,7 +74,7 @@ const Footer = () => {
               <span>
                 <a
                   href={'https://www.instagram.com/' + social.github}
-                  css={style.footer_icon}
+                  css={styles.footer_icon}
                   aria-label="Visit Instagram profile"
                   title="Visit Instagram profile"
                   target="_blank"
@@ -93,7 +93,7 @@ const Footer = () => {
 
 export default Footer
 
-const style = {
+const styles = {
   footer: css`
     display: block;
     position: relative;
