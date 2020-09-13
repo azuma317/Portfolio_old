@@ -6,6 +6,7 @@ module.exports = {
       name: `あずま`,
       summary: `本職: インフラエンジニア, 趣味: iOSアプリ開発`,
       blogAuthor: `Azuma Sato`,
+      introduction: `本職: インフラエンジニア, 趣味: iOS アプリ開発.`,
     },
     description: `インフラやiOSアプリ開発についての個人的な知見をためておく場所です。`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,

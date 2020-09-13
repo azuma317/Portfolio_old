@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
+import { css } from '@emotion/core'
 import { rhythm } from '../utils/typography'
 
 const Bio = () => {
@@ -17,24 +18,7 @@ const Bio = () => {
         siteMetadata {
           author {
             name
-          }
-        }
-      }
-      allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { group: { eq: "Portfolio" } } }
-      ) {
-        edges {
-          node {
-            excerpt
-            fields {
-              slug
-            }
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              title
-              description
-            }
+            introduction
           }
         }
       }
@@ -42,13 +26,8 @@ const Bio = () => {
   `)
 
   const { author } = data.site.siteMetadata
-  const portfolio = data.allMarkdownRemark.edges[0].node
   return (
-    <div
-      style={{
-        display: `flex`,
-      }}
-    >
+    <div css={styles.bio}>
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
@@ -62,17 +41,22 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
+      <div css={styles.bio_description}>
         <strong>{author.name}</strong>
         <br />
-        <p
-          dangerouslySetInnerHTML={{
-            __html: portfolio.frontmatter.description || portfolio.excerpt,
-          }}
-        />
-      </p>
+        <p>{author.introduction}</p>
+      </div>
     </div>
   )
 }
 
 export default Bio
+
+const styles = {
+  bio: css`
+    display: flex;
+  `,
+  bio_description: css`
+    display: block;
+  `,
+}

@@ -1849,7 +1849,6 @@ export type QuerySiteArgs = {
   port?: Maybe<DateQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
-  polyfill?: Maybe<BooleanQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
@@ -1962,7 +1961,6 @@ export type Site = Node & {
   port?: Maybe<Scalars['Date']>;
   host?: Maybe<Scalars['String']>;
   pathPrefix?: Maybe<Scalars['String']>;
-  polyfill?: Maybe<Scalars['Boolean']>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
   children: Array<Node>;
@@ -2172,6 +2170,7 @@ export type SiteFieldsEnum =
   | 'siteMetadata___author___name'
   | 'siteMetadata___author___summary'
   | 'siteMetadata___author___blogAuthor'
+  | 'siteMetadata___author___introduction'
   | 'siteMetadata___description'
   | 'siteMetadata___siteUrl'
   | 'siteMetadata___social___twitter'
@@ -2180,7 +2179,6 @@ export type SiteFieldsEnum =
   | 'port'
   | 'host'
   | 'pathPrefix'
-  | 'polyfill'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -2274,7 +2272,6 @@ export type SiteFilterInput = {
   port?: Maybe<DateQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
-  polyfill?: Maybe<BooleanQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
@@ -3062,12 +3059,14 @@ export type SiteSiteMetadataAuthor = {
   name?: Maybe<Scalars['String']>;
   summary?: Maybe<Scalars['String']>;
   blogAuthor?: Maybe<Scalars['String']>;
+  introduction?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataAuthorFilterInput = {
   name?: Maybe<StringQueryOperatorInput>;
   summary?: Maybe<StringQueryOperatorInput>;
   blogAuthor?: Maybe<StringQueryOperatorInput>;
+  introduction?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSiteMetadataFilterInput = {
@@ -3111,10 +3110,7 @@ export type StringQueryOperatorInput = {
 export type BioQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type BioQueryQuery = { avatar?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }>, site?: Maybe<{ siteMetadata?: Maybe<{ author?: Maybe<Pick<SiteSiteMetadataAuthor, 'name'>> }> }>, allMarkdownRemark: { edges: Array<{ node: (
-        Pick<MarkdownRemark, 'excerpt'>
-        & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'description'>> }
-      ) }> } };
+export type BioQueryQuery = { avatar?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }>, site?: Maybe<{ siteMetadata?: Maybe<{ author?: Maybe<Pick<SiteSiteMetadataAuthor, 'name' | 'introduction'>> }> }> };
 
 export type FooterQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
