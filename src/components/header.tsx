@@ -9,8 +9,8 @@ type Props = {
 
 const Header: React.FC<Props> = ({ activePage }) => {
   return (
-    <header css={styles.header_container}>
-      <nav aria-label="Main Navigation" css={styles.header_logo}>
+    <header css={styles.header}>
+      <nav aria-label="Main Navigation" css={styles.header_nav}>
         <Link to="/" aria-label="Website logo, go back to homepage."></Link>
         <span css={styles.header_link}>
           <NavLink to="/" title="Home" selected={activePage === '/'}>
@@ -39,7 +39,7 @@ const Header: React.FC<Props> = ({ activePage }) => {
 export default Header
 
 const styles = {
-  header_container: css`
+  header: css`
     center: true;
     margin: auto;
     max-width: 1280px;
@@ -65,7 +65,7 @@ const styles = {
       max-width: 1024px;
     }
   `,
-  header_logo: css`
+  header_nav: css`
     display: flex;
     align-items: center;
     margin-top: auto;
