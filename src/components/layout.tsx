@@ -3,6 +3,7 @@ import type { WindowLocation } from '@reach/router'
 import { css } from '@emotion/core'
 import ThemeProvider from '../context/themeContext'
 import SEO from './seo'
+import GlobalStyle from '../styles/globalStyle'
 import Header from './header'
 import Footer from './footer'
 
@@ -14,6 +15,7 @@ const Layout: React.FC<Props> = ({ location, children }) => {
   return (
     <>
       <ThemeProvider>
+        <GlobalStyle />
         <Header activePage={location.pathname} />
         <main css={styles.main}>{children}</main>
         <Footer />
