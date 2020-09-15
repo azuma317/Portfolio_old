@@ -23,6 +23,7 @@ interface ContextProps {
   theme: string
   setTheme: React.Dispatch<React.SetStateAction<string>>
 }
+
 export const ThemeContext = React.createContext<Partial<ContextProps>>({})
 
 const ThemeProvider: React.FC<Props> = ({ initialTheme, children }) => {
