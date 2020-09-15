@@ -19,7 +19,11 @@ const getInitialTheme: () => string = () => {
   return 'dark'
 }
 
-export const ThemeContext = React.createContext({})
+interface ContextProps {
+  theme: string
+  setTheme: React.Dispatch<React.SetStateAction<string>>
+}
+export const ThemeContext = React.createContext<Partial<ContextProps>>({})
 
 const ThemeProvider: React.FC<Props> = ({ initialTheme, children }) => {
   const [theme, setTheme] = React.useState(getInitialTheme)
