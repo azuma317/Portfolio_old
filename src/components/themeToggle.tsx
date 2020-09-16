@@ -14,7 +14,9 @@ const ThemeToggle: React.FC<Props> = ({ className }) => {
   }
 
   const ToggleTheme = () => {
-    setTheme(isLight() ? 'dark' : 'light')
+    if (setTheme !== undefined) {
+      setTheme(isLight() ? 'dark' : 'light')
+    }
   }
 
   return (
