@@ -30,9 +30,9 @@ const styles = {
   nav_link: css`
     font-weight: 400;
     font-size: 1rem;
+    transition-duration: 1s;
     transition-property: background-color, border-color, color, fill, stroke,
       opacity, box-shadow, transform;
-    transition-duration: 150ms;
     :hover {
       color: #2b6cb0;
     }

@@ -102,6 +102,9 @@ const styles = {
     height: 12rem;
     color: var(--color-text-secondary);
     background-color: var(--color-bg-secondary);
+    transition-duration: 1s;
+    transition-property: background-color, border-color, color, fill, stroke,
+      opacity, box-shadow, transform;
   `,
   footer_container: css`
     display: block;
