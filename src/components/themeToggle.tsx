@@ -1,12 +1,9 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { ThemeContext } from '../context/themeContext'
+import { AiFillFire } from 'react-icons/ai'
 
-type Props = {
-  className: string
-}
-
-const ThemeToggle: React.FC<Props> = ({ className }) => {
+const ThemeToggle = () => {
   const { theme, setTheme } = React.useContext(ThemeContext)
 
   function isLight(): boolean {
@@ -25,7 +22,26 @@ const ThemeToggle: React.FC<Props> = ({ className }) => {
         aria-label={isLight() ? 'Activate Dark Mode' : 'Activate Light Mode'}
         title={isLight() ? 'Activate Dark Mode' : 'Activate Light Mode'}
         onClick={ToggleTheme}
-      ></button>
+        css={styles.button}
+      >
+        <AiFillFire />
+      </button>
     </>
   )
+}
+
+export default ThemeToggle
+
+const styles = {
+  button: css`
+    background: transparent;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    outline: none;
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  `,
 }

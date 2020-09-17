@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 import NavLink from './atoms/navLink'
+import ThemeToggle from './themeToggle'
 
 type Props = {
   activePage: string
@@ -31,6 +32,7 @@ const Header: React.FC<Props> = ({ activePage }) => {
             Portfolio
           </NavLink>
         </span>
+        <ThemeToggle />
       </nav>
     </header>
   )
