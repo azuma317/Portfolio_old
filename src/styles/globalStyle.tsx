@@ -69,7 +69,7 @@ const styles = css`
     overflow-x: hidden;
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
-    transition-duration: 1s;
+    transition-duration: 0.3s;
     transition-property: background-color, border-color, color, fill, stroke,
       opacity, box-shadow, transform;
   }
