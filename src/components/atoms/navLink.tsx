@@ -15,7 +15,9 @@ const NavLink: React.FC<Props> = ({
   selected = false,
 }) => {
   const textColor = css`
-    color: ${selected ? '#2b6cb0' : '#4a5568'};
+    color: ${selected
+      ? 'var(--color-text-accent)'
+      : 'var(--color-text-secondary)'};
   `
   return (
     <Link to={to} title={title}>
@@ -34,7 +36,7 @@ const styles = {
     transition-property: background-color, border-color, color, fill, stroke,
       opacity, box-shadow, transform;
     :hover {
-      color: #2b6cb0;
+      color: var(--color-text-accent);
     }
   `,
 }
