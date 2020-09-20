@@ -20,7 +20,7 @@ const NavLink: React.FC<Props> = ({
       : 'var(--color-text-secondary)'};
   `
   return (
-    <Link to={to} title={title}>
+    <Link to={to} title={title} css={styles.nav_link}>
       <span css={[styles.nav_span, textColor]}>{children}</span>
     </Link>
   )
@@ -29,6 +29,9 @@ const NavLink: React.FC<Props> = ({
 export default NavLink
 
 const styles = {
+  nav_link: css`
+    box-shadow: none;
+  `,
   nav_span: css`
     font-weight: 400;
     font-size: 1rem;
