@@ -35,9 +35,6 @@ const styles = {
   nav_span: css`
     font-weight: 400;
     font-size: 1rem;
-    transition-duration: 1s;
-    transition-property: background-color, border-color, color, fill, stroke,
-      opacity, box-shadow, transform;
     :hover {
       color: var(--color-text-accent);
     }

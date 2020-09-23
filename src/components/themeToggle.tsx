@@ -43,9 +43,6 @@ const styles = {
       width: 1.5rem;
       height: 1.5rem;
       color: var(--color-text-secondary);
-      transition-duration: 1s;
-      transition-property: background-color, border-color, color, fill, stroke,
-        opacity, box-shadow, transform;
     }
   `,
 }
