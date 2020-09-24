@@ -100,8 +100,6 @@ const styles = {
     overflow: hidden;
     width: 100%;
     height: 12rem;
-    color: var(--color-text-secondary);
-    background-color: var(--color-bg-secondary);
   `,
   footer_container: css`
     display: block;
