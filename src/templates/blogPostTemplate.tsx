@@ -16,7 +16,6 @@ type Props = {
 const BlogPostTemplate: React.FC<Props> = ({ location, pageContext, data }) => {
   const post = data.markdownRemark
   const title = data.site?.siteMetadata?.title
-  const { previous, next } = pageContext
 
   return (
     <Layout location={location}>
