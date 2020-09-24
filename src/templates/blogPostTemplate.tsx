@@ -4,16 +4,16 @@ import { Link, graphql } from 'gatsby'
 import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import GlobalStyle from '../styles/globalStyle'
 import { rhythm, scale } from '../utils/typography'
 import { BlogPostBySlugQuery } from '../../types/graphql-types'
 
 type Props = {
   location: WindowLocation
-  pageContext: any
   data: BlogPostBySlugQuery
 }
 
-const BlogPostTemplate: React.FC<Props> = ({ location, pageContext, data }) => {
+const BlogPostTemplate: React.FC<Props> = ({ location, data }) => {
   const post = data.markdownRemark
   const title = data.site?.siteMetadata?.title
 
@@ -23,26 +23,25 @@ const BlogPostTemplate: React.FC<Props> = ({ location, pageContext, data }) => {
         title={post?.frontmatter?.title || title || ''}
         description={post?.frontmatter?.description || post?.excerpt || ''}
       />
+      <GlobalStyle />
       <article>
-        <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
-            {post?.frontmatter?.title}
-          </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            {post?.frontmatter?.date}
-          </p>
-        </header>
+        <h1
+          style={{
+            marginTop: rhythm(1),
+            marginBottom: 0,
+          }}
+        >
+          {post?.frontmatter?.title}
+        </h1>
+        <p
+          style={{
+            ...scale(-1 / 5),
+            display: `block`,
+            marginBottom: rhythm(1),
+          }}
+        >
+          {post?.frontmatter?.date}
+        </p>
         <section dangerouslySetInnerHTML={{ __html: post?.html || '' }} />
         <hr
           style={{

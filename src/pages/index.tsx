@@ -6,6 +6,7 @@ import { rhythm } from '../utils/typography'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Title from '../components/title'
+import GlobalStyle from '../styles/globalStyle'
 import Bio from '../components/bio'
 
 type Props = {
@@ -20,26 +21,22 @@ const BlogIndex: React.FC<Props> = ({ location, data }) => {
     <Layout location={location}>
       <SEO />
       <Title />
+      <GlobalStyle />
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter?.title || node.fields?.slug
         return (
           <article key={node.fields?.slug}>
-            <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link
-                  style={{ boxShadow: `none` }}
-                  to={node.fields?.slug || ''}
-                >
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter?.date}</small>
-            </header>
+            <h3
+              style={{
+                marginBottom: rhythm(1 / 4),
+              }}
+            >
+              <Link style={{ boxShadow: `none` }} to={node.fields?.slug || ''}>
+                {title}
+              </Link>
+            </h3>
+            <small>{node.frontmatter?.date}</small>
             <section>
               <p
                 dangerouslySetInnerHTML={{
