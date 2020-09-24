@@ -13,14 +13,12 @@ type Props = {
 
 const Layout: React.FC<Props> = ({ location, children }) => {
   return (
-    <>
-      <ThemeProvider>
-        <GlobalStyle />
-        <Header activePage={location.pathname} />
-        <main css={styles.main}>{children}</main>
-        <Footer />
-      </ThemeProvider>
-    </>
+    <ThemeProvider>
+      <GlobalStyle />
+      <Header activePage={location.pathname} />
+      <main css={styles.main}>{children}</main>
+      <Footer />
+    </ThemeProvider>
   )
 }
 
