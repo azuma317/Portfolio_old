@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://gatsby-starter-blog-demo.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 24 Sep 2020 15:05:45 GMT</lastBuildDate><item><title><![CDATA[CollectionViewの基礎]]></title><description><![CDATA[はじめに 今回は、UINavigationController と UICollectionViewController と UIViewController を使いました。主に、CollectoinView の使い方を記しました。 完成品 cell…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/collectionViewSample/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/collectionViewSample/</guid><pubDate>Wed, 12 Aug 2020 18:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;はじめに&lt;/h1&gt;
+&lt;p&gt;今回は、UINavigationController と UICollectionViewController と UIViewController を使いました。主に、CollectoinView の使い方を記しました。&lt;/p&gt;
+&lt;h1&gt;完成品&lt;/h1&gt;
+&lt;p&gt;cell をタップすると、簡単な画面遷移とデータの移行をしています。&lt;/p&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 572px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/7f126882209076771d32162084063159/a805e/preview1.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 179.72972972972974%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAkCAYAAACJ8xqgAAAACXBIWXMAABYlAAAWJQFJUiTwAAAE1ElEQVRIx3VWS0skVxTunzL7/A11K7gZNxohMRBmk6iLIeosNAPiRmRm3AiORkQIiBESSVAQRYK68YHgI9q23XZrP23tR9ld3fXlfKf7tlV2eYtD1b331HfP47vn3sDp6SkoR0dHuLy8RD6fRzabxcPDAwqFAu7u7nRub28PoVBIxzhvdPjO5XJYX1/H7u4uAsViUQcsy0KpVEK5XFZ5enpCJpNBKpVCOp3G7e0tEokE7u/vdc7oGeFC0WgUAQNCJQqB2SfQ2toaNjY2dOWtrS2V7e1ttYr/Udf84ziOLqqAbsvcYtu2Cuf5rtgVlZd6nK9UKjVASCO6WZEhoBi3zLyRmjcl0akJv6nLRq8U0CTCrtgwjaAMulFmK5UYV8awIL0c/5SxvOg9qh5jrYAEYzs7O0NHRweGh4e1Tze52PMijC+9AN69A7q6ICxQHySx+WdAWsLW2tqKQCCgMj8/D/dczROLsPj4EaLjqPT0ODJWEb1Cs4VdsqQBXF1d1bHHx8cmwOnpZ8D379EMaKwg78bHx7G0tKR9Jon8crtsWUX9npkBPn1iXJm0iizmA0hrgsEg4vF4PQklTwwJxmSxRaMniMVONH6SfNVrALLDlCcScYSugriJhHWSYqhjFkgmk0hLpq9vbhGKxJBMpfVfznkAKXbVqfFOfy7rlvTQRr4fxIsKx+irSFW+8xKWkps2D/WkZO+u8Pfnn7C3/FlhS2Kd2+WCuFtmXOX7B5FOkdsa85Fzu/woMaRVf078iInON5h4+wbnO38pSC7nyrKAkYS/yndAQCjfapIlywVPUmoWbnz9oIBfer5B5PhfXSTvAzjtAvzFD5AWMnxlK4/Df37D1f6GAjB+btqQRlY9y3MiX0SYMqda1Th6iM3BRDKF0/+CCF5HGlXEu/WKGke2pNArfHwMR6yrEFAS6MkyC2dKKBGN3kgZimmf8pI2GfnpXgyIxGIIS0HNUE82BPUagLk6uqnaFI4RkN9uQHKOYaiKVRRazR3mW20ikQjGxsawsLDQqH0e2giQGevt7UVnZ6eWfbdRnq03MjKCtrY2tLS0YHNz06c41MBHR0cbRaS7u7tRlZoAp6amtIS1t7fj4OCgsfJLwBmpDAZwaGjIH5Au0qXl5WXs7Oz4VhtzRBjQyclJDQH/9RQHs2ePhQbhcBgXFxcaGx48L2lDAMb6RtjAc/r6+rphvYc27MSECgSi8IDP1OngzjL14lKVItGIyl1c9NIZb7WhhYYOFFrCZFDBQxs54RLJBApSne2sjXK2DCtrIZVOeWljksJat7i4qNcK30NKCmzlScIgz/foxVt5blCnTT7XnJS5uTkMDAygv7/fP8uy1+VIwQiENk5Apcvp4pEixcGHNisrK+jr68Pg4KBenF4D/IpZBKo1wA/y+AJyGzFevGWdn5+/Wm0MbRblmZZHLitSIIQ2BXeBre8G0uTk5EQz7HdIEczcc672gwjth2CXbH/amKsbeUVAFobXaJMWvfDNFWLxiOg8H2Ye2tBKszonDXXchxQvRllZqChWWVWxWGJXeLIbek1J4Zt3wMPDQ+2/rDZWsQCLLpZF/48e4PcOiVe4flTkvDFkUgg2Ozur9OEWNHu0ASiBL4pl2B6D0xeA87PIyndMMgq5Wpb/B5pvXlbztJaRAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview1.png&quot; title=&quot;preview1.png&quot; src=&quot;/static/7f126882209076771d32162084063159/a805e/preview1.png&quot; srcset=&quot;/static/7f126882209076771d32162084063159/12f09/preview1.png 148w,
+/static/7f126882209076771d32162084063159/e4a3f/preview1.png 295w,
+/static/7f126882209076771d32162084063159/a805e/preview1.png 572w&quot; sizes=&quot;(max-width: 572px) 100vw, 572px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/6670844a5e3399b1e8a9b988ca0e84ee/18872/preview2.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 175.67567567567568%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAjCAYAAACU9ioYAAAACXBIWXMAABYlAAAWJQFJUiTwAAABJklEQVRIx+3O30rCYBiA8c9jTcEDr8cL8A7yAuaJoJIOt3kN4oUIRpS4Px3ZQZ7spKC6gTJXEWujLXzaFgmBpAcefh88fNu7lx8T1WqVbrdLq91GaTTo9zU0XUfTdHTdQFVVGsk8rdPpYBhGMtc3DQaDbK4oCrVaDaH2esTxF2+vL4Qf72w7vu/jeR5hGG79HgQBy+WS0WiEaJ2oPMbw4MHtM9yt4D7p5glWAcTRJ9eLBa7rEkVRBqzX6w2WPv++D4dDxHG9zvTyism5yeTC5jTpbPpzT00Hy7IYj8dZs9kMx3GwbftPpmkyn89pNpuIYvEIIcS/5XK5rF17+Xw+BYs7F/etUCggSqXSYcGD/6EEJShBCUpQghKU4P5gpVKhXC4fpNT6Bp/beOAmSNklAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview2.png&quot; title=&quot;preview2.png&quot; src=&quot;/static/6670844a5e3399b1e8a9b988ca0e84ee/fcda8/preview2.png&quot; srcset=&quot;/static/6670844a5e3399b1e8a9b988ca0e84ee/12f09/preview2.png 148w,
+/static/6670844a5e3399b1e8a9b988ca0e84ee/e4a3f/preview2.png 295w,
+/static/6670844a5e3399b1e8a9b988ca0e84ee/fcda8/preview2.png 590w,
+/static/6670844a5e3399b1e8a9b988ca0e84ee/18872/preview2.png 608w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;h1&gt;作ってみよう&lt;/h1&gt;
+&lt;p&gt;まずは、storyboard の設定をします。
+全体像としては次のようになります。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/d4277dc3acd2042e221feb1e0fbbde05/0ef7e/preview3.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 52.02702702702703%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABRElEQVQoz22S25KDIBBE8/+/uFX7mJhERaPcL700CDGppWpqYMBD9+AlpQQO5hgj2uC6biV8j/pNq6ePMxduOuew7zvWdYVSCsaYfsCYgF0aPB4zts3k0KXuXIR4OYzTDrGoHBrehwpclgXjOGKappLfwASpQj5sIcQKa12+MJQdpROGKWDdAqQMmIWH86kC53nOCh54Pp8lnxW+toifX4dQOVlZtWcdW/RuQzYJHzKQfaOyYRhwv99L1lr3nmoTYWzM81RqNs9TqnXrUu+hMSlbPoC0eb1ecbvdShDIegi+9LDZ56eEs66U72pLr+0B5K1CiGKX4G/LVNFevCjslvEJpMJwAGmZdgljbsAz4HwB1dpDUa+fFfKVCeXjUKW1tttsVng7M9fNopQVzNjlSeH/UZEhpGKNvwQz1xx8JILMEa01fz4uD3jCehikAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview3.png&quot; title=&quot;preview3.png&quot; src=&quot;/static/d4277dc3acd2042e221feb1e0fbbde05/fcda8/preview3.png&quot; srcset=&quot;/static/d4277dc3acd2042e221feb1e0fbbde05/12f09/preview3.png 148w,
+/static/d4277dc3acd2042e221feb1e0fbbde05/e4a3f/preview3.png 295w,
+/static/d4277dc3acd2042e221feb1e0fbbde05/fcda8/preview3.png 590w,
+/static/d4277dc3acd2042e221feb1e0fbbde05/efc66/preview3.png 885w,
+/static/d4277dc3acd2042e221feb1e0fbbde05/c83ae/preview3.png 1180w,
+/static/d4277dc3acd2042e221feb1e0fbbde05/0ef7e/preview3.png 1594w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;CollectionViewController の cell には Label を２つ置いています。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 532px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/21806be43d9973a8dd198756d96280a2/89a37/preview4.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 80.4054054054054%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAABYlAAAWJQFJUiTwAAACRElEQVQ4y5VU227TQBD1f/MPfAMP/ADiDZCQilQeWlpC4yR2fI3t+O7ETWLX18PMNrYSiFpYabw7q93jOWdmVtrtn1Ak99hF93C9CP56Dd/3EQYBPM9DHMfCj6MYeZ6jbVs0TXPR+r6HlO9qNPFnFMFXzFUX8nSK2WyGxXyOpapCJbMsE3c/7mCvHLw2JP7k+x6F/xHw3yJJc4rMRUKRhWFI6zXtZeMFjuIlk/q+Q9MC5UZGYnyAomrQtKWITNM0is6C46wE9aqqXwWV+MOjJtAw2cMmAM91CViFrusE5hBYhMVigcOhEGe7rnuZ8gDatY2IRDcMWKYpQAxa67oGg3xFWWIymZCWK5zeOwO0bRunxhTnlJAg8AXlb1dXuLm9PQLrYjYJ/M97g0kc0V+WbERCGPD79TUmvx6QpunZmSiKRjvdly4K0T5ik2XisElRcR3+65DGDLHQLEm3B1ZvkK4nWCg60SOKRJPBZXkKy3YgU51alk11uhTyZFk6anqWlIqmJHtE5D2QXgrpZQpNDUMX9ViWpeiUuq6FFUUx7o2AIjr2dhkKW4Xjc6tFY9lwl3AiGPBSVk8L/pnysaZa7SfKL+9hOS5ch+koAtQiygpRG2qPZ24GngcbwJ4j5A0+qN6g/PQOurVCcdjjf8fYKRg6ZZsgtxTRcvzKJEkisptRubAfBCHtpdhut4jCgPwAKflcr/zSjFlmQauqwqF8Qpo/wiDdhgKXZRlres74J7PZnJ43TwB5rnPscUfom202os+Z/m946L2Qh8vRcgAAAABJRU5ErkJggg==&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview4.png&quot; title=&quot;preview4.png&quot; src=&quot;/static/21806be43d9973a8dd198756d96280a2/89a37/preview4.png&quot; srcset=&quot;/static/21806be43d9973a8dd198756d96280a2/12f09/preview4.png 148w,
+/static/21806be43d9973a8dd198756d96280a2/e4a3f/preview4.png 295w,
+/static/21806be43d9973a8dd198756d96280a2/89a37/preview4.png 532w&quot; sizes=&quot;(max-width: 532px) 100vw, 532px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;cell に配置されている色の Label を丸くしたいので、Label を選択して、次のように設定してください。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 500px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/c41b3a4e9a8d9029de811207f8374d00/0b533/preview5.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 121.62162162162163%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAABYlAAAWJQFJUiTwAAADDElEQVQ4y41U2XLaQBDU/+Zr8g35g1TeE2xsx0cVFEe4JRAgCSEkJA6DLbkzPZYIdnywVV1a7THTM9OzxmKxQJIkijAM0e/3dW5ZQwS+i8Z4gx+1NaJljF6vh+Vyiel0ivF4jDiOMRgMdK2wYURRhO12q+CGaZrYbDZy0ITvjnFrrvDt9wqLcIlutyNOIwyHQz3Hu/V6XfZCuRvrfYOH6o0Gms0/6HY6qNVqOp/P53oojkKs41Auh8qARniR4JwsGRn3gyCAMbQsVKtVVCpVdNpttFttMSpeFyFWqxXiPBRepBF+CxSh8hwRCAmDi/v9Hrv7e+x2O7iuq+F4nieHYyRykEzvZf/x8REPDw8HpGmGJJrjuu3iy/cMNVMMsijH3nzfR6/bgyOG45ihRTnbRPPM/B4g/ytJR2sU4Gtpj56dGyxoT6RyzGG71YLjOIjzEMk8TVNl+BLPLLP0Adk2QhgcGSxk44gkppOJJpisuX9ciNd5JLi/iJaapv9CXq/XCi0EUzCbaV5d19PvRJw5josZ1/PvTAxNJlPd06Iw4cwPDR2zOBbsKaDURIddkUwFFZFOV4rBsMma4PwUFGnRkAfSag1Re0sKwe4gW1aQbF/n6iMcGNJ6vz/QdqLIydgUw7ZU/Fhzn4FapuQMWqURot/vibFn41ORTdHjb4GRvIYapDz4U1S3EO1KO+Rfzx5/Cd4rQFKMlBU3KOKzs3Pt53K5jJ+/SiiVSri5vtb18nkZt3d3uLq6kv0LXF5e4Ob27kUfJ9JFhTKM0WikxbDzr+fNlDo90yO9c840WJJj6pFrjCKSCvNMKOyKyAyKdWTbsuFhLMJ8b+ijIfk9HokwotRsuc/BwhhW7pm9OxrJwynzZrPxXKSBpfnl8MWhaVpoyRNnj20NlapwhDFHlmVabYMhuq6DpSQ8yMNjyHOBPw/0EMdaDDBUb+ZrcfhY8DVKktWBMR8MI8tSfDaenp5O2leDjJsLpEzQczF/C+k767ShITMMCpWG6eHtd+80aFHY0NQPk1yI+6MO+Qx/AYFpGCR1jvL6AAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview5.png&quot; title=&quot;preview5.png&quot; src=&quot;/static/c41b3a4e9a8d9029de811207f8374d00/0b533/preview5.png&quot; srcset=&quot;/static/c41b3a4e9a8d9029de811207f8374d00/12f09/preview5.png 148w,
+/static/c41b3a4e9a8d9029de811207f8374d00/e4a3f/preview5.png 295w,
+/static/c41b3a4e9a8d9029de811207f8374d00/0b533/preview5.png 500w&quot; sizes=&quot;(max-width: 500px) 100vw, 500px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Clip To Bounds にもチェックを入れておいてください。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 500px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/87b1c229f341d40b6916d204de34ade1/0b533/preview6.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 118.24324324324324%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAABYlAAAWJQFJUiTwAAAD9ElEQVQ4y11Vya4iRxB8v+of8DeM7/bFN/vgu89jWbLG0puNYXvs0CzN+tih6b3ZIZyRUDN4kEJVXdUVHZkVmTyFYQjC930MBgOdTyYTLBYLOI4Dy7IQhT6emzHseQzfdTAcDhHHMUajkb4TRRGCO89TEAQgNpuNHvY8D71eT1+ezWb4+PGTkvxdDVEbhVgtpqhWq3q4UqlgPB7LB0MEIoiinkhAMtd1dYHPBL+8Xq91vlqt4DtLbJyVrDlf93iO88rAxWTpIo5EIaVzI5fLoSpfLBQKGL2+YiMHGo0Gslmul1EqldCxu+DvfD7jfLngcjkLrvjx7RVvqwlwPeCJ0k3I/BpzxznXqM6o9H1PI2C+DOI40r13NUnTLMD5uL8RGiRJAqtRR61eFxUXXK9XxUXV3KDq7uBvPp9hOR0i9F3sD4dbDk3+jCqjluAen4nHfJs9jcKRNRkPJEySGN1uF+lMFvn8C17yeb1lqrU7HaRSKXTaLRSLJaTTGZSKRcl3XnJaRCabwfPzs5zLwxNBSqgeuit7RBRGaLVaao1Gw9J5q9nU+Vh8ynPGFSa6/V5y6N/9YxJOZcab7XYbdclnWUg5ZySVSlUJjQjzLs9/JTQ5pElt21ZD006n0wnnEy/gpPPj8YiLXMZBDibJFrvdTkh9ccZSye8hx7rBl1ly9VpNR25y7UAIGXF8GLnHm6Y71ss5As+9ETris6qEYVkNdOQSut2eKJ1o6dWkxKxSWVBCg5CL4VwhBVCXVAzlvV8+nfC+HYnjJWRPwiVJp9PWxPf7fUynM0nDBv5mBW8xx1pSsBHDe8slnPkcK3mm4VmSxE//7PGhdSdkQhkywUuxhXwxm+BDdYoffm/i578GEtIMn7+kxR4FdHu2GpqGN+Obf094Z8XA5btL4UW4avQNhpMFCp0F7IkrncQT1VP0e325sOk3u9wt9meenSjA5XQnDKnM7qBcLqstehL2Vgzfa1soF1/UxFyjpUzvfMQx8ZFEd9vwBYa6lly8SpfhZXDkWlcqJitVwW5jvGdM/AjPl3UZD8aHXDSmJjin6p4YOSdlVSi8SL06agvub7dbTQ/HvXoy+VYppn3p1wVJFKA/D/Bbeif9z0alXEKz2UJN/Mma5TPLkb2zLJZKpb6IO9oqgpH9jzAIQmzjAMNliD9ye7GSLURVPcBmW683ZN7UEqRdeFEk4Zzn2VS+I7wpvBHu9AXLqquVSEiVZVE4eh3fqkhSYMJn6uhh7TamwfKfaxeH6C9C/Pr5AKvJtlWQ0Erasthp6IJclq0uh4y0PPZH03mU0DRYA09qcrl2UR/5+nfAuibYOBjiXCqFz2wgHE3DJQ8J/wOrnfLk7tUBugAAAABJRU5ErkJggg==&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview6.png&quot; title=&quot;preview6.png&quot; src=&quot;/static/87b1c229f341d40b6916d204de34ade1/0b533/preview6.png&quot; srcset=&quot;/static/87b1c229f341d40b6916d204de34ade1/12f09/preview6.png 148w,
+/static/87b1c229f341d40b6916d204de34ade1/e4a3f/preview6.png 295w,
+/static/87b1c229f341d40b6916d204de34ade1/0b533/preview6.png 500w&quot; sizes=&quot;(max-width: 500px) 100vw, 500px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;そして、一番右の ViewController の全面には Label を設置しています。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/3bc900ad8d3604ce744aa74c26c2993c/940c5/preview7.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 183.1081081081081%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAlCAYAAABCr8kFAAAACXBIWXMAABYlAAAWJQFJUiTwAAACFklEQVRIx+1W2W7bMBD0/39E+95PKVKkSQ/UaAArdX1IsnWRIpfUMR3aSu2kKpAEempNYLDEcjW7y2O1s77v0bbtODqu9TgCZ2ibUfvANXPOwTmB955wJzQtvM3hiitIuoZsIsiPb3CrO3g68IdvTvZ1XSNwkdBDaUuFQP+GJTx0lUPvP0PyHLJPYVYR1HKBWlrUD99QOhci7iFCwko5pKlCttfYnyHbU5cZbGKD65s53n/4iu+LLbKqQZJWSHeaUqEoHW5v53jz9h2U8piVpSClUgsjtYzKHmVpPAyjbzyj1RVUVUJsja71aJsHOHRdA1MrRNESIbiZqiyuI4Obn4KrSPBxKfg0zO9iC2OYmhEYKwepDttxgtIGlqlW2jFai1myq7BOGDrDLeghJ4Isw7xyTNEjyTRi2uW0yQ66MzC7QnvcrxVW24KEefDScVOBpnkdwFNPswabRDBLSWgl3C4cV16IcPfCKJjJdjcQmoEwLB6BAf2Z7J/oTjZh5OUI4bnH544L4X9JuCtkWsKYpcpKNxEhi8OX+T3E9Y9eyusIGxYQlq9VnLMs+QkIHdax5qGwNCktkxCuthUJeSjT7OGQ8rTXxl6e3oXwXya0T//Lz0c3Ruj8y6IaG6VqB0JWm+VGY5c37E/YK2b+MXJ6TtknJprzP22SLDRMDRZLfaw2oRUuKkPIOJQwHXNAmP/Vjm1h6GB/AfshWKwl8HlaAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview7.png&quot; title=&quot;preview7.png&quot; src=&quot;/static/3bc900ad8d3604ce744aa74c26c2993c/fcda8/preview7.png&quot; srcset=&quot;/static/3bc900ad8d3604ce744aa74c26c2993c/12f09/preview7.png 148w,
+/static/3bc900ad8d3604ce744aa74c26c2993c/e4a3f/preview7.png 295w,
+/static/3bc900ad8d3604ce744aa74c26c2993c/fcda8/preview7.png 590w,
+/static/3bc900ad8d3604ce744aa74c26c2993c/940c5/preview7.png 772w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;CollectionViewController から ViewController の画面遷移には Segue を使いましたが、この Segue の Identifier は”Segue”にしています。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 522px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/c1055cb4bd49d6ce61e11af6830c21be/29492/preview8.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 72.97297297297297%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAACYElEQVQ4y11T23LaQAzl+/oT/aq+d/rYX+hrO8Wk2AQPAZJy8QXbGLC967UhMXAirVnqlBmNxK5XOjpH6gkhIKXEfr/HdDpFURSYz+eI4xir1RqPjo1tpvCtrxBnNRZ/n7HZRNjtdphMJvpt13pVVYGtLEtEUaQPkyRBnmUIgoCKPCEvBOylwKGQ8Ly1vmcAq9VKA+har29ZsG0bv/sWRqMRBoMHWNYA47GLLM91IU5eyUx77ogf5nTHcUZnXestlkssFgvMZnMsbzG34nke6rqGUkqjFkLevICh6Z+XKMgEt3w8HqllBdd18UgI/wyHxF9EBWYY09l6vcb5fEHTNOTP2kxsPK4XsldKTC2bioaDNs61KL7va/IZqeGaY/OffVlKpIcCQ78mL9Az0Lk1TuA4DrXra+6YE+aKBTgcDjp5mqbac8KmOSPbxfjlBvj09YqxJ9uEbPwgJpVZ2ZQeGOScmB9zQePLUt2RnogyUVaYBpJEvCXkDzZhQCo7WmlGyO0zwtPphMuNu641XS7f3nBUJJDotMxIDDfmjNuLNhvNJ89okpCnmOeQbbvdas93eXZoB7s7CozKUJDnrUg8ewYtc8ezyTFT1Po94iSFnxZ6fD6IwtV4qMOA1I0DPAxtvQ1zmtE1bcjzywsce6gf8o/bBi7w8is+f2+wSjoJ2Re0YgVBD6ma6wva2RBhGOpZ5AlgxRklo78DkQLxXuLHRGGf/98yVX6rJRxP4cvPCrOniR4ji9Zz5Ix0QaXKzpa071QpcDmSDlJ8RNj94LVqhWIq2lEp7/f3lZPyvnp50fp3tntmDg8cqccAAAAASUVORK5CYII=&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview8.png&quot; title=&quot;preview8.png&quot; src=&quot;/static/c1055cb4bd49d6ce61e11af6830c21be/29492/preview8.png&quot; srcset=&quot;/static/c1055cb4bd49d6ce61e11af6830c21be/12f09/preview8.png 148w,
+/static/c1055cb4bd49d6ce61e11af6830c21be/e4a3f/preview8.png 295w,
+/static/c1055cb4bd49d6ce61e11af6830c21be/29492/preview8.png 522w&quot; sizes=&quot;(max-width: 522px) 100vw, 522px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;また、Cell の Identifier を”CollectionViewCell”にしています。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 500px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/bcbcb53bb2db0e64f93e9f928c98ceb6/0b533/preview9.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 37.16216216216216%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABK0lEQVQoz22R4XKDIBCEff9H6kuojSYRUNRGZ5KICmgyyZ/tHa2dtNMf3+zB3C0sRNM04Xa7Bay1qKoK67qiaRoYM6DrOrynKfyy4i2z6AePttahj2d3ux3GcQyz8zwjEkWBJEmQZTmR4Xg4ICWD47EgfQ+63++hlMLqDKbRBKMNNtrqYRgQaa2RxDGZpsjyHFIK5KR8SBwnKAoRDmLlW3ISTsDwjTacc7her4h48Xg8QmNNURilyhDjdDqh0hVpR09QQ0mJsqwghIQqSzyfzx/Y43K5IDLGwJL7PE+QQqCkaJIG+74Phhy1rhtwko+2DYZa12ipvt/vvwiGnHt7h2VZ4L0n9WHPWhfW3n2p+9at5hQbPH8+nxHxByg61f/TwLzu/eX1c/jp2PAT9ioIOJUkzkEAAAAASUVORK5CYII=&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview9.png&quot; title=&quot;preview9.png&quot; src=&quot;/static/bcbcb53bb2db0e64f93e9f928c98ceb6/0b533/preview9.png&quot; srcset=&quot;/static/bcbcb53bb2db0e64f93e9f928c98ceb6/12f09/preview9.png 148w,
+/static/bcbcb53bb2db0e64f93e9f928c98ceb6/e4a3f/preview9.png 295w,
+/static/bcbcb53bb2db0e64f93e9f928c98ceb6/0b533/preview9.png 500w&quot; sizes=&quot;(max-width: 500px) 100vw, 500px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;次に NewFile から、UICollectionViewController を継承している CollectionViewController.swift というファイルと UICollectionViewCell を継承している CollectionViewCell.swift というファイルを作ってください。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 502px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/c62297c6ac50b884804df101cc6914f1/eea79/preview10.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 47.2972972972973%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABw0lEQVQoz12SXW/aMBSG8/9/RKdqmrTLqdM0adrFSqgogQD5xvkkhNgOhAClwHr17sTJpmoXj+w4OY/f41grmwvK5oZyt4WQMVHDTTawozXmQQo/LWGHK4RrCZZLBFkJTjW8eX3H5R8ab65qUh7fwOsLdpsNpl4EfWJjbAUYmg4exwvM/RjPi4A2SVCdbv8JXyH6TTR+6O2HK2R9Qi0krDCHYS8x8xOYJF9Q0lbuRLROoxuvsTu/QVCtPF4VSnq4dELRCwUJKy7hxQUlSmAtM9jsLyt6TpWcrQRyeUCxOyGvDsjEXsn6ljuh6BO2LbdFI9PF1I0wsZaYOgxjateguemGNDIMDQszev9TN6iTtD8GEm4pbkt1vGHbnLHnHMuUpHRmHrXmUDqHktmKLi2jH9OKN5SwfvmNHcmq3qOl1QtSSVRnZHyPPFtj6q8wnAUY2RGerQiGm2BEYwcldBI8zRlYUSOjukSckMgObeAL6MQvT2LCcmwKC3cPT7j7MsDnHxN8+j7Ghwcd91+H+PhtRN9KjMJaoQcSA08oHns0d71HRwMvr+meFZjFEmbIaRSYRULNTVaqubuie5rvexpVp+r7tT9B14hgAQubwQAAAABJRU5ErkJggg==&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview10.png&quot; title=&quot;preview10.png&quot; src=&quot;/static/c62297c6ac50b884804df101cc6914f1/eea79/preview10.png&quot; srcset=&quot;/static/c62297c6ac50b884804df101cc6914f1/12f09/preview10.png 148w,
+/static/c62297c6ac50b884804df101cc6914f1/e4a3f/preview10.png 295w,
+/static/c62297c6ac50b884804df101cc6914f1/eea79/preview10.png 502w&quot; sizes=&quot;(max-width: 502px) 100vw, 502px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;そして、storyboard の CollectionViewController と CollectionViewCell にクラスの関連付けをします。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 508px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/6182f9620a7dcc933f1c300b1f43f367/2fd48/preview11.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 51.35135135135135%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB1UlEQVQoz1VSWW7bQAzVsXuE/ucERVGgByjQz6LoRyDbUW1Hiixbu2RJlq19tbO8kpPIaQQ8kEMNHx/JkaqqAqOua2RZBtd1yW9gOw7KIoNstZjZrfA51rYtPM8Td9M0RRAEIsb5DKlpGnRdh2EYxCXLsjD0PXRdR3Y84MeqEchPqYhxEtskSQQZ+8xRFIUQJjGBqmkwDAPb7Q7r1Zr8LfI8F5dYGYPPnMBFOX79X5ZXn4tILrWhKAqWyxVV2+B+fY8HqsrJrLzvB0Iv8Hp+t1Obr3dbOMQl8c/z+YxxHAXCMIRt24jjGKZpwdgacGxLxLgD7ohh2w6qukVx8PFVrvH51yNCjwiZnWUzuFoURURkkvwDPD/AbrelZCIhQiY1d6ZYCt/J8gJjfcT3eY2bPyP2/hsho2loe7RhVVWh0UxPaYLnS0/LGq/qGZfLBdP3+Pwi7BflBZ9+PiEO3HdCVpfTwCNqNU0iGEEO2SyxDzwxhiAIxYx838eeuuBYckhxTPa41WL8Vk+wrR2kabAMXj8rfRpbzJ0O3xYdNuoS89kc2oNOdgaZoPxdQqfzYnEHfWNgfSdDmd2K13JVOGGaZ1OX6Jrqv822H7Yt4m+2oYfdUZxn+w8gteTxGxiKmgAAAABJRU5ErkJggg==&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview11.png&quot; title=&quot;preview11.png&quot; src=&quot;/static/6182f9620a7dcc933f1c300b1f43f367/2fd48/preview11.png&quot; srcset=&quot;/static/6182f9620a7dcc933f1c300b1f43f367/12f09/preview11.png 148w,
+/static/6182f9620a7dcc933f1c300b1f43f367/e4a3f/preview11.png 295w,
+/static/6182f9620a7dcc933f1c300b1f43f367/2fd48/preview11.png 508w&quot; sizes=&quot;(max-width: 508px) 100vw, 508px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 500px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/32b2a51ccf4de45f59be1f4e0eaaf239/0b533/preview12.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 52.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAACGklEQVQoz11Ty47aQBD0x0fKMdoPyDnKNZecNmIRWS27BmPwEmABv/CDsQ1+27CESvcgR1EOre6ZaddU15SVLMuQ5znSNMV2uwWvHdeFCAPYosT3WYEkLeF5O/i+L3u7Ps/zEAQBiqJAh6OUZYmqquTGYrGQh2/rNTzXguGWuPtRIIgLmJs1LMuSfZPJRBJYrVZYU29d377nUPg2DsdxsVwuYZomoijG4XCgSP7m4/EoQZKk2zvIvThO4Ox8+KHAfr+HMhj8xEOvB306haqOwGshIsma2XfBzLuaz/L8xuiYZtiaFvYkEZNR2rZFezqhaRp5O98SxzE1hPBIs5BySDrxvk+Z6x1pnBJY07QQvoNvRoOv+gWOtYHCYzD1siykyKqqkgQmXMeBrusYaxom2gjz+ZymmFGtQScNQyHQtCdEvoW7XomP92d49hYK0+ZxmIlJWjJQSGzapkZNrOu6lsET8KgnmuZ6veJ8PqOqGwAXfB42+NRv4TLDDjCg8ebzVxjGDKZlkza5FJ6tkGUpjZhSzqWGDMoyvV9+A+81vmgE+gJ4jnkD7EArYsLMxLHEh/sW019veBz0MR5rGI009B96GD49YaTpeHl+lo84Mwyoj30Y4yGmMwMKM+jiZs5Mspu6FQRZIvA9+SBRFEljs5EF1VEkZM3627ZDP8NOelLhl/0/2HdFyt47SO91D/dv3a1ZFs4sxWazwR8LLC4YbCFyNgAAAABJRU5ErkJggg==&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview12.png&quot; title=&quot;preview12.png&quot; src=&quot;/static/32b2a51ccf4de45f59be1f4e0eaaf239/0b533/preview12.png&quot; srcset=&quot;/static/32b2a51ccf4de45f59be1f4e0eaaf239/12f09/preview12.png 148w,
+/static/32b2a51ccf4de45f59be1f4e0eaaf239/e4a3f/preview12.png 295w,
+/static/32b2a51ccf4de45f59be1f4e0eaaf239/0b533/preview12.png 500w&quot; sizes=&quot;(max-width: 500px) 100vw, 500px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;p&gt;CollectionViewCell.swift の CollectionViewCell というクラスに storyboard の cell の２つのラベルを関連付けましょう。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//// CollectionViewCell.swift
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var name: UILabel!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;そして、CollectionViewCell のクラス内で required init?(coder aDecoder: NSCoder)という関数を作ります。ここでは、cell の枠の色つけと丸くするコードを書きます。
+CollectionViewCell.swift の全体のコードは次のようになります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//// CollectionViewCell.swift
+class CollectionViewCell: UICollectionViewCell {
+
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var name: UILabel!
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        // cellの枠の太さ
+        self.layer.borderWidth = 1.0
+        // cellの枠の色
+        self.layer.borderColor = UIColor.black.cgColor
+        // cellを丸くする
+        self.layer.cornerRadius = 8.0
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;次は CollectionViewController.swift にコードを書いていきます。
+説明などはコメントアウトに書きました。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//// CollectionViewController.swift
+class CollectionViewController: UICollectionViewController {
+
+    // cellの色の配列
+    let colors: [UIColor] = [UIColor.black, UIColor.blue, UIColor.brown, UIColor.cyan, UIColor.darkGray, UIColor.darkText, UIColor.gray, UIColor.green, UIColor.lightGray, UIColor.orange, UIColor.red]
+    // cellの色の名前の配列
+    let colorNames: [String] = [&amp;quot;black&amp;quot;, &amp;quot;blue&amp;quot;, &amp;quot;brown&amp;quot;, &amp;quot;cyan&amp;quot;, &amp;quot;darkGray&amp;quot;, &amp;quot;darkText&amp;quot;, &amp;quot;gray&amp;quot;, &amp;quot;green&amp;quot;, &amp;quot;lightGray&amp;quot;, &amp;quot;orange&amp;quot;, &amp;quot;red&amp;quot;]
+
+    // 画面遷移先に渡す色
+    var giveColor: UIColor = UIColor.black
+    // 画面遷移先に渡す色の名前
+    var giveColorName: String = &amp;quot;black&amp;quot;
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    // cellの数を返す関数
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -&amp;gt; Int {
+        return colors.count
+    }
+
+    // cellに情報を入れていく関数
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -&amp;gt; UICollectionViewCell {
+        // Identifierが&amp;quot;CollectionViewCell&amp;quot;でCollectionViewCellというクラスのcellを取得
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: &amp;quot;CollectionViewCell&amp;quot;, for: indexPath) as! CollectionViewCell
+
+        // cellのlabelに色付け
+        cell.label.backgroundColor = colors[indexPath.item]
+        // cellのnameに色の名前を入れる
+        cell.name.text = colorNames[indexPath.item]
+
+        return cell
+    }
+
+    // cell選択時に呼ばれる関数
+    // 画面遷移先に渡すデータをここで格納する
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        giveColor = colors[indexPath.item]
+        giveColorName = colorNames[indexPath.item]
+        // Identifierが&amp;quot;Segue&amp;quot;のSegueを使って画面遷移する関数
+        performSegue(withIdentifier: &amp;quot;Segue&amp;quot;, sender: nil)
+    }
+
+    // 画面遷移先のViewControllerを取得し、データを渡す
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == &amp;quot;Segue&amp;quot; {
+            let vc = segue.destination as! ViewController
+            vc.receiveColor = giveColor
+            vc.receiveColorName = giveColorName
+        }
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ViewController.swift のコードは次のようになります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//// ViewController.swift
+class ViewController: UIViewController {
+
+    @IBOutlet weak var backgroundLabel: UILabel!
+
+    // CollectionViewControllerから渡される色のデータ
+    var receiveColor: UIColor = UIColor.black
+    var receiveColorName: String = &amp;quot;black&amp;quot;
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // 背景の色を渡された色にする
+        backgroundLabel.backgroundColor = receiveColor
+        // NavigationItemと呼ばれる一番上のバーに色の名前を入れる
+        self.navigationItem.title = receiveColorName
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これで完成になります。&lt;/p&gt;
+&lt;h1&gt;最後に&lt;/h1&gt;
+&lt;p&gt;このコードは、&lt;a href=&quot;https://github.com/azuma317/CollectionViewSample&quot;&gt;github&lt;/a&gt;にあげておきます。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[TableViewの基礎]]></title><description><![CDATA[はじめに UITableView の section と cell の使い方をまとめました！ 完成品 つくってみよう 今回は、UINavigationController と UITableViewController と UIViewController…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/tableViewSample/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/tableViewSample/</guid><pubDate>Wed, 12 Aug 2020 18:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;はじめに&lt;/h1&gt;
+&lt;p&gt;UITableView の section と cell の使い方をまとめました！&lt;/p&gt;
+&lt;h1&gt;完成品&lt;/h1&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 574px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/d62af5233e9ab3e44eac6309e0586855/86389/preview1.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 178.3783783783784%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAkCAYAAACJ8xqgAAAACXBIWXMAAAsSAAALEgHS3X78AAABz0lEQVRIx81Va4vCMBDM//9PfhAREaH3yScqKqL4QG3ro9W2ezdzl5IeJ0eaCgaG0mQz2d3ZTdR8PpfpdCqj0Uhms5mkaSpRFBGPx0Ou16v0+33p9XqyXq/z9TiOczvMeZ5HO4WJ2+3GzYA2vt/vcj6feRiwWCxktVrJ5XLhGmx+A/ZKn2ICB+AL75rNptRqNWm1WtJoNGS325FQ25j2YRiKAivg+74EQUDAC40kSRgSvgA2w9600TidTqL2+z296HQ6Uq/XmUuEDgN4iK9JgLm/gIPgjDLzgQWdP1toARXCADO+rgOkCmF43sdX/D4nka8sy6yAPRiITpknJEnKxTIAMQmhLgTZbDYkxYJTyGBH2FEUG+WRWgKllbEWqfLhcCC7zont0HvApVA/y+WSP3o453AymchwOJRut8tc6razQV7YaBcQjcdjGQwGbB+cBAMb5L38LCe2yOsQCrfbbd51ZcumIAokD4OQbkP6Sspmu93S3Z/zShc2PdRXPNQuWzKFsjFz9r2YuREej0deqi49XBAF7Gg7eyGeiCIVDnqoL0hXFERxBcLNO6UKwoIobxly5R6+rGz4SFWZQzx0r8lhpYRlr/ynhLaP0X+P1Cf1MgtkwmStmAAAAABJRU5ErkJggg==&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview1.png&quot; title=&quot;preview1.png&quot; src=&quot;/static/d62af5233e9ab3e44eac6309e0586855/86389/preview1.png&quot; srcset=&quot;/static/d62af5233e9ab3e44eac6309e0586855/12f09/preview1.png 148w,
+/static/d62af5233e9ab3e44eac6309e0586855/e4a3f/preview1.png 295w,
+/static/d62af5233e9ab3e44eac6309e0586855/86389/preview1.png 574w&quot; sizes=&quot;(max-width: 574px) 100vw, 574px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 572px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/33a16abd6586053d4aff8cb668556ad6/a805e/preview2.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 177.7027027027027%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAkCAYAAACJ8xqgAAAACXBIWXMAAAsSAAALEgHS3X78AAABEklEQVRIx+2UYWuDMBCG8/9/lZ+HymQI1bGt6jr3RasUNYnRd3dtAyJsrO0YG+TgIXqah/cQI4rsBfn2GU+PG5S7ApgNlJSQhNYaVVUhjmP4vo8syzBN0/HZEu6FYYgoiiDySiMjds2EsjV42yscegWtFCShCBYbYzCO41Ggzn2LlTZNA7EpJdJ3ibutxMOrxH0hUe4pnRowDAv61f0KFtd1DWFGTVNqGpWYTnBPUSr9TVjGE7RNCwGqmZnPK66vvu8hZjL9BFxd150S3lpO6IT/Qmhf4JVPEWbZs9cXJVxv+qx3UUJOliQJgiBAnufXJ1wK+ST2PA9pmv7BkW2amz/KevNS8lVy96c4oRM64e8JPwA3ASJ6eDBibAAAAABJRU5ErkJggg==&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview2.png&quot; title=&quot;preview2.png&quot; src=&quot;/static/33a16abd6586053d4aff8cb668556ad6/a805e/preview2.png&quot; srcset=&quot;/static/33a16abd6586053d4aff8cb668556ad6/12f09/preview2.png 148w,
+/static/33a16abd6586053d4aff8cb668556ad6/e4a3f/preview2.png 295w,
+/static/33a16abd6586053d4aff8cb668556ad6/a805e/preview2.png 572w&quot; sizes=&quot;(max-width: 572px) 100vw, 572px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;h1&gt;つくってみよう&lt;/h1&gt;
+&lt;p&gt;今回は、UINavigationController と UITableViewController と UIViewController を使いました。&lt;/p&gt;
+&lt;p&gt;まず、Storyboard で NavigationController を持ってきます。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/85ca24d5511783e192fcb8a43f307544/9239a/preview3.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAABo0lEQVQ4y4VUibKDIAzs/39k2+mpHJ6oqOi+BItHa/uY2YmDYdklgQNeYxwHYHCEAesxjuMqjnPuQLmMMBdyDm3bout6tDZDnURo8xS9c6iqCs65OZHRND3qmv91UCqHTkrUjUNRWJpvfe7BGOMXG1NRkkZRlrSwQRQReduGveFIeFE2lFf6f8fjEafTicgK5HkOKbOJUCmFAK21j1JKJEmCvu9nQj6JKDY4n2MiiqF07ZGkljYileUwWebFQohddF23KHQjhLREWlGsEYuACs/IkP2X5UC4F9eErFDK1NuN43iDKHoiy6qF8BsWy1PxleazEh95LCDL6oWQd30HJ3FRhmFqkb4fyGo6q98QksqZkBNutxuu1yvu97v/ZvC8tdbb5mhtR+envcLJ5rKxEPFWIWNd7VDpjWXqX+49Jnw8HlTtMy6Xiyf/sLxX4feicB8qlXk1/D8UZFfh+7l8q3Ig/CzKjuU97BOK34Rr+Wu8N3boQyGWQiz2I6ShD0u6u3wf9xAeBybkxyYlFVIV1I/lBjxnzOum4J8xvTRYnq7f2fgDiXDLqpty9acAAAAASUVORK5CYII=&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview3.png&quot; title=&quot;preview3.png&quot; src=&quot;/static/85ca24d5511783e192fcb8a43f307544/fcda8/preview3.png&quot; srcset=&quot;/static/85ca24d5511783e192fcb8a43f307544/12f09/preview3.png 148w,
+/static/85ca24d5511783e192fcb8a43f307544/e4a3f/preview3.png 295w,
+/static/85ca24d5511783e192fcb8a43f307544/fcda8/preview3.png 590w,
+/static/85ca24d5511783e192fcb8a43f307544/efc66/preview3.png 885w,
+/static/85ca24d5511783e192fcb8a43f307544/c83ae/preview3.png 1180w,
+/static/85ca24d5511783e192fcb8a43f307544/9239a/preview3.png 1246w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;右の TableView の上にある Root View Controller を TableViewController に変えます。
+そして、cell の中に Label を配置します。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/56846095869239a0903c5c6e6fa5654a/1132d/preview4.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 75.67567567567568%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAABnklEQVQ4y42U3XKDIBCF8/7v1ellp3edXqSZaEQBFTUaRfCUxWDUZKZl5pMfdw677MJhmiYEjDELNKf26P13scU0Aka7sUVotH6w1mIYBo9SCkmSoOs69H2PPM83olpbtO2IW29RlQXE+Yzu2qOqbxBCeZvDOI6o69rTNA2qqlp6Yi3Y3QyKogbnHMfjCcdTBJYKZ98hL1ofxUFr7dSFNyJoHOZlWW4E68bi7T3Gx6fA13cLLrQTIgxkMR/TRnDf7wWbRuPnpBBfapyjCglTSFN3TKxEml3nkPceBsEsy54Er+3g13OZQTqE4HdSCKm2Ia+RUm48DK1tNRgLEayhtQpTSArterlcPJTlMC6KwpcQVYB1vVKtSwJ/coBz561cCdIOjDFPmqbLOAiSjbXGlUfn/s9hxnHsIfuNh69C3idlHTIJ0r8oijy0sXgl+K+kXIe/Q/6Ph+ssB8GQjKekkODauwB5SGe4F6SQpeSrkiHuHk73pNCd3UOlQ3d7K6hdUefOSwd7kCRUZs1c2OH1oEciEObPL87kMv4aY2abX+bqfdvgf1VEAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview4.png&quot; title=&quot;preview4.png&quot; src=&quot;/static/56846095869239a0903c5c6e6fa5654a/fcda8/preview4.png&quot; srcset=&quot;/static/56846095869239a0903c5c6e6fa5654a/12f09/preview4.png 148w,
+/static/56846095869239a0903c5c6e6fa5654a/e4a3f/preview4.png 295w,
+/static/56846095869239a0903c5c6e6fa5654a/fcda8/preview4.png 590w,
+/static/56846095869239a0903c5c6e6fa5654a/efc66/preview4.png 885w,
+/static/56846095869239a0903c5c6e6fa5654a/1132d/preview4.png 1158w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;そして、Cell を選択して、Cell の Identifier を TableViewCell にします。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 518px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/48924a8951fa2eb1372065ff71af4ea9/6b9fd/preview5.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 118.91891891891892%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAAAsSAAALEgHS3X78AAAEJUlEQVQ4y11Vy3LiVhDl67NLVRbZTGWTqtk4qcomFc8mk0w545RjsAEJLEBCDxAgHnq/JQQn3dcW9thVx/dyBX37dJ/T6kRRBEYcxzgcDjAMQ+w1TRPn09kM9sLEfJvj0yhBliaYz3UEQYDVaoX1eo00TS8xOvwvz3MB3/dhWZbYc0D+PBqPYcxVWLsUN5MISRxBURR4nicuN00TSZKIC4IwREfX5+h2u3h6UjAYDDGZTGgdwDAttNmHvAY+8tgXl/AZBwgpAIPPQnoeEDqO42A4HAoaT09PUFUNhq7DXq2RUaZMh8FMwpAviC8XvS2XH8YI6FmHv1xVlaDJ64Ioj4mmT5TsxQKzqSIoRlEI4IxTc8T51FzQNA2dN7iSGvzwT4FOmzJT4Jv2+z1Wtg1n52LpuNAXG+hLB44bwY1yHIIUm32AzSEUWO9DuH6AaynC70PKsE3b9z3oRNU0DViU2dBwcS9r6CsmwRJrb6QR5thGNdZ+gc0LeO/FBQxqXOdSA6LIDdFUFdPpDAPdw01XwZf/ZNz2Z/j7TiZIuHlQ4ERH2G4B2ysFloRDVJK00mfKTNd1XaErbhJj73pYrHewVlvYmz2COEeS14hS+nGQwA1TQiL2cZzir0mC69ELZdYR64q7zVnOKEO+wDJ1jEcjTCeKkEVdlSgLal5ZEgqBoiioVwV+7lb4/kvxGnBBdTMME/p8LmrpByGW4swQOmyaE0oOREp4i7KsgFOFa6XCx17+GpAtxIE44JzgU+fWVAJ2AmfLmWRZdnFVizTLgWOGq36BD/9m6HCw3XaLIblEUSbCcio1hkVsGjpm5GUOfj6fUdc1jsfjN6jqI+nwiF+kI378Wjx7uTX6ZrPBcrkUe5/ONpS1TZpkbbIBOMP3SAmnKsMf4xxXD9lzQG7IaCSLQcAueXx8hENZq+oMDw+PGMkjyjgQGXEd3yIvSsqwwk/3Nb77XLzKhimKifFi+rfmbz8fDq6oZ+usdnXdA2znIBx0oSzLMmXzQNKR0O/3sSOazemEE4H/CmoAK2FNZWH6pzfPWLcWOcyjwCJgO47aGz1qQp6EKNNIzEem7JLQS+o0BxPdpUHbpzHHJeGsxZjjedhar0VEqPIYj1aGWzWGqU0wprHG2c1mqpARX8JK0OYattvdN7/vvJ9tAdWyziJ8pWCf5ACqImFADmI5DV6cxA0cShJlLovSiFkZPc/KTkvhIgMeqLRyllnkoUeUePAqBEmigNMp7u7uoJI+OWCv18N9twd3v0WdJ+iwQ9gZlmXCJCqtY1zPJ106JG5DnGuaKhgUJBW++NU5Bc51jj9nJX4bkg5ZyLIkC0cwLdteioy4CdZLII1eD+wipsX+5WAMoUMKiKbAr4MSH27zZ8r8sKXdloDr0rqjXd+/nF41GtLbMCRlRPgfk2j5EF9KKSkAAAAASUVORK5CYII=&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview5.png&quot; title=&quot;preview5.png&quot; src=&quot;/static/48924a8951fa2eb1372065ff71af4ea9/6b9fd/preview5.png&quot; srcset=&quot;/static/48924a8951fa2eb1372065ff71af4ea9/12f09/preview5.png 148w,
+/static/48924a8951fa2eb1372065ff71af4ea9/e4a3f/preview5.png 295w,
+/static/48924a8951fa2eb1372065ff71af4ea9/6b9fd/preview5.png 518w&quot; sizes=&quot;(max-width: 518px) 100vw, 518px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;次に、Storyboard に ViewController を持ってきます。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/6169e50d1d38e4e201c72bd0c7995285/a2b88/preview6.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 57.432432432432435%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAABVklEQVQoz4WS3XKDIBCF8/5v1t/rTqe9aEdjBBUFExGBU3aJaTMT0505I7Kz354FdiEEOOdgjME4jrDWYp5nUCxLgJ09uq6HlApaTzhNjnO9DlDKQR56dGpB21nEGLGj4q7rWEoptG17AWrj8fDU4vlV4OOzx3cxQfU+FSbgEOED4BbA+8j7PiQgOarrGkKIi1bgoB0eXyTe3gcUpcbXd58KHQPNGJEjf8f0T2AGEkRKyfoLnNJ4Ugr0SqBpqGmdXM8M1CaDaEwKasAOqbiqKpRlif1+z+tpmhCC5zMrS8ETZIm09w9wdXhr5OPJpSYiqeSGDDw7NPccbo18OgObJueugOMdh78jZV0cHh2KIp8d7VdVnS7KXo0czkD650tZliWdi+Z3SKI17VFY61EdDIQcWYfapGPIOXo24zGyM7rhQcf8DrER6ygb2c3MjgpvaYXe1nbuB93zVMnoipNjAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview6.png&quot; title=&quot;preview6.png&quot; src=&quot;/static/6169e50d1d38e4e201c72bd0c7995285/fcda8/preview6.png&quot; srcset=&quot;/static/6169e50d1d38e4e201c72bd0c7995285/12f09/preview6.png 148w,
+/static/6169e50d1d38e4e201c72bd0c7995285/e4a3f/preview6.png 295w,
+/static/6169e50d1d38e4e201c72bd0c7995285/fcda8/preview6.png 590w,
+/static/6169e50d1d38e4e201c72bd0c7995285/efc66/preview6.png 885w,
+/static/6169e50d1d38e4e201c72bd0c7995285/a2b88/preview6.png 908w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;TableView の上にある黄色いボタンを control ボタンを押しながら ViewController に持っていきます。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 572px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/e7f8c492c1aa797a38b1174486e1027c/a805e/preview7.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 31.756756756756754%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABJElEQVQY022Q3W6CQBCFef+X6EXfoTe9sUkbSaqiSX9uWpsGBXFBEBGW3YWvgxovGi++bGbnzJnJ8fq+x3W36HA9WMHxD9fdnBm8PG07WsGKyFxoBfHhK9rwOHtBqwS9XaF/3mnVGiM949xVb6yjMZbByxvM9kdHWXdXhrpq4DvK8D8+qfKKY15ShiFFoig1lJeZQdvIBi2nayOGedmxTjRJptmkZ5K0ReVWhiDbOYK3X14XS5bRgUL+UukNulg1FBWMngPu7h8QP7w0d9S1pnMt1rY4wRrNLlPE0Yo4XhGtwxPbJEZtN6RpIjmedZ0zHKuCMFQcaskwLeT0g6bVmqYRLu98vmA0esL3fabTKZPJhCCYMx4P9QxjzFkvWGso9vYUwx8ZLMoB8lWO5AAAAABJRU5ErkJggg==&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview7.png&quot; title=&quot;preview7.png&quot; src=&quot;/static/e7f8c492c1aa797a38b1174486e1027c/a805e/preview7.png&quot; srcset=&quot;/static/e7f8c492c1aa797a38b1174486e1027c/12f09/preview7.png 148w,
+/static/e7f8c492c1aa797a38b1174486e1027c/e4a3f/preview7.png 295w,
+/static/e7f8c492c1aa797a38b1174486e1027c/a805e/preview7.png 572w&quot; sizes=&quot;(max-width: 572px) 100vw, 572px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;すると、こういったものが出るので、Show を押してください。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 346px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/5b02118949022f94dfc6a31677edd8ef/8f77f/preview8.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 83.1081081081081%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsSAAALEgHS3X78AAAC50lEQVQ4y21U51rqQBTkja5KSKEXgShdOgoWktCk2ODx5845QfF6/THfZpPN7Jw5sxsplkro9wfwAx+dTgfD4YjzPu7v7zEaDdHt9dHvdRGPx2HbtsJxnCPsIxyYZgzFYhERiwsGgyFmswCtVgt34wka9RqGoxFWyyVm8wUm4zsSOl+Ev0GILctERNjPz850l2C2wPhuRNIxkokELi4uYMZiHKP6/R+C73BOyiOf8tPpNG5u2kRLS0+lUoiS0DAMlmP+r+g3lUQkrN9ELpfH6nkD33vCmAoH9PHl9Q2r1QqLxQLlUlHXndT8UPldoSxIJJKo1euoVitElRvk0Gw20Wg0UKlUED9u/Kn2pwWf+FJYKBS0AaJmznGzXqFNC17f3uE9TfFKtYLJZKy+ngidb7BPCpPJJErlMq6urnB9fc3RRT6fh+u6LLeEOjtfLrv6XboZem/BtgyWa5DDPJX8qXC5fMZ6/ay+bTn26ONyucLd7QgLfttu1giCGbbbHauYw7EulNCyqNhiEmzru8KUkko4xTOXarOZjHqZzWa162V5x+d8vsBvKZJFYVpUaZPQFsJYSBiNRpHhzzPuLopE4Wa3Q7vVxB9mVCqIaR7DGIVgRo0zvo8qLPNcy1ZCUSW7S3QuLy/VQ5mX6F34PqfPrhs+i7f6T6mAXDZJ1UQmoVGKOPEEPD/Ax8c7Ou0OMzjBbveCw34Pz/Opdonp9ImnaIbDYa8Z3e62eHh44LodPt7fsD8cEDC/X02JxQzmMMHMNdW7ChVKdyWD0lWBzF33SjPabDZ0vWHEkOIJE38tehkqJKFMpJTJwyMC38ctb5nRcIgNu7nZbFRNEATwfQ9rzp+XC42Z/Gezw9rl460TkZeCdDqDHq+qeq2GTrenPlb53Ot22PXq8cRU9fTUanV0u7zS2NWwwyH0thFl0kFpiCjyvamOg0EfjzwhL/RrPl9hzuvN8zxNwIx+etNHJJzTMbTMKPK5NP4C0Vxza/6+e90AAAAASUVORK5CYII=&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview8.png&quot; title=&quot;preview8.png&quot; src=&quot;/static/5b02118949022f94dfc6a31677edd8ef/8f77f/preview8.png&quot; srcset=&quot;/static/5b02118949022f94dfc6a31677edd8ef/12f09/preview8.png 148w,
+/static/5b02118949022f94dfc6a31677edd8ef/e4a3f/preview8.png 295w,
+/static/5b02118949022f94dfc6a31677edd8ef/8f77f/preview8.png 346w&quot; sizes=&quot;(max-width: 346px) 100vw, 346px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;全体は、下の写真のようになります。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/8e3e4040d0a7d7d6042ca0df185323ca/0940f/preview9.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 47.972972972972975%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABZUlEQVQoz52S226DMAyG+/4vtml7g0rTtCEgp9JyCIQk5J/t0t5068Ui/UqIzedDfMg5w3uPEAL4zOK1lYJERx8SxmFEjBnLmlHonrXlje4i/OTFFmOS+8M4jui6DpfLRTTPiwBjLLCngK/K4Xj8hjY9lPEUsGBdN1RqRaUDGsX/Byg9YdsIqLWGcw7WWhhjyHkV4BqB13eLlzeHj88ZdcOKSImBBfNCWRZQVuJOiUCCCZBhj8ANTdvRnaPsnNiUPoM7wkCugFfZiX4uV6BSSpwZzOJekhvtmQAnOGv2gORjOsS0YVmyQH8F1nWNpmlEbduS80K9yFRSRKs4M41rUApozlhCxOQjwl/AZyVr3RGsRVVV0LQzkB5Xslv/A+SSrZTs9pLP+ys/Ad56eOvjtYeQ0biVrDXbFQXoaDaLlPsA9Duw73sMw3BXSkkceDyM9aTxLuu8zFok2zjR6FBWnBnv/M22H/EGA1mGTrtnAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview9.png&quot; title=&quot;preview9.png&quot; src=&quot;/static/8e3e4040d0a7d7d6042ca0df185323ca/fcda8/preview9.png&quot; srcset=&quot;/static/8e3e4040d0a7d7d6042ca0df185323ca/12f09/preview9.png 148w,
+/static/8e3e4040d0a7d7d6042ca0df185323ca/e4a3f/preview9.png 295w,
+/static/8e3e4040d0a7d7d6042ca0df185323ca/fcda8/preview9.png 590w,
+/static/8e3e4040d0a7d7d6042ca0df185323ca/efc66/preview9.png 885w,
+/static/8e3e4040d0a7d7d6042ca0df185323ca/0940f/preview9.png 1154w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;そして、TableViewController と ViewController を繋いている Segue と言うものを押して、Identifier を Segue にしてください。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/bd93ce75ed14dfa0b6d11729e0de9bcd/2aa89/preview10.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 76.35135135135135%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAAB/klEQVQ4y6WTa2/TMBSG8/9/DhJ8QBpaYWxogo1S2qbXJG16ya12Lk6cS/NynJKMTt0QwtIjO5H8+JzjYy2TAkmwQxr4yGSBKMkQiwztOB6PKIsCVVkilxK+7yMMIziOA12fYGkYiKIIQpAnSaDpxg7fhgt8103YXow1sbSD37oaeXGE5UjYvsTaz2FtGRiLkKYpdrstHeA1MoUSa4O5A8sVRAI7yLDlBVxeUmR1oyxIyOMKqawgsooOqOlf1WwOggD2dg/btpt1HMfQ+guJiV3C9EoYToHFPsfKzVHXJ2FZUsolzkZdHxsh4xzmxmuEnNZhGEIbrw8YrYKOn5YPcx93m5VQRaXSbw9RdVVCJUjiqIlMrRvhcHVAx5phYAUw9glOeym9ToiLwhb13dSwbzG0/CAezQOlnXQRVpWq2cvC52LtwWR4MDlOM8NX44DxJkGUVgiSAoe4gMxfF/6JdjfzcTv1oOb7JcOXBYO+FSgpMknpZjnd7L8IP+oerkcOemMHt3OGz8RoI55SJunfUj4TfppxtNzMOXpTuhhbdI1dXriUPM+bF9Pe7pnwesrR0puFuJpw9NfiQts8CSU9Qdd1LwuvJkpy4gPxfszxuPoP4dshR8s74s2A4d48Fz6vYf6a8HYp0HJH3MwFxjt51ociPVLrEFJFC0Rx9qLwF+bGd0siWsLxAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview10.png&quot; title=&quot;preview10.png&quot; src=&quot;/static/bd93ce75ed14dfa0b6d11729e0de9bcd/fcda8/preview10.png&quot; srcset=&quot;/static/bd93ce75ed14dfa0b6d11729e0de9bcd/12f09/preview10.png 148w,
+/static/bd93ce75ed14dfa0b6d11729e0de9bcd/e4a3f/preview10.png 295w,
+/static/bd93ce75ed14dfa0b6d11729e0de9bcd/fcda8/preview10.png 590w,
+/static/bd93ce75ed14dfa0b6d11729e0de9bcd/efc66/preview10.png 885w,
+/static/bd93ce75ed14dfa0b6d11729e0de9bcd/c83ae/preview10.png 1180w,
+/static/bd93ce75ed14dfa0b6d11729e0de9bcd/2aa89/preview10.png 1698w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;これで Stroyboard はほぼ完成です。&lt;/p&gt;
+&lt;p&gt;次に、NewFile…から UITableViewController を継承をしている TableViewController.swift と UITableViewCell を継承している TableViewCell.swift と UIViewController を継承している ViewController.swift を作ってください。&lt;/p&gt;
+&lt;p&gt;File を継承させるには、Cocoa Touch Class の Subclass of に継承させたいクラスを書きます。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/1f9b71bdac1cb42bba5e231e66e51eb5/85e74/preview11.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 70.94594594594594%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAABNUlEQVQ4y6WT8U6DMBDG9/6v4Gv4BiYm/qfxjynLhiyO6UphQAujtHz22MoyrczNS74c0LtfLtePSRRFmM1mCIIAi8UC8/kcYRgiTVNkWXaRqGdSVRUojDHoum4QvV8iCiHEEUiQa8P1SilPgeOCR8fzUaBnhl/lwF4ghda6X27CM3xsEnwyjlLWUK3BTmk0B9Gz2OkD1AN0MMY24NkWwZLhcfqGp5cI03CNzJZxYcClQVoZrAuDh+X+MszYhHRTpK21QcJYn6UUbvt72akIwsSZHTpgURR9VkoNZ1qf2oRWEHIzvkPfhfi+fy+70jY/ZXy2qesa/w03sCBgWZZo27bfV9M0Qx6Tctn2NbbetI2lKlSiwCTPc8RxDM55/4NT/osS69X31Qob64Tb5wI39yXuXnN8ASX/RlLaJB0KAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview11.png&quot; title=&quot;preview11.png&quot; src=&quot;/static/1f9b71bdac1cb42bba5e231e66e51eb5/fcda8/preview11.png&quot; srcset=&quot;/static/1f9b71bdac1cb42bba5e231e66e51eb5/12f09/preview11.png 148w,
+/static/1f9b71bdac1cb42bba5e231e66e51eb5/e4a3f/preview11.png 295w,
+/static/1f9b71bdac1cb42bba5e231e66e51eb5/fcda8/preview11.png 590w,
+/static/1f9b71bdac1cb42bba5e231e66e51eb5/efc66/preview11.png 885w,
+/static/1f9b71bdac1cb42bba5e231e66e51eb5/c83ae/preview11.png 1180w,
+/static/1f9b71bdac1cb42bba5e231e66e51eb5/85e74/preview11.png 1436w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;作ったファイルは左側のファイル一覧に並びます。&lt;/p&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 428px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/3b166e6dada7f07b21e560a248aa32cb/47730/preview12.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 38.513513513513516%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAABaElEQVQoz02RWXOCQBCE+f+/Ki9RVJD7voNcRgMqYiqVVGdmVcqHrh62im97eqVT18JJSryrFmTdw8rwoViBcNUOsaF5Y/qQDQ96kMEgLbY2/KJBd7qh/hrR9FfUJHapzXLEuz1WBNtYITQvEQCFZsPPoLsJdDpT7QiaG2O5degyD1G5RztMM/ApqaeEXrrDmoAM4R8Zwr51IliUyApzLBQLRTegn35xuPw80l3ndE9JbV4grQ5QzEAAOJX6APNsBTmdx5QuQXW4oKFE9XEU3nIqAZ1mSUPbiISy5oifuD+xHkFk6kr3MtiUcKW5UOwYn+fvO4TEQKGXWWrSHFl9hMmF+ymcqIATf4hLDOrOSXZw6Zs38LMa++E2A+6pri8aIZ2HXMDelgrsiOcUayqdX5hdMe+vPdz+RDoGda/JZk3CpWOlIiwqsbKXlrAooUnd8YtypxrJiUt0A0PGh08EnQS460dx/lz5HzWhRNuqlcPjAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview12.png&quot; title=&quot;preview12.png&quot; src=&quot;/static/3b166e6dada7f07b21e560a248aa32cb/47730/preview12.png&quot; srcset=&quot;/static/3b166e6dada7f07b21e560a248aa32cb/12f09/preview12.png 148w,
+/static/3b166e6dada7f07b21e560a248aa32cb/e4a3f/preview12.png 295w,
+/static/3b166e6dada7f07b21e560a248aa32cb/47730/preview12.png 428w&quot; sizes=&quot;(max-width: 428px) 100vw, 428px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;p&gt;そして、Storyboard の TableViewController と Cell と ViewController にそれぞれのファイルを紐付けます。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 512px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/81d93ec8c315fbe24a24c68aa08666c2/01e7c/preview13.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 48.64864864864865%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAAB3UlEQVQoz3VSy3KbQBDUL+Yb8h/5lFxyzy2uHFyVSnJwJTIONrJAD0ACSUiIxwK7ULIcOjNDpJxy6JoZdqfpnp1RVVVomgabzQZhGEIpBc/zUKscnxyD26lBVRzhup7cWy6XOBwOgsViId/qur5iZIxB27ZI0xRJspOPfLEqMtw4DW6fqaHM4AfB9Wy/3wvm8zlYEIsoCRxHtm3j6cnBZDKBZT0M6qgxLwqYKocmcM6NeZ5LU0F1WZZyj3OGKoc4YiLXdenPS0ynU/h+AK01qTYwphWwA3ZyAddMxuRsmVGov5a7rgODSVarFUKyttvtMJvNCJ5Enhvb4xjQueu5QtYDUHkKe5Hg7cdXTCIiVOK9EvbLw6TpEeFqTXmAFdVB4GNNdRRFdCemefpiryUh/HjzOMO7zx38hAh5NqxuQQoc50lmmR8P+H3SYoXP2KbW5lq/nM/o+x6nlzNp7LFRPd58OMOJmoGQ1WVZJlbTQwJvU+JXqLCN14jjWJQxYnLA9Xa7pY1IhvWhzQiiHW7sAmlBhEx22cW60XjtGnyZGby/qzF/tuXlH2kLHiwL9/cWfvwcw6NHtO1Hmas1HuP7t6/I9xG6Vv9TyFF2itDqCiczjGKwrK/5/6DqRvr/AIPH5dbTMmcNAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview13.png&quot; title=&quot;preview13.png&quot; src=&quot;/static/81d93ec8c315fbe24a24c68aa08666c2/01e7c/preview13.png&quot; srcset=&quot;/static/81d93ec8c315fbe24a24c68aa08666c2/12f09/preview13.png 148w,
+/static/81d93ec8c315fbe24a24c68aa08666c2/e4a3f/preview13.png 295w,
+/static/81d93ec8c315fbe24a24c68aa08666c2/01e7c/preview13.png 512w&quot; sizes=&quot;(max-width: 512px) 100vw, 512px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;そして、Cell の Label を TableViewCell.swift に紐付けたいので、TableViewCell.swift と Stryboard を開いて、control を押しながら、ファイルの方に持ってきます。
+Label の名前は、name にしてあります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tableviewcell.swift&quot;&gt;&lt;pre class=&quot;language-tableviewcell.swift&quot;&gt;&lt;code class=&quot;language-tableviewcell.swift&quot;&gt;    @IBOutlet weak var name: UILabel!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;そして、Storyboard の ViewController にも Label を置きたいので、Label を ViewController の真ん中に置きます。
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 430px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/ec38fd2ee03e9b99162034f7570cf6aa/05ed2/preview14.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 183.1081081081081%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAlCAYAAABCr8kFAAAACXBIWXMAAAsSAAALEgHS3X78AAAB/UlEQVRIx+2Wy27TQBSG8/4PgHgGpAqxQN0jyqJCqmjKClCDXV9iJ77F9tzn54xN6iS1FRq6a470K/aZM5//uXjiGSistTDGPJHLH8ZUrZOLmTEWUkporaGU3vsVQqAsS1RVhaIokOdFl9vWKL2tV13eQWfWGkr0wF25RsZaJMkSWbZGmiaI46jLuT5dTVerHt27+5mUFp7PkKQc8XJQFHMsE4mIruffA3ybe1h4JZKVQhizrj2MGFaZwecvd/h4eQ0hacicGywChrIRqBqODalhHJw7CTSNc5kgimIadklDk3/bOLnl3dCDwMft7U9sagIqafD1B8M8ELi+F7jxBO4eBOqm78CYoCcrmmdNEIm25WhZL9fetKybnrqxKCsaMiOHvwhUlIomfdA6G7TKJFZrUrafHyThPTiGcUBL86Txv1GUdgCGsX7cY6fIRZabKeC/u+phfYe8OANfE5CZJ8Dt3prac/v3B0Auxh3aCau7+VFgUbJJh5oO32Ui6Kja4LeX0zFXH3d4vwgRRGoEaOlEBj5d+bh4f4U3bz/g3cXNcWDdKHJgDoCDS1eYpBbp2l1j9MH7czi6ynZkHvvOQ84+b5WnVvqow/Ordwa+EuCJ/8u7wGgH+PwYeZf9oAdq7b5OTxAx3Wedg84UQfxAdS7DE7Tt585ULgiIF44/2TlaU8+Y5u0AAAAASUVORK5CYII=&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;preview14.png&quot; title=&quot;preview14.png&quot; src=&quot;/static/ec38fd2ee03e9b99162034f7570cf6aa/05ed2/preview14.png&quot; srcset=&quot;/static/ec38fd2ee03e9b99162034f7570cf6aa/12f09/preview14.png 148w,
+/static/ec38fd2ee03e9b99162034f7570cf6aa/e4a3f/preview14.png 295w,
+/static/ec38fd2ee03e9b99162034f7570cf6aa/05ed2/preview14.png 430w&quot; sizes=&quot;(max-width: 430px) 100vw, 430px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Cell の Label と同じように、Storyboard の ViewController の Label を ViewController に label という名前で紐付けます。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//// ViewController.swift
+    @IBOutlet weak var label: UILabel!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ここから、コードを書いていきます。
+主に書くのは、TableViewController.swift です。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//// TableViewController.swift
+class TableViewController: UITableViewController {
+
+    // cellのlabelに書く文字列
+    let name1: [String] = [&amp;quot;aaa&amp;quot;, &amp;quot;bbb&amp;quot;, &amp;quot;ccc&amp;quot;]
+    let name2: [String] = [&amp;quot;ddd&amp;quot;, &amp;quot;eee&amp;quot;, &amp;quot;fff&amp;quot;]
+
+    // 遷移先のViewControllerに渡す変数
+    var giveData: String = &amp;quot;&amp;quot;
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    // sectionの数を返す関数
+    override func numberOfSections(in tableView: UITableView) -&amp;gt; Int {
+        return 2
+    }
+
+    // sectionごとのcellの数を返す関数
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&amp;gt; Int {
+        if section == 0 {
+            return name1.count
+        } else if section == 1 {
+            return name2.count
+        } else {
+            return 0
+        }
+    }
+
+    // sectionの高さを返す関数
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -&amp;gt; CGFloat {
+        return 40
+    }
+
+    // sectionに載せる文字列を返す関数
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -&amp;gt; String? {
+        return &amp;quot;seciton\(section)&amp;quot;
+    }
+
+    // cellの情報を書き込む関数
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&amp;gt; UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: &amp;quot;TableViewCell&amp;quot;, for: indexPath) as! TableViewCell
+
+        // ここでcellのlabelに値を入れています。
+        if indexPath.section == 0 {
+            cell.name.text = name1[indexPath.item]
+        } else {
+            cell.name.text = name2[indexPath.item]
+        }
+
+        return cell
+    }
+
+    // cellが押されたときに呼ばれる関数
+    // 画面遷移の処理もここで書いている
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 押されたときのcellのlabelの文字列をViewControllerに渡したいので、一旦、giveDataに入れとく
+        if indexPath.section == 0 {
+            giveData = name1[indexPath.item]
+        } else {
+            giveData = name2[indexPath.item]
+        }
+        // Segueを使った画面遷移を行う関数
+        performSegue(withIdentifier: &amp;quot;Segue&amp;quot;, sender: nil)
+    }
+
+    // 遷移先のViewControllerにデータを渡す関数
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == &amp;quot;Segue&amp;quot; {
+            let vc = segue.destination as! ViewController
+            vc.receiveData = giveData
+        }
+    }
+
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ViewController.swift での処理は、TableViewController から渡されたデータを label に反映させるだけです。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//// ViewController.swift
+class ViewController: UIViewController {
+
+    @IBOutlet weak var label: UILabel!
+    var receiveData: String = &amp;quot;&amp;quot;
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        label.text = receiveData
+    }
+
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;TableViewCell.swift のほうはなにも書かなくて大丈夫です。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;//// TableViewCell.swift
+class TableViewCell: UITableViewCell {
+
+    @IBOutlet weak var name: UILabel!
+
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これで完成です。&lt;/p&gt;
+&lt;h1&gt;最後に&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/azuma317/TableViewSample&quot;&gt;github&lt;/a&gt;に載せました。
+参考にしてください。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Portfolio]]></title><description><![CDATA[本職: インフラエンジニア, 趣味: iOS アプリ開発. 2019 年に福岡の大学を卒業後, インフラエンジニアとして新卒入社.
+業務では, AWS によるサービス保守やミドルウェア（ Apache, Tomcat, Docker, Jenkins…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/portfolio/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/portfolio/</guid><pubDate>Sat, 01 Aug 2020 02:00:00 GMT</pubDate><content:encoded>&lt;p&gt;本職: インフラエンジニア, 趣味: iOS アプリ開発.&lt;/p&gt;
+&lt;p&gt;2019 年に福岡の大学を卒業後, インフラエンジニアとして新卒入社.
+業務では, AWS によるサービス保守やミドルウェア（ Apache, Tomcat, Docker, Jenkins 等）の管理を行っています.
+また, 趣味で Swift を使って, iOS アプリを開発しています.&lt;/p&gt;
+&lt;h2&gt;個人開発&lt;/h2&gt;
+&lt;h3&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1505143601&quot;&gt;ReWrite&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Firebase(Firestore, Storage, Hosting) を使った日記アプリです.
+このアプリでは, 日記の自動保存やロック機能, テーマ変更, フォント変更などを行うことができます.
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/669cd/ReWrite_Preview.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 43.91891891891892%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAACC0lEQVQozz2S6W7aQBSFeSACwfsYrxTSvEWXpCVVH7hJQBCzmsXbQJIyRHN6x1XyYzSSpfn83XNuY71eoShyFHkmn48H5EV+3m43/OXlGa+vL1LdZVWIu+GQ6x0NpmFIyzDh2KZwGeOO7aDVaslmswlN09FI0zWm0ylmTxOZ5xmqqqyBs1mCMtvLt7czhDiJn9++c99h6Mc9SQchM4WpabwXx/D9QHpdBr1zgcZiMcdoNFJQOZ1MsFwuzmmacrqREVD9hPNKDG9uCejguj+Qse9Db18K2zB44Hlka5O1gU67pYALPD4+4v7+j1yQFT0+r9drPp/PkWeZ3G03NfAHGXpkeH2lgB5azQvhEDAKQnSZK01dR7ulgGTy8HCPJEnkcpmAjM6r1ZJPphMkZM2rEqfTX3H75SuPul0M4lhGQQTLsAlo8iiM4HtdqWsdqBwbs+QJk/EY6SaVm02K/X5XZ0iW9ciUKagYGvmGB8zFIPQlMy24hvZhGAa+1DqXZK2ANKaCvgPfDRP6nhOQVwW1/VpnGLgurgd9GfkBXNsSzLJ4L4rAmCNtm9HIbTTmVMp4/L8UladqmfKjlmdku68zPFTlh+HnwUD2whDUsHBMi1996oHA9SrVGa5WKyjQjh6XZQlao3rksixwPB7k4cCx223F77tfXJnFYSTDIEDEXBF1vXpk2zQlHai1+gd36Ofx0iMbDwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;ReWrite&quot;
+        title=&quot;ReWrite&quot;
+        src=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/fcda8/ReWrite_Preview.png&quot;
+        srcset=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/12f09/ReWrite_Preview.png 148w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/e4a3f/ReWrite_Preview.png 295w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/fcda8/ReWrite_Preview.png 590w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/efc66/ReWrite_Preview.png 885w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/c83ae/ReWrite_Preview.png 1180w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/669cd/ReWrite_Preview.png 3024w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1469767260&quot;&gt;Log&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;バレットジャーナルというタスク管理手法を利用したアプリです.
+タスクの種別を 4 種類（Priority, Task, Event, Memo）に細分化して管理します.
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/669cd/Log_Preview.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 43.91891891891892%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABo0lEQVQoz01Sy47bMAzMzxRY2HpafsQJ0C6SQ9H0kN32VicIGjTtoZd+QT+aRxkgO9TGQQ+06NGQM5S0cs6JtVaapuHgvLQhzsDII08L5mMOIZByjTXsrZPG+uzBM6iNMTL2lScrTbThZrMpYEpptk+G3plKXD+wA9aklMEh5RljuK5rqU1dRPAvwzAwDIHXoKH3EnwQqLNDAYhz//U9ff/wSX4/DzxEdeUy9sjBGQQZDQQTFCyG+FYL9yq0agB0XVdUdMzamnmc9vTn4xf5+/mZt8mL86GMh2ay2+0YIT68YV1qHw7V7Srq7AD7vi8jQ2X2T5bq4KVKLfsYFcuIMp73nhEFwz+lJsl2u2UVKw11U+0utgHOUKeIYwj+gWUI0nq9LsJjP8jYdTjDSC0aKvZoqJ97sK44+FmVF0wvQt28vLzS5XKRb9PEp2mS8+mU4YwseP+ZkZUW3IPv67zcqGJKrKoqHw4Hut1ucr1e+QfW8/mc27alu4mlFpeCw1S7uBgGoTwbvCvSXDHdQ573+z2hify6/WRtfDwe8ziOpPVLrcY/uLkgONA7dyQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Log&quot;
+        title=&quot;Log&quot;
+        src=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/fcda8/Log_Preview.png&quot;
+        srcset=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/12f09/Log_Preview.png 148w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/e4a3f/Log_Preview.png 295w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/fcda8/Log_Preview.png 590w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/efc66/Log_Preview.png 885w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/c83ae/Log_Preview.png 1180w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/669cd/Log_Preview.png 3024w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;インフラ業務&lt;/h2&gt;
+&lt;h3&gt;AWS&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Terrafrom による Kinesis, Lambda 等の作成&lt;/li&gt;
+&lt;li&gt;Cloud Watch Logs, Kinesis, Lambda, S3 を使用したログ基盤構築&lt;/li&gt;
+&lt;li&gt;Viewable Impression の開発&lt;/li&gt;
+&lt;li&gt;Datadog を使用した EC2 インスタンスの管理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Apache, Tomcat&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Apache, Tomcat の設定やバージョンアップ&lt;/li&gt;
+&lt;li&gt;Tomcat の出力ログのカスタマイズ&lt;/li&gt;
+&lt;li&gt;Logrotate によるログファイルの永続化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Docker&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker による開発環境構築の設定やバージョン管理&lt;/li&gt;
+&lt;li&gt;docker-sync, mutagen による Docker 高速化検証&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Jenkins&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Groovy を使用したインフラファイルの自動デプロイ作成&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Projects]]></title><description><![CDATA[ReWrite 概要 シンプルな日記アプリです。
+日記の自動保存やロック機能, テーマ変更やフォント変更を行うことができます. プレビュー  使用ライブラリ FirebaseAuth: ログインや会員登録に使用しています. FirebaseFirestore…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/projects/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/projects/</guid><pubDate>Sat, 01 Aug 2020 01:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1505143601&quot;&gt;ReWrite&lt;/a&gt;&lt;/h2&gt;
+&lt;h3&gt;概要&lt;/h3&gt;
+&lt;p&gt;シンプルな日記アプリです。
+日記の自動保存やロック機能, テーマ変更やフォント変更を行うことができます.&lt;/p&gt;
+&lt;h3&gt;プレビュー&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/669cd/ReWrite_Preview.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 43.91891891891892%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAACC0lEQVQozz2S6W7aQBSFeSACwfsYrxTSvEWXpCVVH7hJQBCzmsXbQJIyRHN6x1XyYzSSpfn83XNuY71eoShyFHkmn48H5EV+3m43/OXlGa+vL1LdZVWIu+GQ6x0NpmFIyzDh2KZwGeOO7aDVaslmswlN09FI0zWm0ylmTxOZ5xmqqqyBs1mCMtvLt7czhDiJn9++c99h6Mc9SQchM4WpabwXx/D9QHpdBr1zgcZiMcdoNFJQOZ1MsFwuzmmacrqREVD9hPNKDG9uCejguj+Qse9Db18K2zB44Hlka5O1gU67pYALPD4+4v7+j1yQFT0+r9drPp/PkWeZ3G03NfAHGXpkeH2lgB5azQvhEDAKQnSZK01dR7ulgGTy8HCPJEnkcpmAjM6r1ZJPphMkZM2rEqfTX3H75SuPul0M4lhGQQTLsAlo8iiM4HtdqWsdqBwbs+QJk/EY6SaVm02K/X5XZ0iW9ciUKagYGvmGB8zFIPQlMy24hvZhGAa+1DqXZK2ANKaCvgPfDRP6nhOQVwW1/VpnGLgurgd9GfkBXNsSzLJ4L4rAmCNtm9HIbTTmVMp4/L8UladqmfKjlmdku68zPFTlh+HnwUD2whDUsHBMi1996oHA9SrVGa5WKyjQjh6XZQlao3rksixwPB7k4cCx223F77tfXJnFYSTDIEDEXBF1vXpk2zQlHai1+gd36Ofx0iMbDwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;ReWrite&quot;
+        title=&quot;ReWrite&quot;
+        src=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/fcda8/ReWrite_Preview.png&quot;
+        srcset=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/12f09/ReWrite_Preview.png 148w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/e4a3f/ReWrite_Preview.png 295w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/fcda8/ReWrite_Preview.png 590w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/efc66/ReWrite_Preview.png 885w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/c83ae/ReWrite_Preview.png 1180w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/669cd/ReWrite_Preview.png 3024w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;使用ライブラリ&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;FirebaseAuth: ログインや会員登録に使用しています.&lt;/li&gt;
+&lt;li&gt;FirebaseFirestore: 日記のデータやユーザー情報を保存しています.&lt;/li&gt;
+&lt;li&gt;FirebaseStorage: 日記の画像を保存するのに使用しています.&lt;/li&gt;
+&lt;li&gt;LicensePlist: ライセンスの記載に使用しています.&lt;/li&gt;
+&lt;li&gt;SwiftDate: 日付関連のデータを扱うのに使用しています.&lt;/li&gt;
+&lt;li&gt;SwiftTheme: アプリ内のテーマを変更する際に使用しています.&lt;/li&gt;
+&lt;li&gt;RxSwift: UI イベントの受け取り等に使用しています.&lt;/li&gt;
+&lt;li&gt;RxGesture: UI イベント周りで使用しています.&lt;/li&gt;
+&lt;li&gt;RxDataSources: 日記一覧等の CollectionView に使用しています.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;追加予定の機能&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;テーマの種類追加&lt;/li&gt;
+&lt;li&gt;フォントの種類追加&lt;/li&gt;
+&lt;li&gt;バグ修正&lt;/li&gt;
+&lt;li&gt;文章内の記号追加（箇条書きや太文字等）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1469767260&quot;&gt;Log&lt;/a&gt;&lt;/h2&gt;
+&lt;h3&gt;概要&lt;/h3&gt;
+&lt;p&gt;バレットジャーナルというタスク管理手法を利用したアプリです.
+タスクの種別を 4 種類（Priority, Task, Event, Memo）に細分化して管理します.&lt;/p&gt;
+&lt;h3&gt;プレビュー&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/669cd/Log_Preview.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 43.91891891891892%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABo0lEQVQoz01Sy47bMAzMzxRY2HpafsQJ0C6SQ9H0kN32VicIGjTtoZd+QT+aRxkgO9TGQQ+06NGQM5S0cs6JtVaapuHgvLQhzsDII08L5mMOIZByjTXsrZPG+uzBM6iNMTL2lScrTbThZrMpYEpptk+G3plKXD+wA9aklMEh5RljuK5rqU1dRPAvwzAwDIHXoKH3EnwQqLNDAYhz//U9ff/wSX4/DzxEdeUy9sjBGQQZDQQTFCyG+FYL9yq0agB0XVdUdMzamnmc9vTn4xf5+/mZt8mL86GMh2ay2+0YIT68YV1qHw7V7Srq7AD7vi8jQ2X2T5bq4KVKLfsYFcuIMp73nhEFwz+lJsl2u2UVKw11U+0utgHOUKeIYwj+gWUI0nq9LsJjP8jYdTjDSC0aKvZoqJ97sK44+FmVF0wvQt28vLzS5XKRb9PEp2mS8+mU4YwseP+ZkZUW3IPv67zcqGJKrKoqHw4Hut1ucr1e+QfW8/mc27alu4mlFpeCw1S7uBgGoTwbvCvSXDHdQ573+z2hify6/WRtfDwe8ziOpPVLrcY/uLkgONA7dyQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Log&quot;
+        title=&quot;Log&quot;
+        src=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/fcda8/Log_Preview.png&quot;
+        srcset=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/12f09/Log_Preview.png 148w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/e4a3f/Log_Preview.png 295w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/fcda8/Log_Preview.png 590w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/efc66/Log_Preview.png 885w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/c83ae/Log_Preview.png 1180w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/669cd/Log_Preview.png 3024w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;使用ライブラリ&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Realm:タスクの保存に使用しています.&lt;/li&gt;
+&lt;li&gt;SwiftDate: タスクの日付管理に使用しています.&lt;/li&gt;
+&lt;li&gt;ReSwift: Redux に使用しています.&lt;/li&gt;
+&lt;li&gt;RxSwift: UI イベントの受け取り等に使用しています.&lt;/li&gt;
+&lt;li&gt;RxRealm: Realm を Rx の記述で書くために使用しています.&lt;/li&gt;
+&lt;li&gt;RxGesture: UI イベント周りで使用しています.&lt;/li&gt;
+&lt;li&gt;RxDataSources:タスク一覧画面で使用しています.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;追加予定の機能&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;デザインの変更&lt;/li&gt;
+&lt;li&gt;バグ修正&lt;/li&gt;
+&lt;li&gt;Google カレンダー連携&lt;/li&gt;
+&lt;li&gt;バックアップ機能&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item></channel></rss>
