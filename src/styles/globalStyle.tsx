@@ -71,6 +71,9 @@ const styles = css`
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
   }
+  a {
+    color: var(--color-text-accent);
+  }
 `
 
 const GlobalStyle: React.FC = () => {
