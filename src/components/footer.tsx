@@ -35,10 +35,10 @@ const Footer = () => {
             <NavLink to="/" title="Home">
               Home
             </NavLink>
-            <NavLink to="/projects" title="Projects">
+            <NavLink to="/projects/" title="Projects">
               Projects
             </NavLink>
-            <NavLink to="/portfolio" title="Portfolio">
+            <NavLink to="/portfolio/" title="Portfolio">
               Portfolio
             </NavLink>
           </nav>
