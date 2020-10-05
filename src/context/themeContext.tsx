@@ -11,12 +11,12 @@ const getInitialTheme: () => string = () => {
       return storedPrefs
     }
 
-    const userMedia = window.matchMedia('(prefers-color-scheme: dark)')
+    const userMedia = window.matchMedia('(prefers-color-scheme: light)')
     if (userMedia.matches) {
-      return 'dark'
+      return 'light'
     }
   }
-  return 'dark'
+  return 'light'
 }
 
 interface ContextProps {

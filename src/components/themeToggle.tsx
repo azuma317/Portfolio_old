@@ -6,21 +6,21 @@ import { AiFillFire } from 'react-icons/ai'
 const ThemeToggle = () => {
   const { theme, setTheme } = React.useContext(ThemeContext)
 
-  function isLight(): boolean {
-    return theme === 'light'
+  function isDark(): boolean {
+    return theme === 'dark'
   }
 
   const ToggleTheme = () => {
     if (setTheme !== undefined) {
-      setTheme(isLight() ? 'dark' : 'light')
+      setTheme(isDark() ? 'light' : 'dark')
     }
   }
 
   return (
     <>
       <button
-        aria-label={isLight() ? 'Activate Dark Mode' : 'Activate Light Mode'}
-        title={isLight() ? 'Activate Dark Mode' : 'Activate Light Mode'}
+        aria-label={isDark() ? 'Activate Light Mode' : 'Activate Dark Mode'}
+        title={isDark() ? 'Activate Light Mode' : 'Activate Dark Mode'}
         onClick={ToggleTheme}
         css={styles.button}
       >

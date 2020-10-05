@@ -3,7 +3,7 @@ import { Global, css } from '@emotion/core'
 
 const styles = css`
   :root {
-    @apply dark;
+    @apply light;
   }
   .light {
     --color-bg-accent: #63b3ed;

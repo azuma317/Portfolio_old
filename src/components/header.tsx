@@ -32,7 +32,7 @@ const Header: React.FC<Props> = ({ activePage }) => {
             Portfolio
           </NavLink>
         </span>
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
       </nav>
     </header>
   )
