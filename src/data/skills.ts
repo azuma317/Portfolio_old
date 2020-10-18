@@ -19,11 +19,18 @@ export default [
     categories: [
       {
         title: 'iOS Development',
-        skills: ['Storybaordを使用したUI作成'],
+        skills: [
+          'SwiftによるiOSアプリ開発',
+          'Storybaordを使用したUI作成',
+          'RxSwift, MVVMを使った開発',
+          '個人開発アプリのリリース経験'
+        ],
       },
       {
-        title: 'Backend Development',
-        skills: ['Firebase(Firestore, Storage, Functions)によるインフラ構築'],
+        title: 'Firebase',
+        skills: [
+          'Firebase(Firestore, Storage, Functions)によるインフラ構築',
+        ],
       },
     ],
   },
@@ -33,7 +40,9 @@ export default [
     categories: [
       {
         title: 'Front-end Development',
-        skills: ['React, TypeScript, Gatsby'],
+        skills: [
+          'React, TypeScript, Gatsby',
+        ],
       },
     ],
   },
