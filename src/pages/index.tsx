@@ -8,6 +8,7 @@ import SEO from '../components/seo'
 import Title from '../components/title'
 import GlobalStyle from '../styles/globalStyle'
 import Bio from '../components/bio'
+import Post from '../components/post'
 
 type Props = {
   location: WindowLocation
@@ -24,28 +25,8 @@ const BlogIndex: React.FC<Props> = ({ location, data }) => {
       <GlobalStyle />
       <Bio />
       {posts.map(({ node }) => {
-        const title = node.frontmatter?.title || node.fields?.slug
-        return (
-          <article key={node.fields?.slug}>
-            <h3
-              style={{
-                marginBottom: rhythm(1 / 4),
-              }}
-            >
-              <Link style={{ boxShadow: `none` }} to={node.fields?.slug || ''}>
-                {title}
-              </Link>
-            </h3>
-            <small>{node.frontmatter?.date}</small>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter?.description || node.excerpt || '',
-                }}
-              />
-            </section>
-          </article>
-        )
+        const title = node.frontmatter?.title || node.fields?.slug || ''
+        return <Post post={node} title={title} />
       })}
     </Layout>
   )
