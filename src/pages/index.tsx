@@ -26,7 +26,7 @@ const BlogIndex: React.FC<Props> = ({ location, data }) => {
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter?.title || node.fields?.slug || ''
-        return <Post post={node} title={title} />
+        return <Post post={node} />
       })}
     </Layout>
   )
