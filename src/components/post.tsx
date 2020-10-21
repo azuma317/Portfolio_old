@@ -4,11 +4,10 @@ import type { MarkdownRemark } from '../../types/graphql-types'
 import { rhythm } from '../utils/typography'
 
 type Props = {
-  post: Pick<MarkdownRemark, "excerpt">
-  title: string
+  post: Pick<MarkdownRemark, "fields" | "frontmatter" | "excerpt">
 }
 
-const Post: React.FC<Props> = ({ post, title }) => {
+const Post: React.FC<Props> = ({ post }) => {
   return (
     <article key={post.fields?.slug}>
       <h3
@@ -17,7 +16,7 @@ const Post: React.FC<Props> = ({ post, title }) => {
         }}
       >
         <Link style={{ boxShadow: `none` }} to={post.fields?.slug || ''}>
-          {title}
+          {post.frontmatter?.title || post.fields?.slug || ''}
         </Link>
       </h3>
       <small>{post.frontmatter?.date}</small>
