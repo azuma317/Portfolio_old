@@ -83,9 +83,9 @@ const styles = {
     margin-left: 1.25rem;
   `,
   bio_image: css`
-    margin-right: rhythm(1 / 2),
-    margin-bottom: 0,
-    min-width: 50,
-    border-radius: 100%,
+    margin-right: rhythm(1 / 2);
+    margin-bottom: 0;
+    min-width: 50;
+    border-radius: 100%;
   `,
 }
