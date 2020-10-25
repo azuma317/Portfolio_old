@@ -23,9 +23,6 @@ const BlogIndex: React.FC<Props> = ({ location, data }) => {
       <Title />
       <GlobalStyle />
       <Bio location={location} />
-      {posts.map(({ node }) => {
-        return <Post post={node} />
-      })}
     </Layout>
   )
 }
