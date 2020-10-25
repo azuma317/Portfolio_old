@@ -49,7 +49,7 @@ const BlogPostTemplate: React.FC<Props> = ({ location, data }) => {
           }}
         />
       </article>
-      <Bio />
+      <Bio location={location} />
     </Layout>
   )
 }
