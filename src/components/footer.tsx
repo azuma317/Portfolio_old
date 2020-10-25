@@ -8,7 +8,11 @@ import {
   AiFillInstagram,
 } from 'react-icons/ai'
 
-const Footer = () => {
+type Props = {
+  activePage: string
+}
+
+const Footer: React.FC<Props> = ({ activePage }) => {
   const data = useStaticQuery(graphql`
     query FooterQuery {
       site {
@@ -32,13 +36,21 @@ const Footer = () => {
       <div css={styles.footer_container}>
         <div>
           <nav css={styles.footer_nav}>
-            <NavLink to="/" title="Home">
+            <NavLink to="/" title="Home" selected={activePage === '/'}>
               Home
             </NavLink>
-            <NavLink to="/projects/" title="Projects">
+            <NavLink
+              to="/projects/"
+              title="Projects"
+              selected={activePage === '/projects/'}
+            >
               Projects
             </NavLink>
-            <NavLink to="/portfolio/" title="Portfolio">
+            <NavLink
+              to="/portfolio/"
+              title="Portfolio"
+              selected={activePage === '/portfolio/'}
+            >
               Portfolio
             </NavLink>
           </nav>

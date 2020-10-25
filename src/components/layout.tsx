@@ -15,7 +15,7 @@ const Layout: React.FC<Props> = ({ location, children }) => {
     <ThemeProvider>
       <Header activePage={location.pathname} />
       <main css={styles.main}>{children}</main>
-      <Footer />
+      <Footer activePage={location.pathname} />
     </ThemeProvider>
   )
 }
