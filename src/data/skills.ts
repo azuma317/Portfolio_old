@@ -4,7 +4,7 @@ export default [
     description: 'IT企業に1年半ほど在籍していたときに習得していたスキル',
     categories: [
       {
-        title: 'Infrastructure engineer',
+        title: 'Infrastructure Engineer',
         skills: [
           'Apache, Tomcat の設定ファイル管理',
           '開発環境のDocker化',
