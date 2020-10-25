@@ -2,7 +2,6 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import { css } from '@emotion/core'
-import { rhythm } from '../utils/typography'
 import type { WindowLocation } from '@reach/router'
 
 type Props = {
@@ -83,7 +82,6 @@ const styles = {
     margin-left: 1.25rem;
   `,
   bio_image: css`
-    margin-right: rhythm(1 / 2);
     margin-bottom: 0;
     min-width: 50;
     border-radius: 100%;
