@@ -14,7 +14,7 @@ group: 'projects'
 
 ### プレビュー
 
-![ReWrite](../../assets/introduction/ReWrite_Preview.png)
+![ReWrite](../../assets/project/ReWrite_Preview.png)
 
 ### 使用ライブラリ
 
@@ -44,7 +44,7 @@ group: 'projects'
 
 ### プレビュー
 
-![Log](../../assets/introduction/Log_Preview.png)
+![Log](../../assets/project/Log_Preview.png)
 
 ### 使用ライブラリ
 
