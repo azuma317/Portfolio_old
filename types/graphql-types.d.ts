@@ -3070,14 +3070,6 @@ export type LayoutQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type LayoutQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-export type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type IndexPageQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, allMarkdownRemark: { edges: Array<{ node: (
-        Pick<MarkdownRemark, 'excerpt'>
-        & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'description'>> }
-      ) }> } };
-
 export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
