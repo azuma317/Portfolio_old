@@ -7,6 +7,7 @@ import SEO from '../components/seo'
 import GlobalStyle from '../styles/globalStyle'
 import { rhythm, scale } from '../utils/typography'
 import { BlogPostBySlugQuery } from '../../types/graphql-types'
+import Title from '../components/title'
 
 type Props = {
   location: WindowLocation
@@ -15,14 +16,15 @@ type Props = {
 
 const BlogPostTemplate: React.FC<Props> = ({ location, data }) => {
   const post = data.markdownRemark
-  const title = data.site?.siteMetadata?.title
+  const title = post?.frontmatter?.title || data.site?.siteMetadata?.title || ''
 
   return (
     <Layout location={location}>
       <SEO
-        title={post?.frontmatter?.title || title || ''}
+        title={title}
         description={post?.frontmatter?.description || post?.excerpt || ''}
       />
+      <Title title={title} />
       <GlobalStyle />
       <article>
         <h1
@@ -31,7 +33,7 @@ const BlogPostTemplate: React.FC<Props> = ({ location, data }) => {
             marginBottom: 0,
           }}
         >
-          {post?.frontmatter?.title}
+          {title}
         </h1>
         <p
           style={{
