@@ -2,7 +2,7 @@
 title: CollectionViewの基礎
 date: '2020-08-12T18:00:00.000Z'
 description: 'CollectionViewの基礎についての内容です.'
-group: 'blog'
+group: 'Blog'
 ---
 
 # はじめに

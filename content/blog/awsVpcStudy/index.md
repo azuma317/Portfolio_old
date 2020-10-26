@@ -2,7 +2,7 @@
 title: VPCのまとめ
 date: '2020-09-25T00:00:00.000Z'
 description: 'Amazon Virtual Private Cloud の勉強も兼ねてまとめてみました.'
-group: 'blog'
+group: 'Blog'
 ---
 
 ## 概要
