@@ -17,6 +17,11 @@ const Index: React.FC<Props> = ({ location }) => {
       <Title />
       <GlobalStyle />
       <Bio location={location} />
+      今はまだなにもない。
+      <br />
+      最近、モバイルアプリ開発のモチベーションが下がってきたので、
+      <br />
+      新しいアプリの作成とその過程をブログに載せていきたいと思います。
     </Layout>
   )
 }
