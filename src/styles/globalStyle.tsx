@@ -66,7 +66,7 @@ const styles = css`
     --color-code-regex: #ffb86c;
   }
   body {
-    // transition: all 300ms ease 0s;
+    min-height: 100vh;
     overflow-x: hidden;
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);

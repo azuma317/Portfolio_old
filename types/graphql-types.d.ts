@@ -3075,6 +3075,16 @@ export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 export type Unnamed_2_Query = { site?: Maybe<Pick<Site, 'buildTime'>> };
 
+export type BlogListBySlugQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type BlogListBySlugQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, markdownRemark?: Maybe<(
+    Pick<MarkdownRemark, 'id' | 'excerpt' | 'html'>
+    & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'description'>> }
+  )> };
+
 export type BlogPostBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
