@@ -40,6 +40,13 @@ const Footer: React.FC<Props> = ({ activePage }) => {
               Home
             </NavLink>
             <NavLink
+              to="/blog/"
+              title="Blog"
+              selected={activePage === '/blog/'}
+            >
+              Blog
+            </NavLink>
+            <NavLink
               to="/projects/"
               title="Projects"
               selected={activePage === '/projects/'}
