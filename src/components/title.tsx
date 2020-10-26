@@ -10,7 +10,7 @@ type Props = {
 const Title: React.FC<Props> = ({ title, tag }) => {
   const blogTitle = useTitle()
 
-  const titleText = `${tag || title || ''}${blogTitle}`
+  const titleText = `${tag || title || blogTitle}`
 
   return <Helmet htmlAttributes={{ lang: 'ja' }} title={titleText} />
 }
