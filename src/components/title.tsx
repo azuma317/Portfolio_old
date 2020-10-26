@@ -3,14 +3,14 @@ import { Helmet } from 'react-helmet'
 import useTitle from '../hooks/useTitle'
 
 type Props = {
-  postTitle?: string
+  title?: string
   tag?: string
 }
 
-const Title: React.FC<Props> = ({ postTitle, tag }) => {
-  const title = useTitle()
+const Title: React.FC<Props> = ({ title, tag }) => {
+  const blogTitle = useTitle()
 
-  const titleText = `${tag || postTitle || ''}${title}`
+  const titleText = `${tag || title || ''}${blogTitle}`
 
   return <Helmet htmlAttributes={{ lang: 'ja' }} title={titleText} />
 }
