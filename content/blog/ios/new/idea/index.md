@@ -7,7 +7,9 @@ group: ''
 
 新規アプリのアイデア出しの前に, 現在リリースしているアプリの作成理由を整理したいと思います.
 
-作成理由は基本的に思いつきです.
+まず, 作成理由は基本的に思いつきです.
+
+その思いつきを振り返ってみて, 少し整理してみたいと思います。
 
 現在リリースしているアプリは, 以下の 4 つです.
 
@@ -15,6 +17,8 @@ group: ''
 2. [J-Color](https://apps.apple.com/us/app/j-color/id1412726943)
 3. [MosaicF](https://apps.apple.com/us/app/mosaicf/id1443439341)
 4. [ReWrite](https://apps.apple.com/us/app/rewrite-diary/id1505143601)
+
+それぞれ１つずつ整理していきたいと思います.
 
 ## Log
 
