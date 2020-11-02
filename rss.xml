@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://gatsby-starter-blog-demo.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 29 Oct 2020 15:06:34 GMT</lastBuildDate><item><title><![CDATA[新しいアプリを作成するまで（アプリ未完成）]]></title><description><![CDATA[概要から軽く. 最近 Swift を書くモチベーションが低くなってきたのに対し, 新しいアプリを作りたいというモチベーションが上がってきています. Swfit のモチベーションを上げるため, Swift…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/ios/new/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/ios/new/</guid><pubDate>Tue, 27 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;概要から軽く.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://gatsby-starter-blog-demo.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 02 Nov 2020 12:46:00 GMT</lastBuildDate><item><title><![CDATA[新しいアプリを作成するまで（アプリ未完成）]]></title><description><![CDATA[概要から軽く. 最近 Swift を書くモチベーションが低くなってきたのに対し, 新しいアプリを作りたいというモチベーションが上がってきています. Swfit のモチベーションを上げるため, Swift…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/ios/new/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/ios/new/</guid><pubDate>Tue, 27 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;概要から軽く.&lt;/p&gt;
 &lt;p&gt;最近 Swift を書くモチベーションが低くなってきたのに対し,&lt;/p&gt;
 &lt;p&gt;新しいアプリを作りたいというモチベーションが上がってきています.&lt;/p&gt;
 &lt;p&gt;Swfit のモチベーションを上げるため, Swift を使って新しいアプリを作成しつつ,&lt;/p&gt;
@@ -19,6 +19,12 @@
 &lt;/ol&gt;
 &lt;p&gt;それぞれ１つずつ整理していきたいと思います.&lt;/p&gt;
 &lt;h2&gt;Log&lt;/h2&gt;
+&lt;p&gt;このアプリはタスク管理系のアプリです.&lt;/p&gt;
+&lt;p&gt;作成きっかけは, バレットジャーナルというタスク管理の手帳術を知ったことがきっかけです.&lt;/p&gt;
+&lt;p&gt;バレットジャーナルの手法を知ったとき, これをアプリ化して自分が使えるなと思ったのでアプリ化しました.&lt;/p&gt;
+&lt;p&gt;このアプリで力をいれたのは, デザインと使いやすさです.&lt;/p&gt;
+&lt;p&gt;デザインは自分がアプリに惹かれる理由の 1 つで, 使いやすさは単純にアプリを長い間使ってほしいからという重いからです.&lt;/p&gt;
+&lt;p&gt;このデザインと使いやすさは次のアプリでも生かして生きたと思っています.&lt;/p&gt;
 &lt;h2&gt;J-Color&lt;/h2&gt;
 &lt;h2&gt;MosaicF&lt;/h2&gt;
 &lt;h2&gt;ReWrite&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Blog]]></title><link>https://gatsby-starter-blog-demo.netlify.app/blog/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/</guid><pubDate>Mon, 26 Oct 2020 00:00:00 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[VPCのまとめ]]></title><description><![CDATA[概要 VPC: Amazon Virtual Private Cloud プライベートなネットワークを AWS 内に作成できる。 インターネットゲートウェイ( IGW ) で、インターネットに接続できる。 仮想プライベートゲートウェイ( VGW ) で、Direct…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/infra/vpc/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/infra/vpc/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;概要&lt;/h2&gt;
