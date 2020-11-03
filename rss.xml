@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://gatsby-starter-blog-demo.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 02 Nov 2020 12:46:00 GMT</lastBuildDate><item><title><![CDATA[新しいアプリを作成するまで（アプリ未完成）]]></title><description><![CDATA[概要から軽く. 最近 Swift を書くモチベーションが低くなってきたのに対し, 新しいアプリを作りたいというモチベーションが上がってきています. Swfit のモチベーションを上げるため, Swift…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/ios/new/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/ios/new/</guid><pubDate>Tue, 27 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;概要から軽く.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://gatsby-starter-blog-demo.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 03 Nov 2020 07:34:24 GMT</lastBuildDate><item><title><![CDATA[新しいアプリを作成するまで（アプリ未完成）]]></title><description><![CDATA[概要から軽く. 最近 Swift を書くモチベーションが低くなってきたのに対し, 新しいアプリを作りたいというモチベーションが上がってきています. Swfit のモチベーションを上げるため, Swift…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/ios/new/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/ios/new/</guid><pubDate>Tue, 27 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;概要から軽く.&lt;/p&gt;
 &lt;p&gt;最近 Swift を書くモチベーションが低くなってきたのに対し,&lt;/p&gt;
 &lt;p&gt;新しいアプリを作りたいというモチベーションが上がってきています.&lt;/p&gt;
 &lt;p&gt;Swfit のモチベーションを上げるため, Swift を使って新しいアプリを作成しつつ,&lt;/p&gt;
 &lt;p&gt;息抜きとしてアプリ開発の過程をブログとして書いていければなと思っています.&lt;/p&gt;
-&lt;h2&gt;構成&lt;/h2&gt;
+&lt;h2 id=&quot;構成&quot; style=&quot;position:relative;&quot;&gt;構成&lt;a href=&quot;#%E6%A7%8B%E6%88%90&quot; aria-label=&quot;構成 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;/ios/new/idea/&quot;&gt;アイデア出し(作成中)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;考え中&lt;/li&gt;
@@ -18,26 +18,39 @@
 &lt;li&gt;&lt;a href=&quot;https://apps.apple.com/us/app/rewrite-diary/id1505143601&quot;&gt;ReWrite&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;それぞれ１つずつ整理していきたいと思います.&lt;/p&gt;
-&lt;h2&gt;Log&lt;/h2&gt;
-&lt;p&gt;このアプリはタスク管理系のアプリです.&lt;/p&gt;
+&lt;h3 id=&quot;Log&quot; style=&quot;position:relative;&quot;&gt;Log&lt;a href=&quot;#Log&quot; aria-label=&quot;Log permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;このアプリは, タスク管理系のアプリです.&lt;/p&gt;
 &lt;p&gt;作成きっかけは, バレットジャーナルというタスク管理の手帳術を知ったことがきっかけです.&lt;/p&gt;
 &lt;p&gt;バレットジャーナルの手法を知ったとき, これをアプリ化して自分が使えるなと思ったのでアプリ化しました.&lt;/p&gt;
 &lt;p&gt;このアプリで力をいれたのは, デザインと使いやすさです.&lt;/p&gt;
-&lt;p&gt;デザインは自分がアプリに惹かれる理由の 1 つで, 使いやすさは単純にアプリを長い間使ってほしいからという重いからです.&lt;/p&gt;
+&lt;p&gt;デザインは自分がアプリに惹かれる理由の 1 つで, 使いやすさは単純にアプリを長い間使ってほしいからという思いからです.&lt;/p&gt;
 &lt;p&gt;このデザインと使いやすさは次のアプリでも生かして生きたと思っています.&lt;/p&gt;
-&lt;h2&gt;J-Color&lt;/h2&gt;
-&lt;h2&gt;MosaicF&lt;/h2&gt;
-&lt;h2&gt;ReWrite&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Blog]]></title><link>https://gatsby-starter-blog-demo.netlify.app/blog/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/</guid><pubDate>Mon, 26 Oct 2020 00:00:00 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[VPCのまとめ]]></title><description><![CDATA[概要 VPC: Amazon Virtual Private Cloud プライベートなネットワークを AWS 内に作成できる。 インターネットゲートウェイ( IGW ) で、インターネットに接続できる。 仮想プライベートゲートウェイ( VGW ) で、Direct…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/infra/vpc/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/infra/vpc/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;概要&lt;/h2&gt;
+&lt;h3 id=&quot;J-Color&quot; style=&quot;position:relative;&quot;&gt;J-Color&lt;a href=&quot;#J-Color&quot; aria-label=&quot;J Color permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;このアプリは, 日本色の色見表です.&lt;/p&gt;
+&lt;p&gt;使いみちがわからないので, 使ったことはないです.&lt;/p&gt;
+&lt;p&gt;後述する日記アプリを作成していた際に, 日本色というものを知って, 気分転換に作りました.&lt;/p&gt;
+&lt;h3 id=&quot;MosaicF&quot; style=&quot;position:relative;&quot;&gt;MosaicF&lt;a href=&quot;#MosaicF&quot; aria-label=&quot;MosaicF permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;このアプリは, 画像を様々なモザイクに加工できるアプリです.&lt;/p&gt;
+&lt;p&gt;画像加工周りの勉強のために作りました.&lt;/p&gt;
+&lt;p&gt;作ったきっかけは忘れましたが, Mosaic というアプリ名にしようとしたら商標に引っかかって,&lt;/p&gt;
+&lt;p&gt;仕方なく MosaicF にしたのを覚えています.&lt;/p&gt;
+&lt;p&gt;“F” が何を表しているか忘れましたが, おそらく Filter だった気がします.&lt;/p&gt;
+&lt;h3 id=&quot;ReWrite&quot; style=&quot;position:relative;&quot;&gt;ReWrite&lt;a href=&quot;#ReWrite&quot; aria-label=&quot;ReWrite permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;このアプリは, 日記アプリです.&lt;/p&gt;
+&lt;p&gt;これまでのアプリ作成の中で 1 番時間をかけて作ったものになります.&lt;/p&gt;
+&lt;p&gt;時間がかかった理由は, 初めて Firebase(Auth, Firestore, Storage) を使ってアプリを作ったためです.&lt;/p&gt;
+&lt;p&gt;Firestore のデータ設計を考えたり, 認証周りの処理を実装するのに苦労したのを覚えています.&lt;/p&gt;
+&lt;p&gt;この経験を活かし, 次のアプリでも Firebase を使っていきたいと思っています.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Blog]]></title><link>https://gatsby-starter-blog-demo.netlify.app/blog/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/</guid><pubDate>Mon, 26 Oct 2020 00:00:00 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[VPCのまとめ]]></title><description><![CDATA[概要 VPC: Amazon Virtual Private Cloud プライベートなネットワークを AWS 内に作成できる。 インターネットゲートウェイ( IGW ) で、インターネットに接続できる。 仮想プライベートゲートウェイ( VGW ) で、Direct…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/infra/vpc/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/infra/vpc/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;概要&quot; style=&quot;position:relative;&quot;&gt;概要&lt;a href=&quot;#%E6%A6%82%E8%A6%81&quot; aria-label=&quot;概要 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;VPC: Amazon Virtual Private Cloud&lt;/p&gt;
 &lt;p&gt;プライベートなネットワークを AWS 内に作成できる。&lt;/p&gt;
 &lt;p&gt;インターネットゲートウェイ( IGW ) で、インターネットに接続できる。&lt;/p&gt;
 &lt;p&gt;仮想プライベートゲートウェイ( VGW ) で、Direct Connect や VPN 経由でインターネットに出ることなく各拠点のネットワークに接続することが可能。&lt;/p&gt;
 &lt;p&gt;ネットワーク空間を構築する際は、可能な限り大きなサイズ(/16)で作成したほうが良い。&lt;/p&gt;
 &lt;p&gt;確保した空間が小さく、IP アドレスが不足した場合、あとから拡張するのは困難。&lt;/p&gt;
-&lt;h2&gt;IP アドレス（CIDR ブロック）&lt;/h2&gt;
+&lt;h2 id=&quot;IP-アドレス（CIDR-ブロック）&quot; style=&quot;position:relative;&quot;&gt;IP アドレス（CIDR ブロック）&lt;a href=&quot;#IP-%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%EF%BC%88CIDR-%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%EF%BC%89&quot; aria-label=&quot;IP アドレス（CIDR ブロック） permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;IP アドレスは、クラス A(10.0.0.0~10.255.255.255), クラス B(172.16.0.0~172.31.255.255), クラス C(192.168.0.0~192.168.255.255)が使える。&lt;/p&gt;
 &lt;p&gt;ただし、クラス A でも /8 で CIDR ブロックを取ることができず、/16 でなければならない。&lt;/p&gt;
-&lt;h2&gt;サブネット&lt;/h2&gt;
+&lt;h2 id=&quot;サブネット&quot; style=&quot;position:relative;&quot;&gt;サブネット&lt;a href=&quot;#%E3%82%B5%E3%83%96%E3%83%8D%E3%83%83%E3%83%88&quot; aria-label=&quot;サブネット permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;サブネットは、VPC 内部に作るアドレスレンジである。&lt;/p&gt;
 &lt;p&gt;VPC では、/16 ~/28 まで設定できる。（IP アドレス数は 16~65536 個）&lt;/p&gt;
 &lt;p&gt;サブネット作成時にアベイラビリティゾーンを指定するが、作成後は変更できない。&lt;/p&gt;
@@ -46,30 +59,30 @@
 &lt;p&gt;サブネットの最初の 4 つと最後の 1 つのアドレスは予約されていて使用できない。(24 ビットマスクのサブネットだと使えないのは「0,1,2,3,255」の 5 つ)&lt;/p&gt;
 &lt;p&gt;必要以上にサブネットで分けるとアドレスの消費につながる。(28 ビットマスクで 16 個の IP が割り振られるが、実際は 11 個しか使えない)&lt;/p&gt;
 &lt;p&gt;サービスの中には IP アドレスの確保が必要な物がある。(ELB の場合は IP アドレスが 8 個)&lt;/p&gt;
-&lt;h2&gt;マルチ AZ&lt;/h2&gt;
+&lt;h2 id=&quot;マルチ-AZ&quot; style=&quot;position:relative;&quot;&gt;マルチ AZ&lt;a href=&quot;#%E3%83%9E%E3%83%AB%E3%83%81-AZ&quot; aria-label=&quot;マルチ AZ permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;サブネット作成時は、同一の役割を持ったサブネットを複数の AZ に作成する。&lt;/p&gt;
 &lt;p&gt;これをマルチ AZ と呼ばれる。&lt;/p&gt;
 &lt;p&gt;インターネットゲートウェイ・ルートテーブル・ネットワーク ACL などを利用して、パブリックサブネットやプライベートサブネットといった役割を持つことができる。&lt;/p&gt;
-&lt;h2&gt;ルートテーブル&lt;/h2&gt;
+&lt;h2 id=&quot;ルートテーブル&quot; style=&quot;position:relative;&quot;&gt;ルートテーブル&lt;a href=&quot;#%E3%83%AB%E3%83%BC%E3%83%88%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB&quot; aria-label=&quot;ルートテーブル permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;ルーティング設計によって、VPC 内部の通信や外部への通信を実装できる。&lt;/p&gt;
 &lt;p&gt;個々のサブネットに 1 つずつ設定する。&lt;/p&gt;
 &lt;p&gt;1 つのルートテーブルを複数のサブネットで共有できるが、1 つのサブネットに複数のルートテーブルを適用することはできない。&lt;/p&gt;
 &lt;p&gt;宛先アドレスとターゲットになるゲートウェイ(ネクストホップ)を指定する。&lt;/p&gt;
 &lt;p&gt;VPC にメインルートテーブルがあり、サブネット作成時に指定しない場合は VPC のルートテーブルになる。&lt;/p&gt;
-&lt;h2&gt;セキュリティグループ&lt;/h2&gt;
+&lt;h2 id=&quot;セキュリティグループ&quot; style=&quot;position:relative;&quot;&gt;セキュリティグループ&lt;a href=&quot;#%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97&quot; aria-label=&quot;セキュリティグループ permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;VPC の通信制御はセキュリティグループとネットワーク ACL(NACL)を利用して行う。&lt;/p&gt;
 &lt;p&gt;セキュリティグループは、EC2 や ELB、RDS など、インスタンス単位の通信制御に利用する。&lt;/p&gt;
 &lt;p&gt;インスタンスには少なくとも 1 つのセキュリティグループをアタッチする必要がある。&lt;/p&gt;
 &lt;p&gt;通信制御としてはインバウンド(外部から VPC へ)とアウトバウンド(内部から外部へ)の両方の制御が可能である。&lt;/p&gt;
 &lt;p&gt;制御項目としては、プロトコル(TCP や UDP など)とポート範囲、送受信先の CIDR もしくはセキュリティグループを指定できる。&lt;/p&gt;
 &lt;p&gt;セキュリティグループはデフォルトでアクセスを拒否し、設定された項目のみアクセスを許可する。&lt;/p&gt;
-&lt;h2&gt;ネットワーク ACL&lt;/h2&gt;
+&lt;h2 id=&quot;ネットワーク-ACL&quot; style=&quot;position:relative;&quot;&gt;ネットワーク ACL&lt;a href=&quot;#%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF-ACL&quot; aria-label=&quot;ネットワーク ACL permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;ネットワーク ACL(アクセスコントロールリスト)は、サブネットごとの通信制御に利用します。&lt;/p&gt;
 &lt;p&gt;通信制御としては、セキュリティグループと同じくインバウンととアウトバウンドの制御が可能である。&lt;/p&gt;
 &lt;p&gt;送受信先の CIDR とポートを指定できますが、セキュリティグループでの指定はできない。&lt;/p&gt;
 &lt;p&gt;ネットワーク ACL はデフォルトですべての通信を許可する。&lt;/p&gt;
 &lt;p&gt;セキュリティグループとネットワーク CL の違いは、状態(ステート)を保持するかどうかである。&lt;/p&gt;
-&lt;h2&gt;ゲートウェイ&lt;/h2&gt;
+&lt;h2 id=&quot;ゲートウェイ&quot; style=&quot;position:relative;&quot;&gt;ゲートウェイ&lt;a href=&quot;#%E3%82%B2%E3%83%BC%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A4&quot; aria-label=&quot;ゲートウェイ permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;ゲートウェイは、VPC の内部と外部との通信をやり取りする出入り口である。&lt;/p&gt;
 &lt;p&gt;インターネットゲートウェイ(IGW)は、VPC とインターネットとを接続するためのゲートウェイである。&lt;/p&gt;
 &lt;p&gt;各 VPC に 1 つだけアタッチすることができる。&lt;/p&gt;
@@ -81,7 +94,7 @@
 &lt;p&gt;EC2 インスタンスがインターネットと通信するには、パブリック IP を持っていなければならない。&lt;/p&gt;
 &lt;p&gt;あるいは、NAT ゲートウェイを経由してインターネットと通信する。&lt;/p&gt;
 &lt;p&gt;NAT ゲートウェイはネットワークアドレス変換機能を有し、プライベート IP を NAT ゲートウェイが持つグローバル IP に変換し、外部と通信する。&lt;/p&gt;
-&lt;h2&gt;VPC エンドポイント&lt;/h2&gt;
+&lt;h2 id=&quot;VPC-エンドポイント&quot; style=&quot;position:relative;&quot;&gt;VPC エンドポイント&lt;a href=&quot;#VPC-%E3%82%A8%E3%83%B3%E3%83%89%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88&quot; aria-label=&quot;VPC エンドポイント permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;VPC ないからインターネット上の AWS サービスに接続する方法としては、インターネットゲートウェイを利用する方法と、VPC エンドポイントと呼ばれる特殊なゲートウェイを利用する方法がある。&lt;/p&gt;
 &lt;p&gt;VPC エンドポイントには、S3 や DynamoDB と接続する際に利用するゲートウェイエンドポイントと、それ以外の大多数のサービスで利用するインターフェイスエンドポイント(AWS PrivateLink)がある。&lt;/p&gt;
 &lt;p&gt;エンドポイントを作成しサブネットと関連付けると、そのサブネットから S3、DynamoDB への通信はインターネットゲートウェイではなくエンドポイントを通じて行われます。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Portfolio]]></title><description><![CDATA[本職: インフラエンジニア, 趣味: iOS アプリ開発. 2019 年に福岡の大学を卒業後, インフラエンジニアとして新卒入社.
@@ -89,8 +102,8 @@
 &lt;p&gt;2019 年に福岡の大学を卒業後, インフラエンジニアとして新卒入社.
 業務では, AWS によるサービス保守やミドルウェア（ Apache, Tomcat, Docker, Jenkins 等）の管理を行っています.
 また, 趣味で Swift を使って, iOS アプリを開発しています.&lt;/p&gt;
-&lt;h2&gt;個人開発&lt;/h2&gt;
-&lt;h3&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1505143601&quot;&gt;ReWrite&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&quot;個人開発&quot; style=&quot;position:relative;&quot;&gt;個人開発&lt;a href=&quot;#%E5%80%8B%E4%BA%BA%E9%96%8B%E7%99%BA&quot; aria-label=&quot;個人開発 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;ReWrite&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1505143601&quot;&gt;ReWrite&lt;/a&gt;&lt;a href=&quot;#ReWrite&quot; aria-label=&quot;ReWrite permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Firebase(Firestore, Storage, Hosting) を使った日記アプリです.
 このアプリでは, 日記の自動保存やロック機能, テーマ変更, フォント変更などを行うことができます.
 &lt;span
@@ -99,7 +112,7 @@
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/669cd/ReWrite_Preview.png&quot;
+    href=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/b5b4d/ReWrite_Preview.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -112,20 +125,20 @@
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;ReWrite&quot;
         title=&quot;ReWrite&quot;
-        src=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/fcda8/ReWrite_Preview.png&quot;
-        srcset=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/12f09/ReWrite_Preview.png 148w,
-/static/1dd345dc5805d45ed62aceadb6bcc6e2/e4a3f/ReWrite_Preview.png 295w,
-/static/1dd345dc5805d45ed62aceadb6bcc6e2/fcda8/ReWrite_Preview.png 590w,
-/static/1dd345dc5805d45ed62aceadb6bcc6e2/efc66/ReWrite_Preview.png 885w,
-/static/1dd345dc5805d45ed62aceadb6bcc6e2/c83ae/ReWrite_Preview.png 1180w,
-/static/1dd345dc5805d45ed62aceadb6bcc6e2/669cd/ReWrite_Preview.png 3024w&quot;
+        src=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/27330/ReWrite_Preview.png&quot;
+        srcset=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/3c361/ReWrite_Preview.png 148w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/03654/ReWrite_Preview.png 295w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/27330/ReWrite_Preview.png 590w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/25849/ReWrite_Preview.png 885w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/27179/ReWrite_Preview.png 1180w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/b5b4d/ReWrite_Preview.png 3024w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;h3&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1469767260&quot;&gt;Log&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;Log&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1469767260&quot;&gt;Log&lt;/a&gt;&lt;a href=&quot;#Log&quot; aria-label=&quot;Log permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;バレットジャーナルというタスク管理手法を利用したアプリです.
 タスクの種別を 4 種類（Priority, Task, Event, Memo）に細分化して管理します.
 &lt;span
@@ -134,7 +147,7 @@
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/669cd/Log_Preview.png&quot;
+    href=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/b5b4d/Log_Preview.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -147,54 +160,54 @@
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Log&quot;
         title=&quot;Log&quot;
-        src=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/fcda8/Log_Preview.png&quot;
-        srcset=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/12f09/Log_Preview.png 148w,
-/static/f253b2c91ff33fcdc56e130c8c730e7c/e4a3f/Log_Preview.png 295w,
-/static/f253b2c91ff33fcdc56e130c8c730e7c/fcda8/Log_Preview.png 590w,
-/static/f253b2c91ff33fcdc56e130c8c730e7c/efc66/Log_Preview.png 885w,
-/static/f253b2c91ff33fcdc56e130c8c730e7c/c83ae/Log_Preview.png 1180w,
-/static/f253b2c91ff33fcdc56e130c8c730e7c/669cd/Log_Preview.png 3024w&quot;
+        src=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/27330/Log_Preview.png&quot;
+        srcset=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/3c361/Log_Preview.png 148w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/03654/Log_Preview.png 295w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/27330/Log_Preview.png 590w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/25849/Log_Preview.png 885w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/27179/Log_Preview.png 1180w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/b5b4d/Log_Preview.png 3024w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;h2&gt;インフラ業務&lt;/h2&gt;
-&lt;h3&gt;AWS&lt;/h3&gt;
+&lt;h2 id=&quot;インフラ業務&quot; style=&quot;position:relative;&quot;&gt;インフラ業務&lt;a href=&quot;#%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E6%A5%AD%E5%8B%99&quot; aria-label=&quot;インフラ業務 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;AWS&quot; style=&quot;position:relative;&quot;&gt;AWS&lt;a href=&quot;#AWS&quot; aria-label=&quot;AWS permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Terrafrom による Kinesis, Lambda 等の作成&lt;/li&gt;
 &lt;li&gt;Cloud Watch Logs, Kinesis, Lambda, S3 を使用したログ基盤構築&lt;/li&gt;
 &lt;li&gt;Viewable Impression の開発&lt;/li&gt;
 &lt;li&gt;Datadog を使用した EC2 インスタンスの管理&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Apache, Tomcat&lt;/h3&gt;
+&lt;h3 id=&quot;Apache-Tomcat&quot; style=&quot;position:relative;&quot;&gt;Apache, Tomcat&lt;a href=&quot;#Apache-Tomcat&quot; aria-label=&quot;Apache Tomcat permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Apache, Tomcat の設定やバージョンアップ&lt;/li&gt;
 &lt;li&gt;Tomcat の出力ログのカスタマイズ&lt;/li&gt;
 &lt;li&gt;Logrotate によるログファイルの永続化&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Docker&lt;/h3&gt;
+&lt;h3 id=&quot;Docker&quot; style=&quot;position:relative;&quot;&gt;Docker&lt;a href=&quot;#Docker&quot; aria-label=&quot;Docker permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Docker による開発環境構築の設定やバージョン管理&lt;/li&gt;
 &lt;li&gt;docker-sync, mutagen による Docker 高速化検証&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Jenkins&lt;/h3&gt;
+&lt;h3 id=&quot;Jenkins&quot; style=&quot;position:relative;&quot;&gt;Jenkins&lt;a href=&quot;#Jenkins&quot; aria-label=&quot;Jenkins permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Groovy を使用したインフラファイルの自動デプロイ作成&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Projects]]></title><description><![CDATA[ReWrite 概要 シンプルな日記アプリです。
-日記の自動保存やロック機能, テーマ変更やフォント変更を行うことができます. プレビュー  使用ライブラリ FirebaseAuth: ログインや会員登録に使用しています. FirebaseFirestore…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/projects/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/projects/</guid><pubDate>Sat, 01 Aug 2020 01:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1505143601&quot;&gt;ReWrite&lt;/a&gt;&lt;/h2&gt;
-&lt;h3&gt;概要&lt;/h3&gt;
+日記の自動保存やロック機能, テーマ変更やフォント変更を行うことができます. プレビュー  使用ライブラリ FirebaseAuth: ログインや会員登録に使用しています. FirebaseFirestore…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/projects/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/projects/</guid><pubDate>Sat, 01 Aug 2020 01:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;ReWrite&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1505143601&quot;&gt;ReWrite&lt;/a&gt;&lt;a href=&quot;#ReWrite&quot; aria-label=&quot;ReWrite permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;概要&quot; style=&quot;position:relative;&quot;&gt;概要&lt;a href=&quot;#%E6%A6%82%E8%A6%81&quot; aria-label=&quot;概要 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;シンプルな日記アプリです。
 日記の自動保存やロック機能, テーマ変更やフォント変更を行うことができます.&lt;/p&gt;
-&lt;h3&gt;プレビュー&lt;/h3&gt;
+&lt;h3 id=&quot;プレビュー&quot; style=&quot;position:relative;&quot;&gt;プレビュー&lt;a href=&quot;#%E3%83%97%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC&quot; aria-label=&quot;プレビュー permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/669cd/ReWrite_Preview.png&quot;
+    href=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/b5b4d/ReWrite_Preview.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -207,20 +220,20 @@
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;ReWrite&quot;
         title=&quot;ReWrite&quot;
-        src=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/fcda8/ReWrite_Preview.png&quot;
-        srcset=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/12f09/ReWrite_Preview.png 148w,
-/static/1dd345dc5805d45ed62aceadb6bcc6e2/e4a3f/ReWrite_Preview.png 295w,
-/static/1dd345dc5805d45ed62aceadb6bcc6e2/fcda8/ReWrite_Preview.png 590w,
-/static/1dd345dc5805d45ed62aceadb6bcc6e2/efc66/ReWrite_Preview.png 885w,
-/static/1dd345dc5805d45ed62aceadb6bcc6e2/c83ae/ReWrite_Preview.png 1180w,
-/static/1dd345dc5805d45ed62aceadb6bcc6e2/669cd/ReWrite_Preview.png 3024w&quot;
+        src=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/27330/ReWrite_Preview.png&quot;
+        srcset=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/3c361/ReWrite_Preview.png 148w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/03654/ReWrite_Preview.png 295w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/27330/ReWrite_Preview.png 590w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/25849/ReWrite_Preview.png 885w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/27179/ReWrite_Preview.png 1180w,
+/static/1dd345dc5805d45ed62aceadb6bcc6e2/b5b4d/ReWrite_Preview.png 3024w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;h3&gt;使用ライブラリ&lt;/h3&gt;
+&lt;h3 id=&quot;使用ライブラリ&quot; style=&quot;position:relative;&quot;&gt;使用ライブラリ&lt;a href=&quot;#%E4%BD%BF%E7%94%A8%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA&quot; aria-label=&quot;使用ライブラリ permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;FirebaseAuth: ログインや会員登録に使用しています.&lt;/li&gt;
 &lt;li&gt;FirebaseFirestore: 日記のデータやユーザー情報を保存しています.&lt;/li&gt;
@@ -232,25 +245,25 @@
 &lt;li&gt;RxGesture: UI イベント周りで使用しています.&lt;/li&gt;
 &lt;li&gt;RxDataSources: 日記一覧等の CollectionView に使用しています.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;追加予定の機能&lt;/h3&gt;
+&lt;h3 id=&quot;追加予定の機能&quot; style=&quot;position:relative;&quot;&gt;追加予定の機能&lt;a href=&quot;#%E8%BF%BD%E5%8A%A0%E4%BA%88%E5%AE%9A%E3%81%AE%E6%A9%9F%E8%83%BD&quot; aria-label=&quot;追加予定の機能 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;テーマの種類追加&lt;/li&gt;
 &lt;li&gt;フォントの種類追加&lt;/li&gt;
 &lt;li&gt;バグ修正&lt;/li&gt;
 &lt;li&gt;文章内の記号追加（箇条書きや太文字等）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1469767260&quot;&gt;Log&lt;/a&gt;&lt;/h2&gt;
-&lt;h3&gt;概要&lt;/h3&gt;
+&lt;h2 id=&quot;Log&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1469767260&quot;&gt;Log&lt;/a&gt;&lt;a href=&quot;#Log&quot; aria-label=&quot;Log permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;概要-1&quot; style=&quot;position:relative;&quot;&gt;概要&lt;a href=&quot;#%E6%A6%82%E8%A6%81-1&quot; aria-label=&quot;概要 1 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;バレットジャーナルというタスク管理手法を利用したアプリです.
 タスクの種別を 4 種類（Priority, Task, Event, Memo）に細分化して管理します.&lt;/p&gt;
-&lt;h3&gt;プレビュー&lt;/h3&gt;
+&lt;h3 id=&quot;プレビュー-1&quot; style=&quot;position:relative;&quot;&gt;プレビュー&lt;a href=&quot;#%E3%83%97%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC-1&quot; aria-label=&quot;プレビュー 1 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/669cd/Log_Preview.png&quot;
+    href=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/b5b4d/Log_Preview.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -263,20 +276,20 @@
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Log&quot;
         title=&quot;Log&quot;
-        src=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/fcda8/Log_Preview.png&quot;
-        srcset=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/12f09/Log_Preview.png 148w,
-/static/f253b2c91ff33fcdc56e130c8c730e7c/e4a3f/Log_Preview.png 295w,
-/static/f253b2c91ff33fcdc56e130c8c730e7c/fcda8/Log_Preview.png 590w,
-/static/f253b2c91ff33fcdc56e130c8c730e7c/efc66/Log_Preview.png 885w,
-/static/f253b2c91ff33fcdc56e130c8c730e7c/c83ae/Log_Preview.png 1180w,
-/static/f253b2c91ff33fcdc56e130c8c730e7c/669cd/Log_Preview.png 3024w&quot;
+        src=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/27330/Log_Preview.png&quot;
+        srcset=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/3c361/Log_Preview.png 148w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/03654/Log_Preview.png 295w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/27330/Log_Preview.png 590w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/25849/Log_Preview.png 885w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/27179/Log_Preview.png 1180w,
+/static/f253b2c91ff33fcdc56e130c8c730e7c/b5b4d/Log_Preview.png 3024w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;h3&gt;使用ライブラリ&lt;/h3&gt;
+&lt;h3 id=&quot;使用ライブラリ-1&quot; style=&quot;position:relative;&quot;&gt;使用ライブラリ&lt;a href=&quot;#%E4%BD%BF%E7%94%A8%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA-1&quot; aria-label=&quot;使用ライブラリ 1 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Realm:タスクの保存に使用しています.&lt;/li&gt;
 &lt;li&gt;SwiftDate: タスクの日付管理に使用しています.&lt;/li&gt;
@@ -286,7 +299,7 @@
 &lt;li&gt;RxGesture: UI イベント周りで使用しています.&lt;/li&gt;
 &lt;li&gt;RxDataSources:タスク一覧画面で使用しています.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;追加予定の機能&lt;/h3&gt;
+&lt;h3 id=&quot;追加予定の機能-1&quot; style=&quot;position:relative;&quot;&gt;追加予定の機能&lt;a href=&quot;#%E8%BF%BD%E5%8A%A0%E4%BA%88%E5%AE%9A%E3%81%AE%E6%A9%9F%E8%83%BD-1&quot; aria-label=&quot;追加予定の機能 1 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;デザインの変更&lt;/li&gt;
 &lt;li&gt;バグ修正&lt;/li&gt;
