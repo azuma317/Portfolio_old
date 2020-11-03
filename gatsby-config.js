@@ -46,12 +46,24 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
+              quality: 90,
+              linkImagesToOriginal: true,
             },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
               wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          {
+            resolve: "gatsby-remark-autolink-headers",
+            options: {
+              elements: [`h2`, `h3`],
+              maintainCase: true,
+              className: `custom-class`,
+              removeAccents: true,
+              isIconAfterHeader: true,
             },
           },
           `gatsby-remark-prismjs`,
