@@ -9,14 +9,17 @@ type Props = {
 }
 
 const Bio: React.FC<Props> = ({ location }) => {
-
-  const isRoot = location.pathname === "/"
+  const isRoot = location.pathname === '/'
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
           fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
+            base64
+            width
+            height
+            src
+            srcSet
           }
         }
       }
