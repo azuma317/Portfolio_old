@@ -73,6 +73,7 @@ const styles = css`
   }
   a {
     color: var(--color-text-accent);
+    box-shadow: none;
   }
 `
 
