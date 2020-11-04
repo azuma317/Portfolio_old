@@ -60,7 +60,6 @@ module.exports = {
             resolve: "gatsby-remark-autolink-headers",
             options: {
               elements: [`h2`, `h3`],
-              maintainCase: true,
               className: `custom-class`,
               removeAccents: true,
               isIconAfterHeader: true,

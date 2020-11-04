@@ -13,14 +13,16 @@ group: ''
 
 現在リリースしているアプリは, 以下の 4 つです.
 
-1. [Log](https://apps.apple.com/us/app/log-todo-app/id1469767260)
-2. [J-Color](https://apps.apple.com/us/app/j-color/id1412726943)
-3. [MosaicF](https://apps.apple.com/us/app/mosaicf/id1443439341)
-4. [ReWrite](https://apps.apple.com/us/app/rewrite-diary/id1505143601)
+- [Log](#log)
+- [J-Color](#j-color)
+- [MosaicF](#mosaicf)
+- [ReWrite](#rewrite)
 
 それぞれ１つずつ整理していきたいと思います.
 
 ### Log
+
+[AppStore](https://apps.apple.com/us/app/log-todo-app/id1469767260)
 
 このアプリは, タスク管理系のアプリです.
 
@@ -36,6 +38,8 @@ group: ''
 
 ### J-Color
 
+[AppStore](https://apps.apple.com/us/app/j-color/id1412726943)
+
 このアプリは, 日本色の色見表です.
 
 使いみちがわからないので, 使ったことはないです.
@@ -43,6 +47,8 @@ group: ''
 後述する日記アプリを作成していた際に, 日本色というものを知って, 気分転換に作りました.
 
 ### MosaicF
+
+[AppStore](https://apps.apple.com/us/app/mosaicf/id1443439341)
 
 このアプリは, 画像を様々なモザイクに加工できるアプリです.
 
@@ -55,6 +61,8 @@ group: ''
 "F" が何を表しているか忘れましたが, おそらく Filter だった気がします.
 
 ### ReWrite
+
+[AppStore](https://apps.apple.com/us/app/rewrite-diary/id1505143601)
 
 このアプリは, 日記アプリです.
 
