@@ -1,13 +1,13 @@
 ---
 title: tmux の設定ファイル
 date: '2020-11-06T00:00:00.000Z'
-description: '自分の tmux の設定ファイルを公開します.'
-group: 'Blog'
+description: 'tmux の設定ファイルを公開します.'
+group: ''
 ---
 
 ## .tmux.conf
 
-```
+``` .tmux.conf
 # Prefix
 set -g prefix C-t
 bind-key C-t send-prefix
@@ -23,6 +23,10 @@ set -g base-index 1
 bind - split-window -v -c '#{pane_current_path}'
 # prefix + \で垂直分割
 bind \\ split-window -h -c '#{pane_current_path}'
+
+# アクティブウィンドウのハイライト
+setw -g window-style 'bg=#44475a'
+setw -g window-active-style 'bg=#282a36'
 
 # viのキーバインドを使用する
 setw -g mode-keys vi
