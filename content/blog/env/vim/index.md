@@ -7,7 +7,7 @@ group: ''
 
 ## vimrc (~/.vimrc)
 
-```
+``` .vimrc
 " 行番号を表示
 set number
 " vim の矩形選択で文字が無くても右へ進める
