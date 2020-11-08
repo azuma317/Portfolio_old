@@ -36,6 +36,6 @@ group: 'Portfolio'
 - Groovy を使用した Jenkins 自動デプロイ作成
 - Ansible によるミドルウェア構築
 
-## 個人開発
+## 個人開発（Swift）
 
 [こちら](/projects/) にまとめています.
