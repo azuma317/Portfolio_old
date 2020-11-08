@@ -1,4 +1,264 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://gatsby-starter-blog-demo.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 05 Nov 2020 14:26:35 GMT</lastBuildDate><item><title><![CDATA[新しいアプリを作成するまで（アプリ未完成）]]></title><description><![CDATA[概要から軽く. 最近 Swift を書くモチベーションが低くなってきたのに対し, 新しいアプリを作りたいというモチベーションが上がってきています. Swfit のモチベーションを上げるため, Swift…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/ios/new/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/ios/new/</guid><pubDate>Tue, 27 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;概要から軽く.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://gatsby-starter-blog-demo.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 08 Nov 2020 14:35:28 GMT</lastBuildDate><item><title><![CDATA[terminal の設定ファイル]]></title><description><![CDATA[zshrc, vimrc, tmux, prezto の設定ファイル一覧です. 設定 zshrc vimrc tmux.conf prezto]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/env/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/env/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;zshrc, vimrc, tmux, prezto の設定ファイル一覧です.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;設定&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;/env/zsh/&quot;&gt;zshrc&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;/env/vim/&quot;&gt;vimrc&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;/env/tmux/&quot;&gt;tmux.conf&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;/env/zpreztorc/&quot;&gt;prezto&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content:encoded></item><item><title><![CDATA[prezto の設定ファイル]]></title><description><![CDATA[.zpreztorc(~/.zpreztorc)]]></description><link>https://gatsby-starter-blog-demo.netlify.app/env/prezto/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/env/prezto/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;zpreztorczpreztorc&quot; style=&quot;position:relative;&quot;&gt;.zpreztorc(~/.zpreztorc)&lt;a href=&quot;#zpreztorczpreztorc&quot; aria-label=&quot;zpreztorczpreztorc permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.zpreztorc&quot;&gt;&lt;pre class=&quot;language-.zpreztorc&quot;&gt;&lt;code class=&quot;language-.zpreztorc&quot;&gt;# Color output (auto set to &amp;#39;no&amp;#39; on dumb terminals).
+zstyle &amp;#39;:prezto:*:*&amp;#39; color &amp;#39;yes&amp;#39;
+
+# Set the Prezto modules to load (browse modules).
+# The order matters.
+zstyle &amp;#39;:prezto:load&amp;#39; pmodule \
+  &amp;#39;environment&amp;#39; \
+  &amp;#39;terminal&amp;#39; \
+  &amp;#39;editor&amp;#39; \
+  &amp;#39;history&amp;#39; \
+  &amp;#39;directory&amp;#39; \
+  &amp;#39;spectrum&amp;#39; \
+  &amp;#39;utility&amp;#39; \
+  &amp;#39;completion&amp;#39; \
+  &amp;#39;prompt&amp;#39;
+
+# Set the key mapping style to &amp;#39;emacs&amp;#39; or &amp;#39;vi&amp;#39;.
+zstyle &amp;#39;:prezto:module:editor&amp;#39; key-bindings &amp;#39;emacs&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[vim の設定ファイル]]></title><description><![CDATA[vimrc (~/.vimrc)]]></description><link>https://gatsby-starter-blog-demo.netlify.app/env/vim/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/env/vim/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;vimrc-vimrc&quot; style=&quot;position:relative;&quot;&gt;vimrc (~/.vimrc)&lt;a href=&quot;#vimrc-vimrc&quot; aria-label=&quot;vimrc vimrc permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.vimrc&quot;&gt;&lt;pre class=&quot;language-.vimrc&quot;&gt;&lt;code class=&quot;language-.vimrc&quot;&gt;&amp;quot; 行番号を表示
+set number
+&amp;quot; vim の矩形選択で文字が無くても右へ進める
+set virtualedit=block
+&amp;quot; 全角文字専用の設定
+set ambiwidth=double
+&amp;quot; 検索するときに大文字小文字を区別しない
+set ignorecase
+&amp;quot; 小文字で検索すると大文字と小文字を無視して検索
+set smartcase
+&amp;quot; 検索がファイル末尾まで進んだら、ファイル先頭から再び検索
+set wrapscan
+&amp;quot; 検索結果をハイライト表示
+set hlsearch
+&amp;quot; コマンドラインの履歴を10000件保存する
+set history=10000
+&amp;quot; タブキー押下時に挿入される文字幅を指定
+set softtabstop=2
+&amp;quot; インデント幅
+set shiftwidth=2
+&amp;quot; ファイル内にあるタブ文字の表示幅
+set tabstop=2
+&amp;quot; Tab文字を半角スペースにする
+set expandtab
+&amp;quot; 対応する括弧を強調表示
+set showmatch
+
+&amp;quot; dracula
+packadd! dracula
+syntax enable
+colorscheme dracula&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[zsh の設定ファイル]]></title><description><![CDATA[zshrc (~/.zshrc) .aliasenv(~/.zsh/aliasenv) .env(~/.zsh/env) .pecoenv(~/.zsh/pecoenv) .zplugenv(~/.zsh/zplugenv)]]></description><link>https://gatsby-starter-blog-demo.netlify.app/env/zsh/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/env/zsh/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;zshrc-zshrc&quot; style=&quot;position:relative;&quot;&gt;zshrc (~/.zshrc)&lt;a href=&quot;#zshrc-zshrc&quot; aria-label=&quot;zshrc zshrc permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.zshrc&quot;&gt;&lt;pre class=&quot;language-.zshrc&quot;&gt;&lt;code class=&quot;language-.zshrc&quot;&gt;# Source Prezto.
+if [[ -s &amp;quot;${ZDOTDIR:-$HOME}/.zprezto/init.zsh&amp;quot; ]]; then
+  source &amp;quot;${ZDOTDIR:-$HOME}/.zprezto/init.zsh&amp;quot;
+fi
+
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# setup rbenv
+eval &amp;quot;$(rbenv init -)&amp;quot;
+
+# ZSH_HOME
+export ZSH_HOME=&amp;quot;${HOME}/.zsh&amp;quot;
+
+# 環境変数読み込み
+. $ZSH_HOME/env
+
+# zplugの読み込み
+. $ZSH_HOME/zplug_env
+
+# aliasの読み込み
+. $ZSH_HOME/alias_env
+
+### zsh-autosuggestionsの設定（補完の色を変更）
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=&amp;quot;fg=#5D6D7E,bg=clear&amp;quot;
+
+### history 設定
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+# pecoの読み込み
+. $ZSH_HOME/peco_env&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;aliasenvzshaliasenv&quot; style=&quot;position:relative;&quot;&gt;.alias&lt;em&gt;env(~/.zsh/alias&lt;/em&gt;env)&lt;a href=&quot;#aliasenvzshaliasenv&quot; aria-label=&quot;aliasenvzshaliasenv permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.alias_env&quot;&gt;&lt;pre class=&quot;language-.alias_env&quot;&gt;&lt;code class=&quot;language-.alias_env&quot;&gt;# alias&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;envzshenv&quot; style=&quot;position:relative;&quot;&gt;.env(~/.zsh/env)&lt;a href=&quot;#envzshenv&quot; aria-label=&quot;envzshenv permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.env&quot;&gt;&lt;pre class=&quot;language-.env&quot;&gt;&lt;code class=&quot;language-.env&quot;&gt;# Global veriable&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;pecoenvzshpecoenv&quot; style=&quot;position:relative;&quot;&gt;.peco&lt;em&gt;env(~/.zsh/peco&lt;/em&gt;env)&lt;a href=&quot;#pecoenvzshpecoenv&quot; aria-label=&quot;pecoenvzshpecoenv permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.peco_env&quot;&gt;&lt;pre class=&quot;language-.peco_env&quot;&gt;&lt;code class=&quot;language-.peco_env&quot;&gt;# pecoの設定
+## history検索
+function peco-select-history() {
+    local tac
+    if which tac &amp;gt; /dev/null; then
+        tac=&amp;quot;tac&amp;quot;
+    else
+        tac=&amp;quot;tail -r&amp;quot;
+    fi
+    BUFFER=$(\history -n 1 | \
+        eval $tac | \
+        peco --query &amp;quot;$LBUFFER&amp;quot;)
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey &amp;#39;^r&amp;#39; peco-select-history
+
+## cdrからファイルを検索
+#function peco-get-destination-from-cdr() {
+#  cdr -l | \
+#  sed -e &amp;#39;s/^[[:digit:]]*[[:blank:]]*//&amp;#39; | \
+#  peco --query &amp;quot;$LBUFFER&amp;quot;
+#}
+#
+## ファイルを検索してcd
+#function peco-cdr() {
+#  local destination=&amp;quot;$(peco-get-destination-from-cdr)&amp;quot;
+#  if [ -n &amp;quot;$destination&amp;quot; ]; then
+#    BUFFER=&amp;quot;cd $destination&amp;quot;
+#    zle accept-line
+#  else
+#    zle reset-prompt
+#  fi
+#}
+#zle -N peco-cdr
+#bindkey &amp;#39;^j&amp;#39; peco-cdr&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;zplugenvzshzplugenv&quot; style=&quot;position:relative;&quot;&gt;.zplug&lt;em&gt;env(~/.zsh/zplug&lt;/em&gt;env)&lt;a href=&quot;#zplugenvzshzplugenv&quot; aria-label=&quot;zplugenvzshzplugenv permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.zplug_env&quot;&gt;&lt;pre class=&quot;language-.zplug_env&quot;&gt;&lt;code class=&quot;language-.zplug_env&quot;&gt;export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+zplug &amp;quot;dracula/zsh&amp;quot;, as:theme
+zplug &amp;#39;zsh-users/zsh-completions&amp;#39;
+zplug &amp;#39;zsh-users/zaw&amp;#39;
+zplug &amp;#39;zsh-users/zsh-syntax-highlighting&amp;#39;, defer:2
+zplug &amp;quot;zsh-users/zsh-autosuggestions&amp;quot;
+zplug &amp;quot;zsh-users/zsh-history-substring-search&amp;quot;
+zplug check || zplug install
+
+### cdr の設定 (zplug load 前に書かないと zaw-cdr がスキップされる)
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook is-at-least
+if is-at-least 4.3.10; then
+  add-zsh-hook chpwd chpwd_recent_dirs
+  zstyle &amp;#39;:chpwd:*&amp;#39; recent-dirs-max 5000
+  zstyle &amp;#39;:chpwd:*&amp;#39; recent-dirs-default yes
+fi
+
+### 補完
+autoload -U compinit; compinit -C
+## 補完候補をキャッシュする。
+zstyle &amp;#39;:completion:*&amp;#39; use-cache yes
+zstyle &amp;#39;:completion:*&amp;#39; cache-path ~/.zsh/cache
+### 補完候補に色を付ける。
+zstyle &amp;#39;:completion:*&amp;#39; list-colors &amp;quot;${(s.:.)LS_COLORS}&amp;quot;
+
+zplug load&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[tmux の設定ファイル]]></title><description><![CDATA[.tmux.conf]]></description><link>https://gatsby-starter-blog-demo.netlify.app/env/tmux/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/env/tmux/</guid><pubDate>Fri, 06 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;tmuxconf&quot; style=&quot;position:relative;&quot;&gt;.tmux.conf&lt;a href=&quot;#tmuxconf&quot; aria-label=&quot;tmuxconf permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.tmux.conf&quot;&gt;&lt;pre class=&quot;language-.tmux.conf&quot;&gt;&lt;code class=&quot;language-.tmux.conf&quot;&gt;# Prefix
+set -g prefix C-t
+bind-key C-t send-prefix
+unbind-key C-b
+
+# Escキーの遅延を解消
+set -s escape-time 0
+
+# ウィンドウのインデックスを1から始める
+set -g base-index 1
+
+# prefix + -で水平分割
+bind - split-window -v -c &amp;#39;#{pane_current_path}&amp;#39;
+# prefix + \で垂直分割
+bind \\ split-window -h -c &amp;#39;#{pane_current_path}&amp;#39;
+
+# アクティブウィンドウのハイライト
+setw -g window-style &amp;#39;bg=#44475a&amp;#39;
+setw -g window-active-style &amp;#39;bg=#282a36&amp;#39;
+
+# viのキーバインドを使用する
+setw -g mode-keys vi
+
+#マウスデフォルトはOFF
+setw -g mouse on
+
+# ペイン切り替え(Vim風)
+bind -r j select-pane -D #down
+bind -r k select-pane -U #up
+bind -r h select-pane -L #left
+bind -r l select-pane -R #right
+
+# カーソルキーでペインの大きさ変更
+bind -r Up    resize-pane -U 3
+bind -r Down  resize-pane -D 3
+bind -r Left  resize-pane -L 3
+bind -r Right resize-pane -R 3
+
+# セッション切り替え
+bind -r n choose-session
+
+# セッション移動
+bind -r f switch-client -p
+bind -r b switch-client -n
+
+# コピーモード
+set -g default-command &amp;quot;exec reattach-to-user-namespace -l $SHELL&amp;quot;
+setw -g mode-keys vi
+unbind -T copy-mode MouseDragEnd1Pane
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel &amp;quot;reattach-to-user-namespace pbcopy&amp;quot;
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel &amp;quot;reattach-to-user-namespace pbcopy&amp;quot;
+
+# tmuxのオートスタート
+set -g @continuum-boot &amp;#39;on&amp;#39;
+set -g @continuum-restore &amp;#39;on&amp;#39;
+
+# Dracula Theme
+set -g @plugin &amp;#39;dracula/tmux&amp;#39;
+
+# Status line
+## status line を更新する間隔を1秒にする
+set -g status-interval 1
+## バッテリー容量を削除
+set -g @dracula-show-battery false
+## Wifi名を削除
+set -g @dracula-show-network false
+## 華氏から摂氏に変更
+set -g @dracula-show-fahrenheit false
+## タイムゾーン削除
+set -g @dracula-show-timezone false
+## CPU使用率表示
+set -g @dracula-cpu-usage true
+## よくわからんけど?みたいなやつがつくからその対処
+set -g @dracula-show-left-sep &amp;quot;&amp;quot;
+set -g @dracula-show-right-sep &amp;quot;&amp;quot;
+
+# Session保存
+set -g @plugin &amp;#39;tmux-plugins/tmux-resurrect&amp;#39;
+set -g @plugin &amp;#39;tmux-plugins/tmux-continuum&amp;#39;
+
+# 同時操作
+bind e setw synchronize-panes on
+bind E setw synchronize-panes off
+
+# tpmを起動
+run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[新しいアプリを作成するまで（アプリ未完成）]]></title><description><![CDATA[概要から軽く. 最近 Swift を書くモチベーションが低くなってきたのに対し, 新しいアプリを作りたいというモチベーションが上がってきています. Swfit のモチベーションを上げるため, Swift…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/ios/new/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/ios/new/</guid><pubDate>Tue, 27 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;概要から軽く.&lt;/p&gt;
 &lt;p&gt;最近 Swift を書くモチベーションが低くなってきたのに対し,&lt;/p&gt;
 &lt;p&gt;新しいアプリを作りたいというモチベーションが上がってきています.&lt;/p&gt;
 &lt;p&gt;Swfit のモチベーションを上げるため, Swift を使って新しいアプリを作成しつつ,&lt;/p&gt;
@@ -125,100 +385,32 @@
 &lt;p&gt;2019 年に福岡の大学を卒業後, インフラエンジニアとして新卒入社.
 業務では, AWS によるサービス保守やミドルウェア（ Apache, Tomcat, Docker, Jenkins 等）の管理を行っています.
 また, 趣味で Swift を使って, iOS アプリを開発しています.&lt;/p&gt;
-&lt;h2 id=&quot;個人開発&quot; style=&quot;position:relative;&quot;&gt;個人開発&lt;a href=&quot;#%E5%80%8B%E4%BA%BA%E9%96%8B%E7%99%BA&quot; aria-label=&quot;個人開発 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;rewrite&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1505143601&quot;&gt;ReWrite&lt;/a&gt;&lt;a href=&quot;#rewrite&quot; aria-label=&quot;rewrite permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Firebase(Firestore, Storage, Hosting) を使った日記アプリです.
-このアプリでは, 日記の自動保存やロック機能, テーマ変更, フォント変更などを行うことができます.
-&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/b5b4d/ReWrite_Preview.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 43.91891891891892%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAACC0lEQVQozz2S6W7aQBSFeSACwfsYrxTSvEWXpCVVH7hJQBCzmsXbQJIyRHN6x1XyYzSSpfn83XNuY71eoShyFHkmn48H5EV+3m43/OXlGa+vL1LdZVWIu+GQ6x0NpmFIyzDh2KZwGeOO7aDVaslmswlN09FI0zWm0ylmTxOZ5xmqqqyBs1mCMtvLt7czhDiJn9++c99h6Mc9SQchM4WpabwXx/D9QHpdBr1zgcZiMcdoNFJQOZ1MsFwuzmmacrqREVD9hPNKDG9uCejguj+Qse9Db18K2zB44Hlka5O1gU67pYALPD4+4v7+j1yQFT0+r9drPp/PkWeZ3G03NfAHGXpkeH2lgB5azQvhEDAKQnSZK01dR7ulgGTy8HCPJEnkcpmAjM6r1ZJPphMkZM2rEqfTX3H75SuPul0M4lhGQQTLsAlo8iiM4HtdqWsdqBwbs+QJk/EY6SaVm02K/X5XZ0iW9ciUKagYGvmGB8zFIPQlMy24hvZhGAa+1DqXZK2ANKaCvgPfDRP6nhOQVwW1/VpnGLgurgd9GfkBXNsSzLJ4L4rAmCNtm9HIbTTmVMp4/L8UladqmfKjlmdku68zPFTlh+HnwUD2whDUsHBMi1996oHA9SrVGa5WKyjQjh6XZQlao3rksixwPB7k4cCx223F77tfXJnFYSTDIEDEXBF1vXpk2zQlHai1+gd36Ofx0iMbDwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;ReWrite&quot;
-        title=&quot;ReWrite&quot;
-        src=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/27330/ReWrite_Preview.png&quot;
-        srcset=&quot;/static/1dd345dc5805d45ed62aceadb6bcc6e2/3c361/ReWrite_Preview.png 148w,
-/static/1dd345dc5805d45ed62aceadb6bcc6e2/03654/ReWrite_Preview.png 295w,
-/static/1dd345dc5805d45ed62aceadb6bcc6e2/27330/ReWrite_Preview.png 590w,
-/static/1dd345dc5805d45ed62aceadb6bcc6e2/25849/ReWrite_Preview.png 885w,
-/static/1dd345dc5805d45ed62aceadb6bcc6e2/27179/ReWrite_Preview.png 1180w,
-/static/1dd345dc5805d45ed62aceadb6bcc6e2/b5b4d/ReWrite_Preview.png 3024w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&quot;log&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1469767260&quot;&gt;Log&lt;/a&gt;&lt;a href=&quot;#log&quot; aria-label=&quot;log permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;バレットジャーナルというタスク管理手法を利用したアプリです.
-タスクの種別を 4 種類（Priority, Task, Event, Memo）に細分化して管理します.
-&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/b5b4d/Log_Preview.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 43.91891891891892%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABo0lEQVQoz01Sy47bMAzMzxRY2HpafsQJ0C6SQ9H0kN32VicIGjTtoZd+QT+aRxkgO9TGQQ+06NGQM5S0cs6JtVaapuHgvLQhzsDII08L5mMOIZByjTXsrZPG+uzBM6iNMTL2lScrTbThZrMpYEpptk+G3plKXD+wA9aklMEh5RljuK5rqU1dRPAvwzAwDIHXoKH3EnwQqLNDAYhz//U9ff/wSX4/DzxEdeUy9sjBGQQZDQQTFCyG+FYL9yq0agB0XVdUdMzamnmc9vTn4xf5+/mZt8mL86GMh2ay2+0YIT68YV1qHw7V7Srq7AD7vi8jQ2X2T5bq4KVKLfsYFcuIMp73nhEFwz+lJsl2u2UVKw11U+0utgHOUKeIYwj+gWUI0nq9LsJjP8jYdTjDSC0aKvZoqJ97sK44+FmVF0wvQt28vLzS5XKRb9PEp2mS8+mU4YwseP+ZkZUW3IPv67zcqGJKrKoqHw4Hut1ucr1e+QfW8/mc27alu4mlFpeCw1S7uBgGoTwbvCvSXDHdQ573+z2hify6/WRtfDwe8ziOpPVLrcY/uLkgONA7dyQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;Log&quot;
-        title=&quot;Log&quot;
-        src=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/27330/Log_Preview.png&quot;
-        srcset=&quot;/static/f253b2c91ff33fcdc56e130c8c730e7c/3c361/Log_Preview.png 148w,
-/static/f253b2c91ff33fcdc56e130c8c730e7c/03654/Log_Preview.png 295w,
-/static/f253b2c91ff33fcdc56e130c8c730e7c/27330/Log_Preview.png 590w,
-/static/f253b2c91ff33fcdc56e130c8c730e7c/25849/Log_Preview.png 885w,
-/static/f253b2c91ff33fcdc56e130c8c730e7c/27179/Log_Preview.png 1180w,
-/static/f253b2c91ff33fcdc56e130c8c730e7c/b5b4d/Log_Preview.png 3024w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;インフラ業務&quot; style=&quot;position:relative;&quot;&gt;インフラ業務&lt;a href=&quot;#%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E6%A5%AD%E5%8B%99&quot; aria-label=&quot;インフラ業務 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id=&quot;aws&quot; style=&quot;position:relative;&quot;&gt;AWS&lt;a href=&quot;#aws&quot; aria-label=&quot;aws permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Terrafrom による Kinesis, Lambda 等の作成&lt;/li&gt;
+&lt;li&gt;Terrafrom による AWS リソースの作成&lt;/li&gt;
 &lt;li&gt;Cloud Watch Logs, Kinesis, Lambda, S3 を使用したログ基盤構築&lt;/li&gt;
-&lt;li&gt;Viewable Impression の開発&lt;/li&gt;
-&lt;li&gt;Datadog を使用した EC2 インスタンスの管理&lt;/li&gt;
+&lt;li&gt;EC2, ELB によるサーバー構築&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;apache-tomcat&quot; style=&quot;position:relative;&quot;&gt;Apache, Tomcat&lt;a href=&quot;#apache-tomcat&quot; aria-label=&quot;apache tomcat permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;ミドルウェア&quot; style=&quot;position:relative;&quot;&gt;ミドルウェア&lt;a href=&quot;#%E3%83%9F%E3%83%89%E3%83%AB%E3%82%A6%E3%82%A7%E3%82%A2&quot; aria-label=&quot;ミドルウェア permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Apache, Tomcat の設定やバージョンアップ&lt;/li&gt;
-&lt;li&gt;Tomcat の出力ログのカスタマイズ&lt;/li&gt;
+&lt;li&gt;Fluentd を使用したログ基盤構築&lt;/li&gt;
 &lt;li&gt;Logrotate によるログファイルの永続化&lt;/li&gt;
+&lt;li&gt;Datadog を使用した EC2 インスタンスの状態管理&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;docker&quot; style=&quot;position:relative;&quot;&gt;Docker&lt;a href=&quot;#docker&quot; aria-label=&quot;docker permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Docker による開発環境構築の設定やバージョン管理&lt;/li&gt;
-&lt;li&gt;docker-sync, mutagen による Docker 高速化検証&lt;/li&gt;
+&lt;li&gt;開発環境の Docker 化&lt;/li&gt;
+&lt;li&gt;docker-sync, mutagen, Vagrant による Docker 高速化検証&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;jenkins&quot; style=&quot;position:relative;&quot;&gt;Jenkins&lt;a href=&quot;#jenkins&quot; aria-label=&quot;jenkins permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;cicd&quot; style=&quot;position:relative;&quot;&gt;CI/CD&lt;a href=&quot;#cicd&quot; aria-label=&quot;cicd permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Groovy を使用したインフラファイルの自動デプロイ作成&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Projects]]></title><description><![CDATA[ReWrite 概要 シンプルな日記アプリです。
+&lt;li&gt;Groovy を使用した Jenkins 自動デプロイ作成&lt;/li&gt;
+&lt;li&gt;Ansible によるミドルウェア構築&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;個人開発&quot; style=&quot;position:relative;&quot;&gt;個人開発&lt;a href=&quot;#%E5%80%8B%E4%BA%BA%E9%96%8B%E7%99%BA&quot; aria-label=&quot;個人開発 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/projects/&quot;&gt;こちら&lt;/a&gt; にまとめています.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Projects]]></title><description><![CDATA[ReWrite 概要 シンプルな日記アプリです。
 日記の自動保存やロック機能, テーマ変更やフォント変更を行うことができます. プレビュー  使用ライブラリ FirebaseAuth: ログインや会員登録に使用しています. FirebaseFirestore…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/projects/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/projects/</guid><pubDate>Sat, 01 Aug 2020 01:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;rewrite&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1505143601&quot;&gt;ReWrite&lt;/a&gt;&lt;a href=&quot;#rewrite&quot; aria-label=&quot;rewrite permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id=&quot;概要&quot; style=&quot;position:relative;&quot;&gt;概要&lt;a href=&quot;#%E6%A6%82%E8%A6%81&quot; aria-label=&quot;概要 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;シンプルな日記アプリです。
