@@ -9,7 +9,7 @@ zshrc, vimrc, tmux, prezto の設定ファイル一覧です.
 
 |  設定  |
 | ---- |
-|  [zshrc](/env/zsh/)  |
-|  [vimrc](/env/vim/)  |
-|  [tmux.conf](/env/tmux/)  |
-|  [prezto](/env/zpreztorc/)  |
+|  [zsh](/env/zsh/)  |
+|  [vim](/env/vim/)  |
+|  [tmux](/env/tmux/)  |
+|  [prezto](/env/prezto/)  |
