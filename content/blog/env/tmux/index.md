@@ -26,7 +26,7 @@ bind \\ split-window -h -c '#{pane_current_path}'
 
 # アクティブウィンドウのハイライト
 setw -g window-style 'bg=#44475a'
-setw -g window-active-style 'bg=#282a36'
+setw -g window-active-style 'bg=#1d1e26'
 
 # viのキーバインドを使用する
 setw -g mode-keys vi
