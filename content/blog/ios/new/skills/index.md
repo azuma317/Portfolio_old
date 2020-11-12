@@ -25,3 +25,19 @@ RxSwift を選ぶ理由は, 理解していない部分が多く, 独学で Swif
 できるだけアプリに採用して RxSwift の知見ををためていきたいからです.
 
 将来, 実務として使ったときに RxSwift 周りの処理がすぐに理解できるようになりたいと考えています.
+
+その他, 今まで使ったことのない技術も使いたいと思っています.
+
+それは, 以下の 2 つです.
+
+- SwiftUI
+- Mac Catalyst
+
+正直, そこまで色々手をつけていいものかとは思いますが, モチベーションのある内に
+
+色々と手をつけていきたいと思っています.
+
+SwiftUI と Mac Catalyst については, まだ触ったことすらないので
+
+[Creating a macOS App](https://developer.apple.com/tutorials/swiftui/creating-a-macos-app)
+をまずはやってみたいと思います.
