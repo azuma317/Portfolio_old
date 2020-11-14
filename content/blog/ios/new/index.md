@@ -20,3 +20,4 @@ Swfit のモチベーションを上げるため, Swift を使って新しいア
 1. [アイデア出し](/ios/new/idea/)
 2. [使いたい技術](/ios/new/skills/)
 3. [Creating a macOS App をやってみて](/ios/new/tutorial-swiftui/)
+4. 考え中
