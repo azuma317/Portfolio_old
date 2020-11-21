@@ -118,6 +118,9 @@ if is-at-least 4.3.10; then
   zstyle ':chpwd:*' recent-dirs-default yes
 fi
 
+### zplugのロード
+zplug load
+
 ### 補完
 autoload -U compinit; compinit -C
 ## 補完候補をキャッシュする。
@@ -125,6 +128,4 @@ zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' cache-path ~/.zsh/cache
 ### 補完候補に色を付ける。
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-
-zplug load
 ```
