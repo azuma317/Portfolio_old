@@ -39,5 +39,4 @@ RxSwift を選ぶ理由は, 理解していない部分が多く, 独学で Swif
 
 SwiftUI と Mac Catalyst については, まだ触ったことすらないので
 
-[Creating a macOS App](https://developer.apple.com/tutorials/swiftui/creating-a-macos-app)
-をまずはやってみたいと思います.
+既存アプリの SwiftUI 化を行っていきます.

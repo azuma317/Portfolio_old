@@ -1,16 +1,10 @@
 ---
-title: Creating a macOS App をやってみる
-date: '2020-11-13T00:00:00.000Z'
-description: 'Creating a macOS App をやってみる'
+title: Log の SwiftUI 化
+date: '2020-12-16T00:00:00.000Z'
+description: ''
 group: ''
 ---
 
 ## はじめに
 
-macOS のアプリ作成のサンプルである [Create a macOS App](https://developer.apple.com/tutorials/swiftui/creating-a-macos-app)
-をやっていく過程を綴っていきます
-
-## ターゲットの設定
-
-[Create a macOS App](https://developer.apple.com/tutorials/swiftui/creating-a-macos-app)
-の **Project files** からプロジェクトファイルをダウンロードする
+既存アプリ [Log](https://apps.apple.com/us/app/log-todo-app/id1469767260) の SwiftUI 化をやっていきます.
