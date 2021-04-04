@@ -1,6 +1,6 @@
 ---
 title: Portfolio
-date: '2020-08-01T02:00:00.000Z'
+date: '2021-04-03T00:00:00.000Z'
 description: '本職: インフラエンジニア, 趣味: iOS アプリ開発.'
 group: 'Portfolio'
 ---
@@ -16,25 +16,29 @@ group: 'Portfolio'
 ### AWS
 
 - Terrafrom による AWS リソースの作成
-- Cloud Watch Logs, Kinesis, Lambda, S3 を使用したログ基盤構築
-- EC2, ELB によるサーバー構築
+- Fluentd, Kinesis Firehose, S3 を使用したログ収集基盤の構築
+- EC2, ALB によるサーバー構築
 
 ### ミドルウェア
 
 - Apache, Tomcat の設定やバージョンアップ
-- Fluentd を使用したログ基盤構築
 - Logrotate によるログファイルの永続化
 - Datadog を使用した EC2 インスタンスの状態管理
+- Ansible によるミドルウェアの IaC(Infrastructure as Code)
+- Embulk によるバッチサーバーの管理
 
 ### Docker
 
-- 開発環境の Docker化
+- Docker, docker-compose を使用した開発環境の構築
 - docker-sync, mutagen, Vagrant による Docker 高速化検証
 
 ### CI/CD
 
 - Groovy を使用した Jenkins 自動デプロイ作成
-- Ansible によるミドルウェア構築
+
+### 分析基盤
+
+- Presto, Redash を使用したデータレイク, RDS 間の分析基盤構築
 
 ## 個人開発（Swift）
 
