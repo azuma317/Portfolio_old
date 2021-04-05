@@ -7,7 +7,7 @@ group: ''
 
 ## .tmux.conf
 
-``` .tmux.conf
+```.tmux.conf
 # Prefix
 set -g prefix C-t
 bind-key C-t send-prefix

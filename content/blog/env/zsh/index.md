@@ -7,7 +7,7 @@ group: ''
 
 ### zshrc (~/.zshrc)
 
-``` .zshrc
+```.zshrc
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -45,19 +45,19 @@ SAVEHIST=10000
 
 ### .alias_env(~/.zsh/alias_env)
 
-``` .alias_env
+```.alias_env
 # alias
 ```
 
 ### .env(~/.zsh/env)
 
-``` .env
+```.env
 # Global veriable
 ```
 
 ### .peco_env(~/.zsh/peco_env)
 
-``` .peco_env
+```.peco_env
 # pecoの設定
 ## history検索
 function peco-select-history() {
@@ -99,7 +99,7 @@ bindkey '^r' peco-select-history
 
 ### .zplug_env(~/.zsh/zplug_env)
 
-``` .zplug_env
+```.zplug_env
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 zplug "dracula/zsh", as:theme

@@ -7,9 +7,9 @@ group: 'Blog'
 
 zshrc, vimrc, tmux, prezto の設定ファイル一覧です.
 
-|  設定  |
-| ---- |
-|  [zsh](/env/zsh/)  |
-|  [vim](/env/vim/)  |
-|  [tmux](/env/tmux/)  |
-|  [prezto](/env/prezto/)  |
+| 設定                   |
+| ---------------------- |
+| [zsh](/env/zsh/)       |
+| [vim](/env/vim/)       |
+| [tmux](/env/tmux/)     |
+| [prezto](/env/prezto/) |

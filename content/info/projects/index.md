@@ -35,12 +35,13 @@ group: 'Projects'
 - バグ修正
 - 文章内の記号追加（箇条書きや太文字等）
 
-## [Log](https://apps.apple.com/jp/app/id1469767260)
+## Log
 
 ### 概要
 
 バレットジャーナルというタスク管理手法を利用したアプリです.
 タスクの種別を 4 種類（Priority, Task, Event, Memo）に細分化して管理します.
+※ 現在, SwiftUI でタスク管理アプリを作成しているので App Store から削除しています.
 
 ### プレビュー
 
@@ -48,17 +49,28 @@ group: 'Projects'
 
 ### 使用ライブラリ
 
-- Realm:タスクの保存に使用しています.
+- Realm: タスクの保存に使用しています.
 - SwiftDate: タスクの日付管理に使用しています.
 - ReSwift: Redux に使用しています.
 - RxSwift: UI イベントの受け取り等に使用しています.
 - RxRealm: Realm を Rx の記述で書くために使用しています.
 - RxGesture: UI イベント周りで使用しています.
-- RxDataSources:タスク一覧画面で使用しています.
+- RxDataSources: タスク一覧画面で使用しています.
 
-### 追加予定の機能
+## Zebra（仮）
 
-- デザインの変更
-- バグ修正
-- Google カレンダー連携
-- バックアップ機能
+### 概要
+
+現在 SwiftUI で作成中のアプリです.
+タスク管理アプリで Log アプリの改良版です.
+
+### プレビュー
+
+![Zebra](../../assets/project/Zebra_Preview.png)
+
+### 使用ライブラリ
+
+- Firestore
+- SwiftUI
+- swift-format
+- SwiftDate
