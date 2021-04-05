@@ -104,10 +104,11 @@
 <li>バグ修正</li>
 <li>文章内の記号追加（箇条書きや太文字等）</li>
 </ul>
-<h2 id="log" style="position:relative;"><a href="https://apps.apple.com/jp/app/id1469767260">Log</a><a href="#log" aria-label="log permalink" class="custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<h2 id="log" style="position:relative;">Log<a href="#log" aria-label="log permalink" class="custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
 <h3 id="概要-1" style="position:relative;">概要<a href="#%E6%A6%82%E8%A6%81-1" aria-label="概要 1 permalink" class="custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <p>バレットジャーナルというタスク管理手法を利用したアプリです.
-タスクの種別を 4 種類（Priority, Task, Event, Memo）に細分化して管理します.</p>
+タスクの種別を 4 種類（Priority, Task, Event, Memo）に細分化して管理します.
+※ 現在, SwiftUI でタスク管理アプリを作成しているので App Store から削除しています.</p>
 <h3 id="プレビュー-1" style="position:relative;">プレビュー<a href="#%E3%83%97%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC-1" aria-label="プレビュー 1 permalink" class="custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <p><span
       class="gatsby-resp-image-wrapper"
@@ -143,20 +144,57 @@
     </span></p>
 <h3 id="使用ライブラリ-1" style="position:relative;">使用ライブラリ<a href="#%E4%BD%BF%E7%94%A8%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA-1" aria-label="使用ライブラリ 1 permalink" class="custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <ul>
-<li>Realm:タスクの保存に使用しています.</li>
+<li>Realm: タスクの保存に使用しています.</li>
 <li>SwiftDate: タスクの日付管理に使用しています.</li>
 <li>ReSwift: Redux に使用しています.</li>
 <li>RxSwift: UI イベントの受け取り等に使用しています.</li>
 <li>RxRealm: Realm を Rx の記述で書くために使用しています.</li>
 <li>RxGesture: UI イベント周りで使用しています.</li>
-<li>RxDataSources:タスク一覧画面で使用しています.</li>
+<li>RxDataSources: タスク一覧画面で使用しています.</li>
 </ul>
-<h3 id="追加予定の機能-1" style="position:relative;">追加予定の機能<a href="#%E8%BF%BD%E5%8A%A0%E4%BA%88%E5%AE%9A%E3%81%AE%E6%A9%9F%E8%83%BD-1" aria-label="追加予定の機能 1 permalink" class="custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<h2 id="zebra（仮）" style="position:relative;">Zebra（仮）<a href="#zebra%EF%BC%88%E4%BB%AE%EF%BC%89" aria-label="zebra（仮） permalink" class="custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<h3 id="概要-2" style="position:relative;">概要<a href="#%E6%A6%82%E8%A6%81-2" aria-label="概要 2 permalink" class="custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>現在 SwiftUI で作成中のアプリです.
+タスク管理アプリで Log アプリの改良版です.</p>
+<h3 id="プレビュー-2" style="position:relative;">プレビュー<a href="#%E3%83%97%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC-2" aria-label="プレビュー 2 permalink" class="custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/d9dc16ba8ca8d3a9f024aee837ef8d56/5f755/Zebra_Preview.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54.05405405405405%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAAB7klEQVQoz22T65KiMBCFuXmBICEgN4FBUccdy9rZB9p9/0fID6j0ns6oU1vrj1Rim/769OngSClpuVyS4zjGdV1ah+EshNBRFJHv+wZxWoXhtFqttOd59h7HFsvFhLsad56x9XpNzjiOpDL1DGLNXdfr8/lMcRx/xdxgcj3PJqPo496E8z9Ax8Vq244OhyNtt4XJ8y2lqZpRSRdFSXlemCzLKcuyCeo0d4DdsFLPc23sDn8UIedwGOnz8xc1TWvqegdwOaNdzfFh2BsUAnhrkxnENvAO+ASrtBARzl/AuEvJ2e8PdLv9tMC27amq6jmEN/jN57vC/Al8KGRgEARaJIq8xdoCg2hBTllWnEhCxGazSSgMI6vweDzRfj+aoqjYDgv0/W+F3DL7Cn/J8RbfLbNv3KpSGdTAQ5nOnDyOR7pcflgbUNQOgEFQdQd6EwD/e7jbtXS93qjr3gwWFVUDoA+FZxrHk43Vu84CAz+wQCxW+hqYpinxRKVM0fKGciFmJFog1FmFQ91MEXzF+6QkkQbPCXvyGtg0O/tsJFru4OXvoZtVkugYcPZLRIL+DN1US6njRFKe5UZCRFXBhtcKFb2/X+jj42r6/o3kZoMpR5qHdTqdDf9XFYWdKCvr+96UVYWvIrQK+W0qpQwUW+BfKs35sglpTt8AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Zebra"
+        title="Zebra"
+        src="/static/d9dc16ba8ca8d3a9f024aee837ef8d56/27330/Zebra_Preview.png"
+        srcset="/static/d9dc16ba8ca8d3a9f024aee837ef8d56/3c361/Zebra_Preview.png 148w,
+/static/d9dc16ba8ca8d3a9f024aee837ef8d56/03654/Zebra_Preview.png 295w,
+/static/d9dc16ba8ca8d3a9f024aee837ef8d56/27330/Zebra_Preview.png 590w,
+/static/d9dc16ba8ca8d3a9f024aee837ef8d56/25849/Zebra_Preview.png 885w,
+/static/d9dc16ba8ca8d3a9f024aee837ef8d56/27179/Zebra_Preview.png 1180w,
+/static/d9dc16ba8ca8d3a9f024aee837ef8d56/5f755/Zebra_Preview.png 4524w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h3 id="使用ライブラリ-2" style="position:relative;">使用ライブラリ<a href="#%E4%BD%BF%E7%94%A8%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA-2" aria-label="使用ライブラリ 2 permalink" class="custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <ul>
-<li>デザインの変更</li>
-<li>バグ修正</li>
-<li>Google カレンダー連携</li>
-<li>バックアップ機能</li>
+<li>Firestore</li>
+<li>SwiftUI</li>
+<li>swift-format</li>
+<li>SwiftDate</li>
 </ul></section><hr style="margin-bottom:1.75rem"/></article><style data-emotion-css="k008qs">.css-k008qs{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}</style><div class="css-k008qs"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px;name:1arllnu;styles:margin-bottom:0;min-width:50;border-radius:100%;"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMEAgX/xAAVAQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEAMQAAAB9CPUY3gZSE1Af//EAB0QAAEDBQEAAAAAAAAAAAAAAAEAAiIDEyExMkL/2gAIAQEAAQUCKuSVTnyNFocg2QwP/8QAFREBAQAAAAAAAAAAAAAAAAAAASD/2gAIAQMBAT8BWP/EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/ASE//8QAGRAAAgMBAAAAAAAAAAAAAAAAABARITFh/9oACAEBAAY/AtLx9VkL/8QAHBABAAICAwEAAAAAAAAAAAAAAQAxESEQUWGh/9oACAEBAAE/Ic70C4M+DgDtZUUcENupRAPEJWTiAAKJ/9oADAMBAAIAAwAAABAg4AD/xAAWEQEBAQAAAAAAAAAAAAAAAAABECH/2gAIAQMBAT8Qgmz/xAAXEQADAQAAAAAAAAAAAAAAAAABECFB/9oACAECAQE/EA1FF//EAB8QAQACAgICAwAAAAAAAAAAAAEAESFhMUFRcYGR0f/aAAgBAQABPxCqu/ZVv59SyIzWnQ71Assl95n2Y3QoSiWbZknkGYCbCickVFBPH5MaeAn/2Q==" alt="あずま" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/static/72e0c4d76b127abd9df67877d0dfc214/99438/profile-pic.jpg 1x,
 /static/72e0c4d76b127abd9df67877d0dfc214/aba1d/profile-pic.jpg 1.5x,
 /static/72e0c4d76b127abd9df67877d0dfc214/b315d/profile-pic.jpg 2x" /><img loading="lazy" width="50" height="50" srcset="/static/72e0c4d76b127abd9df67877d0dfc214/99438/profile-pic.jpg 1x,

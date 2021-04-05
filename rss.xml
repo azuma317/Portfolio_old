@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://gatsby-starter-blog-demo.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 04 Apr 2021 01:40:12 GMT</lastBuildDate><item><title><![CDATA[Portfolio]]></title><description><![CDATA[本職: インフラエンジニア, 趣味: iOS アプリ開発. 2019 年に福岡の大学を卒業後, インフラエンジニアとして新卒入社.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://gatsby-starter-blog-demo.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 05 Apr 2021 15:38:38 GMT</lastBuildDate><item><title><![CDATA[Portfolio]]></title><description><![CDATA[本職: インフラエンジニア, 趣味: iOS アプリ開発. 2019 年に福岡の大学を卒業後, インフラエンジニアとして新卒入社.
 業務では, AWS によるサービス保守やミドルウェア（ Apache, Tomcat, Docker, Jenkins…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/portfolio/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/portfolio/</guid><pubDate>Sat, 03 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;本職: インフラエンジニア, 趣味: iOS アプリ開発.&lt;/p&gt;
 &lt;p&gt;2019 年に福岡の大学を卒業後, インフラエンジニアとして新卒入社.
 業務では, AWS によるサービス保守やミドルウェア（ Apache, Tomcat, Docker, Jenkins 等）の管理を行っています.
-また, 趣味で Swift を使って, iOS アプリを開発しています.&lt;/p&gt;
+また, 趣味で Swift を使った iOS アプリを開発しています.&lt;/p&gt;
 &lt;h2 id=&quot;インフラ業務&quot; style=&quot;position:relative;&quot;&gt;インフラ業務&lt;a href=&quot;#%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9%E6%A5%AD%E5%8B%99&quot; aria-label=&quot;インフラ業務 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id=&quot;aws&quot; style=&quot;position:relative;&quot;&gt;AWS&lt;a href=&quot;#aws&quot; aria-label=&quot;aws permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
@@ -32,8 +32,7 @@
 &lt;li&gt;Presto, Redash を使用したデータレイク, RDS 間の分析基盤構築&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;個人開発（swift）&quot; style=&quot;position:relative;&quot;&gt;個人開発（Swift）&lt;a href=&quot;#%E5%80%8B%E4%BA%BA%E9%96%8B%E7%99%BA%EF%BC%88swift%EF%BC%89&quot; aria-label=&quot;個人開発（swift） permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/projects/&quot;&gt;こちら&lt;/a&gt; にまとめています.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Log の SwiftUI 化]]></title><description><![CDATA[はじめに 既存アプリ Log の SwiftUI 化をやっていきます.]]></description><link>https://gatsby-starter-blog-demo.netlify.app/ios/new/tutorial-swiftui/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/ios/new/tutorial-swiftui/</guid><pubDate>Wed, 16 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;はじめに&quot; style=&quot;position:relative;&quot;&gt;はじめに&lt;a href=&quot;#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB&quot; aria-label=&quot;はじめに permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;既存アプリ &lt;a href=&quot;https://apps.apple.com/us/app/log-todo-app/id1469767260&quot;&gt;Log&lt;/a&gt; の SwiftUI 化をやっていきます.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[CloudFrontのまとめ]]></title><description><![CDATA[概要 CloudFront: Amazon CloudFront HTML, CSS, 画像といった静的ファイルをキャッシュして, 配信する CDN(Contents Delivery Network…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/infra/aws/cloudfront/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/infra/aws/cloudfront/</guid><pubDate>Thu, 10 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;概要&quot; style=&quot;position:relative;&quot;&gt;概要&lt;a href=&quot;#%E6%A6%82%E8%A6%81&quot; aria-label=&quot;概要 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/projects/&quot;&gt;こちら&lt;/a&gt; にまとめています.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Presto]]></title><link>https://gatsby-starter-blog-demo.netlify.app/blog/infra/presto/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/infra/presto/</guid><pubDate>Sun, 20 Dec 2020 00:00:00 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[CloudFrontのまとめ]]></title><description><![CDATA[概要 CloudFront: Amazon CloudFront HTML, CSS, 画像といった静的ファイルをキャッシュして, 配信する CDN(Contents Delivery Network…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/infra/aws/cloudfront/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/infra/aws/cloudfront/</guid><pubDate>Thu, 10 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;概要&quot; style=&quot;position:relative;&quot;&gt;概要&lt;a href=&quot;#%E6%A6%82%E8%A6%81&quot; aria-label=&quot;概要 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;CloudFront: Amazon CloudFront&lt;/p&gt;
 &lt;p&gt;HTML, CSS, 画像といった静的ファイルをキャッシュして, 配信する CDN(Contents Delivery Network).&lt;/p&gt;
 &lt;p&gt;利用者から最も近いエッジロケーションからコンテンツを配信する.&lt;/p&gt;
@@ -75,29 +74,7 @@
 &lt;li&gt;Footer を画面の下部に設定したい&lt;/li&gt;
 &lt;li&gt;Dark テーマを実装する&lt;/li&gt;
 &lt;li&gt;Home 画面のコンテンツを考える&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[使いたい技術]]></title><description><![CDATA[アイデア出し でタスク管理系のアプリを作ることが決まったので, そのアプリで使う技術について考えたいと思います. 使いたい技術 今までのアプリで使った技術で今回も使いたいと思っているものは以下の 2 つです. Firebase RxSwift Firebase…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/ios/new/skills/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/ios/new/skills/</guid><pubDate>Mon, 09 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;/ios/new/idea/&quot;&gt;アイデア出し&lt;/a&gt; でタスク管理系のアプリを作ることが決まったので,&lt;/p&gt;
-&lt;p&gt;そのアプリで使う技術について考えたいと思います.&lt;/p&gt;
-&lt;h2 id=&quot;使いたい技術&quot; style=&quot;position:relative;&quot;&gt;使いたい技術&lt;a href=&quot;#%E4%BD%BF%E3%81%84%E3%81%9F%E3%81%84%E6%8A%80%E8%A1%93&quot; aria-label=&quot;使いたい技術 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;今までのアプリで使った技術で今回も使いたいと思っているものは以下の 2 つです.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Firebase&lt;/li&gt;
-&lt;li&gt;RxSwift&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Firebase は, Firestore や Storage, Auth を使って,&lt;/p&gt;
-&lt;p&gt;デバイス間のデータ連携やバックアップとして使っていきたいと思います.&lt;/p&gt;
-&lt;p&gt;RxSwift を選ぶ理由は, 理解していない部分が多く, 独学で Swift を学んでいるということもあって,&lt;/p&gt;
-&lt;p&gt;できるだけアプリに採用して RxSwift の知見ををためていきたいからです.&lt;/p&gt;
-&lt;p&gt;将来, 実務として使ったときに RxSwift 周りの処理がすぐに理解できるようになりたいと考えています.&lt;/p&gt;
-&lt;p&gt;その他, 今まで使ったことのない技術も使いたいと思っています.&lt;/p&gt;
-&lt;p&gt;それは, 以下の 2 つです.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;SwiftUI&lt;/li&gt;
-&lt;li&gt;Mac Catalyst&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;正直, そこまで色々手をつけていいものかとは思いますが, モチベーションのある内に&lt;/p&gt;
-&lt;p&gt;色々と手をつけていきたいと思っています.&lt;/p&gt;
-&lt;p&gt;SwiftUI と Mac Catalyst については, まだ触ったことすらないので&lt;/p&gt;
-&lt;p&gt;既存アプリの SwiftUI 化を行っていきます.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[terminal の設定ファイル]]></title><description><![CDATA[zshrc, vimrc, tmux, prezto の設定ファイル一覧です. 設定 zsh vim tmux prezto]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/env/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/env/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;zshrc, vimrc, tmux, prezto の設定ファイル一覧です.&lt;/p&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[terminal の設定ファイル]]></title><description><![CDATA[zshrc, vimrc, tmux, prezto の設定ファイル一覧です. 設定 zsh vim tmux prezto]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/env/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/env/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;zshrc, vimrc, tmux, prezto の設定ファイル一覧です.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -366,9 +343,6 @@ run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/di
 &lt;h2 id=&quot;構成&quot; style=&quot;position:relative;&quot;&gt;構成&lt;a href=&quot;#%E6%A7%8B%E6%88%90&quot; aria-label=&quot;構成 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;/ios/new/idea/&quot;&gt;アイデア出し&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/ios/new/skills/&quot;&gt;使いたい技術&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/ios/new/tutorial-swiftui/&quot;&gt;Creating a macOS App をやってみて(作成中)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;考え中&lt;/li&gt;
 &lt;/ol&gt;</content:encoded></item><item><title><![CDATA[新規アプリのアイデア出し]]></title><description><![CDATA[新規アプリのアイデア出しの前に, 現在リリースしているアプリの作成理由を整理したいと思います. まず, 作成理由は基本的に思いつきです. その思いつきを振り返ってみて, 少し整理してみたいと思います。 現在リリースしているアプリは, 以下の 4 つです. Log J-Color…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/ios/new/idea/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/ios/new/idea/</guid><pubDate>Tue, 27 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;新規アプリのアイデア出しの前に, 現在リリースしているアプリの作成理由を整理したいと思います.&lt;/p&gt;
 &lt;p&gt;まず, 作成理由は基本的に思いつきです.&lt;/p&gt;
 &lt;p&gt;その思いつきを振り返ってみて, 少し整理してみたいと思います。&lt;/p&gt;
@@ -545,10 +519,11 @@ run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/di
 &lt;li&gt;バグ修正&lt;/li&gt;
 &lt;li&gt;文章内の記号追加（箇条書きや太文字等）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;log&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;https://apps.apple.com/jp/app/id1469767260&quot;&gt;Log&lt;/a&gt;&lt;a href=&quot;#log&quot; aria-label=&quot;log permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;log&quot; style=&quot;position:relative;&quot;&gt;Log&lt;a href=&quot;#log&quot; aria-label=&quot;log permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id=&quot;概要-1&quot; style=&quot;position:relative;&quot;&gt;概要&lt;a href=&quot;#%E6%A6%82%E8%A6%81-1&quot; aria-label=&quot;概要 1 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;バレットジャーナルというタスク管理手法を利用したアプリです.
-タスクの種別を 4 種類（Priority, Task, Event, Memo）に細分化して管理します.&lt;/p&gt;
+タスクの種別を 4 種類（Priority, Task, Event, Memo）に細分化して管理します.
+※ 現在, SwiftUI でタスク管理アプリを作成しているので App Store から削除しています.&lt;/p&gt;
 &lt;h3 id=&quot;プレビュー-1&quot; style=&quot;position:relative;&quot;&gt;プレビュー&lt;a href=&quot;#%E3%83%97%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC-1&quot; aria-label=&quot;プレビュー 1 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -584,18 +559,55 @@ run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/di
     &lt;/span&gt;&lt;/p&gt;
 &lt;h3 id=&quot;使用ライブラリ-1&quot; style=&quot;position:relative;&quot;&gt;使用ライブラリ&lt;a href=&quot;#%E4%BD%BF%E7%94%A8%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA-1&quot; aria-label=&quot;使用ライブラリ 1 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Realm:タスクの保存に使用しています.&lt;/li&gt;
+&lt;li&gt;Realm: タスクの保存に使用しています.&lt;/li&gt;
 &lt;li&gt;SwiftDate: タスクの日付管理に使用しています.&lt;/li&gt;
 &lt;li&gt;ReSwift: Redux に使用しています.&lt;/li&gt;
 &lt;li&gt;RxSwift: UI イベントの受け取り等に使用しています.&lt;/li&gt;
 &lt;li&gt;RxRealm: Realm を Rx の記述で書くために使用しています.&lt;/li&gt;
 &lt;li&gt;RxGesture: UI イベント周りで使用しています.&lt;/li&gt;
-&lt;li&gt;RxDataSources:タスク一覧画面で使用しています.&lt;/li&gt;
+&lt;li&gt;RxDataSources: タスク一覧画面で使用しています.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;追加予定の機能-1&quot; style=&quot;position:relative;&quot;&gt;追加予定の機能&lt;a href=&quot;#%E8%BF%BD%E5%8A%A0%E4%BA%88%E5%AE%9A%E3%81%AE%E6%A9%9F%E8%83%BD-1&quot; aria-label=&quot;追加予定の機能 1 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&quot;zebra（仮）&quot; style=&quot;position:relative;&quot;&gt;Zebra（仮）&lt;a href=&quot;#zebra%EF%BC%88%E4%BB%AE%EF%BC%89&quot; aria-label=&quot;zebra（仮） permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;概要-2&quot; style=&quot;position:relative;&quot;&gt;概要&lt;a href=&quot;#%E6%A6%82%E8%A6%81-2&quot; aria-label=&quot;概要 2 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;現在 SwiftUI で作成中のアプリです.
+タスク管理アプリで Log アプリの改良版です.&lt;/p&gt;
+&lt;h3 id=&quot;プレビュー-2&quot; style=&quot;position:relative;&quot;&gt;プレビュー&lt;a href=&quot;#%E3%83%97%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC-2&quot; aria-label=&quot;プレビュー 2 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d9dc16ba8ca8d3a9f024aee837ef8d56/5f755/Zebra_Preview.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.05405405405405%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAAB7klEQVQoz22T65KiMBCFuXmBICEgN4FBUccdy9rZB9p9/0fID6j0ns6oU1vrj1Rim/769OngSClpuVyS4zjGdV1ah+EshNBRFJHv+wZxWoXhtFqttOd59h7HFsvFhLsad56x9XpNzjiOpDL1DGLNXdfr8/lMcRx/xdxgcj3PJqPo496E8z9Ax8Vq244OhyNtt4XJ8y2lqZpRSRdFSXlemCzLKcuyCeo0d4DdsFLPc23sDn8UIedwGOnz8xc1TWvqegdwOaNdzfFh2BsUAnhrkxnENvAO+ASrtBARzl/AuEvJ2e8PdLv9tMC27amq6jmEN/jN57vC/Al8KGRgEARaJIq8xdoCg2hBTllWnEhCxGazSSgMI6vweDzRfj+aoqjYDgv0/W+F3DL7Cn/J8RbfLbNv3KpSGdTAQ5nOnDyOR7pcflgbUNQOgEFQdQd6EwD/e7jbtXS93qjr3gwWFVUDoA+FZxrHk43Vu84CAz+wQCxW+hqYpinxRKVM0fKGciFmJFog1FmFQ91MEXzF+6QkkQbPCXvyGtg0O/tsJFru4OXvoZtVkugYcPZLRIL+DN1US6njRFKe5UZCRFXBhtcKFb2/X+jj42r6/o3kZoMpR5qHdTqdDf9XFYWdKCvr+96UVYWvIrQK+W0qpQwUW+BfKs35sglpTt8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Zebra&quot;
+        title=&quot;Zebra&quot;
+        src=&quot;/static/d9dc16ba8ca8d3a9f024aee837ef8d56/27330/Zebra_Preview.png&quot;
+        srcset=&quot;/static/d9dc16ba8ca8d3a9f024aee837ef8d56/3c361/Zebra_Preview.png 148w,
+/static/d9dc16ba8ca8d3a9f024aee837ef8d56/03654/Zebra_Preview.png 295w,
+/static/d9dc16ba8ca8d3a9f024aee837ef8d56/27330/Zebra_Preview.png 590w,
+/static/d9dc16ba8ca8d3a9f024aee837ef8d56/25849/Zebra_Preview.png 885w,
+/static/d9dc16ba8ca8d3a9f024aee837ef8d56/27179/Zebra_Preview.png 1180w,
+/static/d9dc16ba8ca8d3a9f024aee837ef8d56/5f755/Zebra_Preview.png 4524w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;使用ライブラリ-2&quot; style=&quot;position:relative;&quot;&gt;使用ライブラリ&lt;a href=&quot;#%E4%BD%BF%E7%94%A8%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA-2&quot; aria-label=&quot;使用ライブラリ 2 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;デザインの変更&lt;/li&gt;
-&lt;li&gt;バグ修正&lt;/li&gt;
-&lt;li&gt;Google カレンダー連携&lt;/li&gt;
-&lt;li&gt;バックアップ機能&lt;/li&gt;
+&lt;li&gt;Firestore&lt;/li&gt;
+&lt;li&gt;SwiftUI&lt;/li&gt;
+&lt;li&gt;swift-format&lt;/li&gt;
+&lt;li&gt;SwiftDate&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item></channel></rss>
