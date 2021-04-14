@@ -1,12 +1,13 @@
 import React from 'react'
+import 'twin.macro'
 import { css } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
-import NavLink from './atoms/navLink'
 import {
   AiFillTwitterCircle,
   AiFillGithub,
   AiFillInstagram,
 } from 'react-icons/ai'
+import Nav from './atoms/nav'
 
 type Props = {
   activePage: string
@@ -32,35 +33,10 @@ const Footer: React.FC<Props> = ({ activePage }) => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <footer css={styles.footer}>
-      <div css={styles.footer_container}>
+    <footer tw="container relative block m-auto px-5 h-32 overflow-hidden sm:px-12 md:px-20">
+      <div tw="block m-auto py-12 h-full">
         <div>
-          <nav css={styles.footer_nav}>
-            <NavLink to="/" title="Home" selected={activePage === '/'}>
-              Home
-            </NavLink>
-            <NavLink
-              to="/blog/"
-              title="Blog"
-              selected={activePage === '/blog/'}
-            >
-              Blog
-            </NavLink>
-            <NavLink
-              to="/projects/"
-              title="Projects"
-              selected={activePage === '/projects/'}
-            >
-              Projects
-            </NavLink>
-            <NavLink
-              to="/portfolio/"
-              title="Portfolio"
-              selected={activePage === '/portfolio/'}
-            >
-              Portfolio
-            </NavLink>
-          </nav>
+          <Nav activePage={activePage} justify="end" />
           <div css={styles.footer_info}>
             <span css={styles.footer_copyright} aria-label="Copyright">
               © 2020 {author.blogAuthor}. All Right Reserved.
@@ -113,13 +89,6 @@ const Footer: React.FC<Props> = ({ activePage }) => {
 export default Footer
 
 const styles = {
-  footer: css`
-    display: block;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 12rem;
-  `,
   footer_container: css`
     display: block;
     padding-top: 3rem;
