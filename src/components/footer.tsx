@@ -33,10 +33,12 @@ const Footer: React.FC<Props> = ({ activePage }) => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <footer tw="container relative block m-auto px-5 h-32 overflow-hidden sm:px-12 md:px-20">
-      <div tw="block m-auto py-12 h-full">
+    <footer tw="container relative block m-auto px-5 overflow-hidden sm:px-12 md:px-20">
+      <div tw="block m-auto h-full">
         <div>
-          <Nav activePage={activePage} justify="end" />
+          <div tw="mb-2 mt-4">
+            <Nav activePage={activePage} justify="end" />
+          </div>
           <div css={styles.footer_info}>
             <span css={styles.footer_copyright} aria-label="Copyright">
               © 2020 {author.blogAuthor}. All Right Reserved.

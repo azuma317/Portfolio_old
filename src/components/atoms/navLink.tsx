@@ -1,4 +1,5 @@
 import React from 'react'
+import tw from 'twin.macro'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 
@@ -20,23 +21,12 @@ const NavLink: React.FC<Props> = ({
       : 'var(--color-text-secondary)'};
   `
   return (
-    <Link to={to} title={title} css={styles.nav_link}>
-      <span css={[styles.nav_span, textColor]}>{children}</span>
+    <Link to={to} title={title} css={tw`shadow-none`}>
+      <span css={[tw`text-base font-normal hover:from-pink-500`, textColor]}>
+        {children}
+      </span>
     </Link>
   )
 }
 
 export default NavLink
-
-const styles = {
-  nav_link: css`
-    box-shadow: none;
-  `,
-  nav_span: css`
-    font-weight: 400;
-    font-size: 1rem;
-    :hover {
-      color: var(--color-text-accent);
-    }
-  `,
-}

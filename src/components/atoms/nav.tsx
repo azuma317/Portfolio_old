@@ -14,7 +14,7 @@ const Nav: React.FC<Props> = ({ activePage, justify }) => {
     <nav
       aria-label="Main Navigation"
       css={[
-        tw`flex-row items-center justify-center mt-auto h-full text-sm lg:flex`,
+        tw`hidden flex-row items-center justify-center mt-auto h-full text-sm sm:flex`,
         tw_justify,
       ]}
     >
