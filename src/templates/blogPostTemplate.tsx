@@ -4,7 +4,6 @@ import { Link, graphql } from 'gatsby'
 import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import GlobalStyle from '../styles/globalStyle'
 import { rhythm, scale } from '../utils/typography'
 import { BlogPostBySlugQuery } from '../../types/graphql-types'
 import Title from '../components/title'
@@ -25,16 +24,8 @@ const BlogPostTemplate: React.FC<Props> = ({ location, data }) => {
         description={post?.frontmatter?.description || post?.excerpt || ''}
       />
       <Title title={title} />
-      <GlobalStyle />
       <article>
-        <h1
-          style={{
-            marginTop: rhythm(1),
-            marginBottom: 0,
-          }}
-        >
-          {title}
-        </h1>
+        <h1>{title}</h1>
         <p
           style={{
             ...scale(-1 / 5),

@@ -5,7 +5,6 @@ import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Title from '../components/title'
-import GlobalStyle from '../styles/globalStyle'
 import { rhythm, scale } from '../utils/typography'
 import { BlogListQuery } from '../../types/graphql-types'
 import Post from '../components/post'
@@ -26,16 +25,8 @@ const BlogPostTemplate: React.FC<Props> = ({ location, data }) => {
     <Layout location={location}>
       <SEO title={title} description={description} />
       <Title title={title} />
-      <GlobalStyle />
       <article>
-        <h1
-          style={{
-            marginTop: rhythm(1),
-            marginBottom: 0,
-          }}
-        >
-          {title}
-        </h1>
+        <h1>{title}</h1>
         <section dangerouslySetInnerHTML={{ __html: post?.html || '' }} />
       </article>
       {posts.map(({ node }) => {

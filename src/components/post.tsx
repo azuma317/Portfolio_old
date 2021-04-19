@@ -4,7 +4,7 @@ import type { MarkdownRemark } from '../../types/graphql-types'
 import { rhythm } from '../utils/typography'
 
 type Props = {
-  post: Pick<MarkdownRemark, "fields" | "frontmatter" | "excerpt">
+  post: Pick<MarkdownRemark, 'fields' | 'frontmatter' | 'excerpt'>
 }
 
 const Post: React.FC<Props> = ({ post }) => {
@@ -28,7 +28,7 @@ const Post: React.FC<Props> = ({ post }) => {
         />
       </section>
     </article>
-    )
+  )
 }
 
 export default Post
