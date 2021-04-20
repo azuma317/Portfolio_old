@@ -41,46 +41,43 @@ const Footer: React.FC<Props> = ({ activePage }) => {
           </div>
           <div tw="flex flex-col-reverse md:flex-row md:justify-between md:mt-8">
             <span
-              tw="self-center text-xs tracking-wider md:self-end"
+              tw="self-center mb-8 text-xs tracking-wider md:self-end"
               aria-label="Copyright"
             >
               © 2020 {author.blogAuthor}. All Right Reserved.
             </span>
-            <div tw="flex-flow flex items-center justify-center md:justify-end">
+            <div tw="flex items-center justify-center mb-8 md:justify-end">
               <span tw="ml-4">
                 <a
                   href={'https://github.com/' + social.github}
-                  tw="text-secondary block align-middle w-8 h-8"
                   aria-label="Visit Github profile"
                   title="Visit Github profile"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <AiFillGithub />
+                  <AiFillGithub tw="block align-middle w-8 h-8" />
                 </a>
               </span>
               <span tw="ml-4">
                 <a
                   href={'https://twitter.com/' + social.twitter}
-                  tw="text-secondary block align-middle w-8 h-8"
                   aria-label="Visit Twitter profile"
                   title="Visit Twitter profile"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <AiFillTwitterCircle />
+                  <AiFillTwitterCircle tw="block align-middle w-8 h-8" />
                 </a>
               </span>
               <span tw="ml-4">
                 <a
                   href={'https://www.instagram.com/' + social.github}
-                  tw="text-secondary block align-middle w-8 h-8"
                   aria-label="Visit Instagram profile"
                   title="Visit Instagram profile"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <AiFillInstagram />
+                  <AiFillInstagram tw="block align-middle w-8 h-8" />
                 </a>
               </span>
             </div>

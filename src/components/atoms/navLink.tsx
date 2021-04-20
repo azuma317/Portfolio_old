@@ -22,7 +22,9 @@ const NavLink: React.FC<Props> = ({
   `
   return (
     <Link to={to} title={title} css={tw`shadow-none`}>
-      <span css={[tw`text-base font-normal hover:from-pink-500`, textColor]}>
+      <span
+        css={[tw`hover:from-bg-accent-hover text-base font-normal`, textColor]}
+      >
         {children}
       </span>
     </Link>

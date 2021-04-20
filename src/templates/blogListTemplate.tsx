@@ -5,7 +5,6 @@ import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Title from '../components/title'
-import { rhythm, scale } from '../utils/typography'
 import { BlogListQuery } from '../../types/graphql-types'
 import Post from '../components/post'
 
@@ -32,11 +31,7 @@ const BlogPostTemplate: React.FC<Props> = ({ location, data }) => {
       {posts.map(({ node }) => {
         return <Post post={node} />
       })}
-      <hr
-        style={{
-          marginBottom: rhythm(1),
-        }}
-      />
+      <hr />
       <Bio location={location} />
     </Layout>
   )
