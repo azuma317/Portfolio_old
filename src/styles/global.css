@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-primary text-primary min-h-screen overflow-x-hidden;
+  }
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  a {
+    @apply text-accent shadow-none;
+  }
+}
+
 :root {
   --color-bg-accent: #63b3ed;
   --color-bg-primary: #ffffff;
@@ -31,14 +49,4 @@
   --color-code-func: #3d5afe;
   --color-code-keyword: #7c4dff;
   --color-code-regex: #6182b8;
-}
-body {
-  min-height: 100vh;
-  overflow-x: hidden;
-  background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
-}
-a {
-  color: var(--color-text-accent);
-  box-shadow: none;
 }
