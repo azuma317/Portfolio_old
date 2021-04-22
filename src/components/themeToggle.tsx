@@ -22,25 +22,12 @@ const ThemeToggle = () => {
         aria-label={isDark() ? 'Activate Light Mode' : 'Activate Dark Mode'}
         title={isDark() ? 'Activate Light Mode' : 'Activate Dark Mode'}
         onClick={ToggleTheme}
-        tw="bg-nonw bg-transparent"
+        tw="bg-nonw bg-transparent border-none outline-none"
       >
-        <AiFillFire />
+        <AiFillFire tw="w-6 h-6" />
       </button>
     </>
   )
 }
 
 export default ThemeToggle
-
-const styles = {
-  button: css`
-    background-image: none;
-    border: none;
-    outline: none;
-    svg {
-      width: 1.5rem;
-      height: 1.5rem;
-      color: var(--color-text-secondary);
-    }
-  `,
-}
