@@ -1,22 +1,23 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   body {
     @apply bg-primary text-primary min-h-screen overflow-x-hidden;
   }
   h1 {
-    @apply text-2xl;
+    @apply font-serif text-2xl;
   }
   h2 {
-    @apply text-xl;
+    @apply font-serif text-xl;
   }
   h3 {
-    @apply text-lg;
+    @apply font-serif text-lg;
   }
   a {
     @apply text-accent shadow-none;
+  }
+  p {
+    @apply font-serif;
   }
 }
 
