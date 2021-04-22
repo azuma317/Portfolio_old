@@ -1,5 +1,5 @@
 import React from 'react'
-import { css } from '@emotion/core'
+import tw from 'twin.macro'
 import { ThemeContext } from '../context/themeContext'
 import { AiFillFire } from 'react-icons/ai'
 
@@ -22,7 +22,7 @@ const ThemeToggle = () => {
         aria-label={isDark() ? 'Activate Light Mode' : 'Activate Dark Mode'}
         title={isDark() ? 'Activate Light Mode' : 'Activate Dark Mode'}
         onClick={ToggleTheme}
-        css={styles.button}
+        tw="bg-nonw bg-transparent"
       >
         <AiFillFire />
       </button>
@@ -34,8 +34,6 @@ export default ThemeToggle
 
 const styles = {
   button: css`
-    background: transparent;
-    background-color: transparent;
     background-image: none;
     border: none;
     outline: none;
