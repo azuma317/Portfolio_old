@@ -1,10 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 @layer base {
   body {
-    @apply bg-primary text-primary min-h-screen overflow-x-hidden;
+    @apply min-h-screen overflow-x-hidden;
   }
   h1 {
     @apply font-serif text-2xl;
@@ -16,7 +16,7 @@
     @apply font-serif text-lg;
   }
   a {
-    @apply text-accent shadow-none;
+    @apply shadow-none;
   }
   p {
     @apply font-serif;
