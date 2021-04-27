@@ -4,22 +4,25 @@
 
 @layer base {
   body {
-    @apply min-h-screen overflow-x-hidden;
+    @apply min-h-screen font-serif overflow-x-hidden;
   }
   h1 {
-    @apply font-serif text-2xl;
+    @apply font-serif text-5xl font-black;
   }
   h2 {
-    @apply font-serif text-xl;
+    @apply mb-8 mt-12 font-serif text-3xl font-black;
   }
   h3 {
-    @apply font-serif text-lg;
+    @apply mb-4 mt-8 font-serif text-2xl font-black;
   }
   a {
     @apply shadow-none;
   }
   p {
-    @apply font-serif;
+    @apply mb-8;
+  }
+  li {
+    @apply mb-4;
   }
 }
 
