@@ -1,6 +1,5 @@
 import React from 'react'
 import 'twin.macro'
-import { css } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
 import {
   AiFillTwitterCircle,
@@ -49,7 +48,7 @@ const Footer: React.FC<Props> = ({ activePage }) => {
             <div tw="flex items-center justify-center mb-8 md:justify-end">
               <span tw="ml-4">
                 <a
-                  href={'https://github.com/' + social.github}
+                  href={`https://github.com/${social.github}`}
                   aria-label="Visit Github profile"
                   title="Visit Github profile"
                   target="_blank"
@@ -60,7 +59,7 @@ const Footer: React.FC<Props> = ({ activePage }) => {
               </span>
               <span tw="ml-4">
                 <a
-                  href={'https://twitter.com/' + social.twitter}
+                  href={`https://twitter.com/${social.twitter}`}
                   aria-label="Visit Twitter profile"
                   title="Visit Twitter profile"
                   target="_blank"
@@ -71,7 +70,7 @@ const Footer: React.FC<Props> = ({ activePage }) => {
               </span>
               <span tw="ml-4">
                 <a
-                  href={'https://www.instagram.com/' + social.github}
+                  href={`https://www.instagram.com/${social.github}`}
                   aria-label="Visit Instagram profile"
                   title="Visit Instagram profile"
                   target="_blank"

@@ -1,6 +1,5 @@
 import React from 'react'
-import type { WindowLocation } from '@reach/router'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -8,7 +7,7 @@ import { BlogPostBySlugQuery } from '../../types/graphql-types'
 import Title from '../components/title'
 
 type Props = {
-  location: WindowLocation
+  location: Location
   data: BlogPostBySlugQuery
 }
 
@@ -27,7 +26,7 @@ const BlogPostTemplate: React.FC<Props> = ({ location, data }) => {
         <h1>{title}</h1>
         <p
           style={{
-            display: `block`,
+            display: 'block',
           }}
         >
           {post?.frontmatter?.date}

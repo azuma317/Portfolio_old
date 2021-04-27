@@ -8,14 +8,14 @@ type Props = {
 }
 
 const Nav: React.FC<Props> = ({ activePage, justify }) => {
-  const tw_justify = justify == 'start' ? tw`justify-start` : tw`justify-end`
+  const twJustify = justify === 'start' ? tw`justify-start` : tw`justify-end`
 
   return (
     <nav
       aria-label="Main Navigation"
       css={[
         tw`hidden flex-row items-center justify-center mt-auto h-full text-sm sm:flex`,
-        tw_justify,
+        twJustify,
       ]}
     >
       <NavLink to="/" title="Home" selected={activePage === '/'}>

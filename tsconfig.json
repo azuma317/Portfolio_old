@@ -1,16 +1,19 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "ES2018",
-    "typeRoots": ["node_modules/@types", "src/@types"],
-    "jsx": "preserve",
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "react",
     "lib": ["dom", "esnext"],
-    "strict": true,
-    "noEmit": true,
+    "moduleResolution": "node",
+    "typeRoots": ["node_modules/@types", "src/@types"],
     "isolatedModules": true,
-    "esModuleInterop": true,
     "noUnusedLocals": false,
-    "allowJs": true
+    "allowJs": true,
+    "noEmit": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": ["node_modules", "public", ".cache"]
 }

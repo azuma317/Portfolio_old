@@ -1,5 +1,4 @@
 import React from 'react'
-import type { WindowLocation } from '@reach/router'
 import { graphql } from 'gatsby'
 import Bio from '../components/bio'
 import Layout from '../components/layout'
@@ -9,7 +8,7 @@ import { BlogListQuery } from '../../types/graphql-types'
 import Post from '../components/post'
 
 type Props = {
-  location: WindowLocation
+  location: Location
   data: BlogListQuery
 }
 
@@ -28,9 +27,9 @@ const BlogPostTemplate: React.FC<Props> = ({ location, data }) => {
         <h1>{title}</h1>
         <section dangerouslySetInnerHTML={{ __html: post?.html || '' }} />
       </article>
-      {posts.map(({ node }) => {
-        return <Post post={node} />
-      })}
+      {posts.map(({ node }) => (
+        <Post key={node.fields?.slug} post={node} />
+      ))}
       <hr />
       <Bio location={location} />
     </Layout>

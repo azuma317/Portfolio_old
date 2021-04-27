@@ -29,14 +29,14 @@ export const ThemeContext = React.createContext<Partial<ContextProps>>({})
 const ThemeProvider: React.FC<Props> = ({ initialTheme, children }) => {
   const [theme, setTheme] = React.useState(getInitialTheme)
 
-  const rawSetTheme = (theme: string) => {
+  const rawSetTheme = (rawTheme: string) => {
     const root = window.document.documentElement
-    const isDark = theme === 'dark'
+    const isDark = rawTheme === 'dark'
 
     root.classList.remove(isDark ? 'light' : 'dark')
-    root.classList.add(theme)
+    root.classList.add(rawTheme)
 
-    localStorage.setItem('color-theme', theme)
+    localStorage.setItem('color-theme', rawTheme)
   }
 
   if (initialTheme) {

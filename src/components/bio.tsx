@@ -2,10 +2,9 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import { css } from '@emotion/core'
-import type { WindowLocation } from '@reach/router'
 
 type Props = {
-  location: WindowLocation
+  location: Location
 }
 
 const Bio: React.FC<Props> = ({ location }) => {
@@ -43,25 +42,7 @@ const Bio: React.FC<Props> = ({ location }) => {
           alt={author.name}
           style={styles.bio_image}
           imgStyle={{
-            borderRadius: `50%`,
-          }}
-        />
-        <div css={styles.bio_description}>
-          <strong>{author.name}</strong>
-          <br />
-          <p>{author.introduction}</p>
-        </div>
-      </div>
-    )
-  } else {
-    return (
-      <div css={styles.bio}>
-        <Image
-          fixed={data.avatar.childImageSharp.fixed}
-          alt={author.name}
-          style={styles.bio_image}
-          imgStyle={{
-            borderRadius: `50%`,
+            borderRadius: '50%',
           }}
         />
         <div css={styles.bio_description}>
@@ -72,6 +53,23 @@ const Bio: React.FC<Props> = ({ location }) => {
       </div>
     )
   }
+  return (
+    <div css={styles.bio}>
+      <Image
+        fixed={data.avatar.childImageSharp.fixed}
+        alt={author.name}
+        style={styles.bio_image}
+        imgStyle={{
+          borderRadius: '50%',
+        }}
+      />
+      <div css={styles.bio_description}>
+        <strong>{author.name}</strong>
+        <br />
+        <p>{author.introduction}</p>
+      </div>
+    </div>
+  )
 }
 
 export default Bio
