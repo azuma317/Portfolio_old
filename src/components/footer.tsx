@@ -32,7 +32,7 @@ const Footer: React.FC<Props> = ({ activePage }) => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <footer tw="container relative block m-auto px-5 overflow-hidden sm:px-12 md:px-20">
+    <footer tw="relative block m-auto px-5 max-w-6xl overflow-hidden sm:px-12 md:px-20">
       <div tw="block m-auto h-full">
         <div>
           <div tw="mb-2 mt-4">

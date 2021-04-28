@@ -14,13 +14,11 @@ const Post: React.FC<Props> = ({ post }) => (
       </Link>
     </h3>
     <small>{post.frontmatter?.date}</small>
-    <section>
-      <p
-        dangerouslySetInnerHTML={{
-          __html: post.frontmatter?.description || post.excerpt || '',
-        }}
-      />
-    </section>
+    <section
+      dangerouslySetInnerHTML={{
+        __html: post.frontmatter?.description || post.excerpt || '',
+      }}
+    />
   </article>
 )
 

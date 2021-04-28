@@ -7,10 +7,10 @@
     @apply min-h-screen font-serif overflow-x-hidden;
   }
   h1 {
-    @apply font-serif text-5xl font-black;
+    @apply font-serif text-5xl font-black border-0;
   }
   h2 {
-    @apply mb-8 mt-12 font-serif text-3xl font-black;
+    @apply mb-8 mt-12 font-serif text-3xl font-black border-0;
   }
   h3 {
     @apply mb-4 mt-8 font-serif text-2xl font-black;
