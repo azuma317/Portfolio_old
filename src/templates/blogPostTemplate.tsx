@@ -1,6 +1,6 @@
 import React from 'react'
+import 'twin.macro'
 import { graphql } from 'gatsby'
-import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { BlogPostBySlugQuery } from '../../types/graphql-types'
@@ -24,17 +24,9 @@ const BlogPostTemplate: React.FC<Props> = ({ location, data }) => {
       <Title title={title} />
       <article>
         <h1>{title}</h1>
-        <p
-          style={{
-            display: 'block',
-          }}
-        >
-          {post?.frontmatter?.date}
-        </p>
+        <p tw="block">{post?.frontmatter?.date}</p>
         <section dangerouslySetInnerHTML={{ __html: post?.html || '' }} />
-        <hr />
       </article>
-      <Bio location={location} />
     </Layout>
   )
 }
