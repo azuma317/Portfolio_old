@@ -53,6 +53,7 @@ const Footer: React.FC<Props> = ({ activePage }) => {
                   title="Visit Github profile"
                   target="_blank"
                   rel="noopener noreferrer"
+                  tw="text-secondary"
                 >
                   <AiFillGithub tw="block align-middle w-8 h-8" />
                 </a>
@@ -64,6 +65,7 @@ const Footer: React.FC<Props> = ({ activePage }) => {
                   title="Visit Twitter profile"
                   target="_blank"
                   rel="noopener noreferrer"
+                  tw="text-secondary"
                 >
                   <AiFillTwitterCircle tw="block align-middle w-8 h-8" />
                 </a>
@@ -75,6 +77,7 @@ const Footer: React.FC<Props> = ({ activePage }) => {
                   title="Visit Instagram profile"
                   target="_blank"
                   rel="noopener noreferrer"
+                  tw="text-secondary"
                 >
                   <AiFillInstagram tw="block align-middle w-8 h-8" />
                 </a>

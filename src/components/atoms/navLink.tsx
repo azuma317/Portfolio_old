@@ -1,5 +1,5 @@
 import React from 'react'
-import tw from 'twin.macro'
+import tw, { theme } from 'twin.macro'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 
@@ -16,17 +16,11 @@ const NavLink: React.FC<Props> = ({
   selected = false,
 }) => {
   const textColor = css`
-    color: ${selected
-      ? 'var(--color-text-accent)'
-      : 'var(--color-text-secondary)'};
+    color: ${selected ? theme('colors.accent') : theme('colors.secondary')};
   `
   return (
-    <Link to={to} title={title} css={tw`shadow-none`}>
-      <span
-        css={[tw`text-base font-normal hover:from-bg-accent-hover`, textColor]}
-      >
-        {children}
-      </span>
+    <Link to={to} title={title} css={[textColor, tw`text-base`]}>
+      {children}
     </Link>
   )
 }
