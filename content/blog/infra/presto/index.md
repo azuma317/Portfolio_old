@@ -1,6 +1,6 @@
 ---
 title: Presto
-date: '2020-12-20T00:00:00.000Z'
-description: 'Prestoを使った分析基盤をまとめます.'
+date: '2020-05-01T00:00:00.000Z'
+description: 'Prestoを触ってみて'
 group: 'Blog'
 ---
