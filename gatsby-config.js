@@ -10,7 +10,7 @@ module.exports = {
     },
     description:
       'インフラやiOSアプリ開発についての個人的な知見をためておく場所です。',
-    siteUrl: 'https://gatsby-starter-blog-demo.netlify.app/',
+    siteUrl: 'https://pages.azumax.work/',
     social: {
       twitter: 'azumax_develop',
       github: 'azuma317',
@@ -114,5 +114,6 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-sitemap',
   ],
 }
