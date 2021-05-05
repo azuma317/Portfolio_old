@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://gatsby-starter-blog-demo.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 05 May 2021 06:28:24 GMT</lastBuildDate><item><title><![CDATA[brew の設定]]></title><description><![CDATA[brew install brew list]]></description><link>https://gatsby-starter-blog-demo.netlify.app/env/brew/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/env/brew/</guid><pubDate>Wed, 05 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;brew install&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://gatsby-starter-blog-demo.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 05 May 2021 06:42:39 GMT</lastBuildDate><item><title><![CDATA[brewでインストールしているもの]]></title><description><![CDATA[brew install brew list]]></description><link>https://gatsby-starter-blog-demo.netlify.app/env/brew/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/env/brew/</guid><pubDate>Wed, 05 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;brew install&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;zsh&quot;&gt;&lt;pre class=&quot;language-zsh&quot;&gt;&lt;code class=&quot;language-zsh&quot;&gt;$ brew tap homebrew/cask-versions
 $ brew install libpq corretto11 swift-format ffmpeg homebrew/cask/sequel-ace \
 nodebrew node tig ag tmux reattach-to-user-namespace peco watch tree htop peco \
@@ -45,7 +45,109 @@ pcre2                           theora
 git                             libidn2                         libxdmcp
 peco                            tig
 glib                            libogg                          libxext
-pixman                          tmux&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Portfolio]]></title><description><![CDATA[本職: インフラエンジニア, 趣味: iOS アプリ開発. 2019 年に福岡の大学を卒業後, インフラエンジニアとして新卒入社.
+pixman                          tmux&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Presto(TrinoDB)をDockerで動かしてみた]]></title><description><![CDATA[概要 Presto とは, Facebook が公開した新しい分散処理基盤.
+大規模なデータセットに対して, インタラクティブに結果を返すように開発されたものである.
+PrestoはHiveやImpalaと同じ「SQL Query Engine」であり, 特に数百GB…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/infra/presto/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/infra/presto/</guid><pubDate>Sat, 01 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;概要&lt;/h2&gt;
+&lt;p&gt;Presto とは, Facebook が公開した新しい分散処理基盤.
+大規模なデータセットに対して, インタラクティブに結果を返すように開発されたものである.
+PrestoはHiveやImpalaと同じ「SQL Query Engine」であり, 特に数百GBを超える大規模データに対してもインタラクティブなレスポンスを（コンマ0秒以下，遅くても2,3秒）返す.
+&lt;a href=&quot;https://tug.red/entry/2014/07/10/150250/&quot;&gt;参考:『Prestoとは何か，Prestoで何ができるか』&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;現在, 使用されている Presto としては,
+&lt;a href=&quot;https://prestodb.io/&quot;&gt;PrestoDB&lt;/a&gt; と &lt;a href=&quot;https://trino.io/&quot;&gt;Trino(旧PrestoSQL)&lt;/a&gt; がある.
+PrestoDB は 2012 年に Facebook で作成されていて, Trino は 2018 年に オープンソースコミュニティとして作成されたものである.&lt;/p&gt;
+&lt;p&gt;この記事は, Trino に関しての記事となっています.&lt;/p&gt;
+&lt;h2&gt;Trino&lt;/h2&gt;
+&lt;p&gt;分散クエリを使用して, 大量のデータに効率的に取得するために設計されたツールです.
+従来のリレーショナルデータベースや Cassandra など, さまざまな種類のデータソースで動作するように拡張できます.
+また, 数種類のデータソース間でのデータ結合(JOIN)なども行うことができます.&lt;/p&gt;
+&lt;h2&gt;DEMO&lt;/h2&gt;
+&lt;p&gt;MySQL と PostgreSQL の2つのデータソースを使って, 動作確認をしてみます.
+今回は, DEMO 用にリポジトリ &lt;a href=&quot;https://github.com/azuma317/trino-sample&quot;&gt;trino-sample&lt;/a&gt; を作りました.
+動作確認に関して, trino から Docker イメージが提供されているのでそちらを使用します.
+&lt;a href=&quot;https://hub.docker.com/r/trinodb/trino&quot;&gt;dockerhub - trino&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Trino の設定&lt;/h3&gt;
+&lt;h4&gt;データソース&lt;/h4&gt;
+&lt;p&gt;データソースの設定については, &lt;code class=&quot;language-text&quot;&gt;/etc/trino/catalog/&lt;/code&gt; 配下にデータソースごとの接続情報を記述します.&lt;/p&gt;
+&lt;p&gt;設定例&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;properties&quot;&gt;&lt;pre class=&quot;language-properties&quot;&gt;&lt;code class=&quot;language-properties&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# MySQL&lt;/span&gt;
+&lt;span class=&quot;token attr-name&quot;&gt;connector.name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;mysql&lt;/span&gt;
+&lt;span class=&quot;token attr-name&quot;&gt;connection-url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;jdbc:mysql://mysql:3306?autoReconnect=true&amp;amp;useSSL=false&lt;/span&gt;
+&lt;span class=&quot;token attr-name&quot;&gt;connection-user&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;root&lt;/span&gt;
+&lt;span class=&quot;token attr-name&quot;&gt;connection-password&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;password&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# PostgreSQL&lt;/span&gt;
+&lt;span class=&quot;token attr-name&quot;&gt;connector.name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;postgresql&lt;/span&gt;
+&lt;span class=&quot;token attr-name&quot;&gt;connection-url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;jdbc:postgresql://postgresql:5432/mydb&lt;/span&gt;
+&lt;span class=&quot;token attr-name&quot;&gt;connection-user&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;postgres&lt;/span&gt;
+&lt;span class=&quot;token attr-name&quot;&gt;connection-password&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;password&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;Config&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;config.properties&lt;/code&gt; で coordinator や worker の設定, ポートの設定等を行います.
+検証等で, coordinator かつ worker として扱いたい場合は,
+&lt;code class=&quot;language-text&quot;&gt;node-scheduler.include-coordinator=true&lt;/code&gt; の設定を付ける必要があります.&lt;/p&gt;
+&lt;h4&gt;クラスタ&lt;/h4&gt;
+&lt;p&gt;基本的に Presto は, coordinator, worker のクラスタで動作します.
+&lt;code class=&quot;language-text&quot;&gt;node.properties&lt;/code&gt; でクラスタID: &lt;code class=&quot;language-text&quot;&gt;node.environment&lt;/code&gt; であったり,
+ノードID: &lt;code class=&quot;language-text&quot;&gt;node.id&lt;/code&gt; であったりを設定します.&lt;/p&gt;
+&lt;h3&gt;動作確認&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;zsh&quot;&gt;&lt;pre class=&quot;language-zsh&quot;&gt;&lt;code class=&quot;language-zsh&quot;&gt;$ git clone git@github.com:azuma317/trino-sample.git
+$ docker compose up -d
+# mysql をデフォルトで接続したい場合
+$ ./bin/trino --server localhost:8080 --catalog mysql --schema mydb
+# postgresql をデフォルトで接続したい場合
+$ ./bin/trino --server localhost:8080 --catalog postgresql --schema public
+
+# mysql へのクエリの投げ方
+trino:mydb&amp;gt; select * from mysql.mydb.users;
+ id |        name
+----+---------------------
+  1 | Gary Singh Johnson
+  2 | Nguyen Joseph Gupta
+  3 | Raul Bryan Ruiz
+  4 | Earl Craig Caldwell
+  5 | Wes Sean Parks
+(5 rows)
+
+Query 20210505_055704_00011_6tmbi, FINISHED, 1 node
+Splits: 17 total, 17 done (100.00%)
+0.22 [5 rows, 0B] [22 rows/s, 0B/s]
+
+# postgresql へのクエリの投げ方
+trino:mydb&amp;gt; select * from postgresql.public.users;
+ user_id |       user_name
+---------+-----------------------
+       1 | Danilo Hoang Bhandari
+       2 | Jacques Ace Faulkner
+       3 | Dipak Bubba Hopper
+       4 | Mihir Aji Ace
+       5 | Kabir Bayu Humphries
+(5 rows)
+
+Query 20210505_060105_00012_6tmbi, FINISHED, 1 node
+Splits: 17 total, 17 done (100.00%)
+0.22 [5 rows, 0B] [22 rows/s, 0B/s]
+
+# mysql, postgresql へのクエリの投げ方
+trino:mydb&amp;gt; select id, name from mysql.mydb.users
+         -&amp;gt; union
+         -&amp;gt; select user_id as id, user_name as name from postgresql.public.users
+         -&amp;gt; order by id;
+ id |         name
+----+-----------------------
+  1 | Danilo Hoang Bhandari
+  1 | Gary Singh Johnson
+  2 | Nguyen Joseph Gupta
+  2 | Jacques Ace Faulkner
+  3 | Dipak Bubba Hopper
+  3 | Raul Bryan Ruiz
+  4 | Earl Craig Caldwell
+  4 | Mihir Aji Ace
+  5 | Wes Sean Parks
+  5 | Kabir Bayu Humphries
+(10 rows)
+
+Query 20210505_060327_00018_6tmbi, FINISHED, 1 node
+Splits: 68 total, 68 done (100.00%)
+0.22 [10 rows, 0B] [45 rows/s, 0B/s]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Portfolio]]></title><description><![CDATA[本職: インフラエンジニア, 趣味: iOS アプリ開発. 2019 年に福岡の大学を卒業後, インフラエンジニアとして新卒入社.
 業務では, AWS によるサービス保守やミドルウェア（ Apache, Tomcat, Docker, Jenkins…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/portfolio/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/portfolio/</guid><pubDate>Sat, 03 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;本職: インフラエンジニア, 趣味: iOS アプリ開発.&lt;/p&gt;
 &lt;p&gt;2019 年に福岡の大学を卒業後, インフラエンジニアとして新卒入社.
 業務では, AWS によるサービス保守やミドルウェア（ Apache, Tomcat, Docker, Jenkins 等）の管理を行っています.
@@ -114,14 +216,7 @@ pixman                          tmux&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</conte
 &lt;p&gt;Alias レコードは, CloudFront や ELB といった AWS リソース FQDN を指定できる.&lt;/p&gt;
 &lt;p&gt;Alias レコードは, CNAME レコードと違って, Zone Apex も登録できる.&lt;/p&gt;
 &lt;p&gt;Zone Apex は, 最上位ドメインのことで,&lt;/p&gt;
-&lt;p&gt;example.com を S3 の Web サイトをホスティングする独自ドメインとして利用することも可能.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[このサイトの改善したいところ]]></title><description><![CDATA[改善したいところ 文字が見にくいので, フォントや文字サイズを考える 青色がわかりにくいので, もうちょっと目立った色にしたい Footer を画面の下部に設定したい Dark テーマを実装する Home 画面のコンテンツを考える]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/improvement/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/improvement/</guid><pubDate>Wed, 11 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;改善したいところ&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;文字が見にくいので, フォントや文字サイズを考える&lt;/li&gt;
-&lt;li&gt;青色がわかりにくいので, もうちょっと目立った色にしたい&lt;/li&gt;
-&lt;li&gt;Footer を画面の下部に設定したい&lt;/li&gt;
-&lt;li&gt;Dark テーマを実装する&lt;/li&gt;
-&lt;li&gt;Home 画面のコンテンツを考える&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[terminal の設定ファイル]]></title><description><![CDATA[zshrc, vimrc, tmux, prezto の設定ファイル一覧です. 設定 zsh vim tmux prezto brew]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/env/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/env/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;zshrc, vimrc, tmux, prezto の設定ファイル一覧です.&lt;/p&gt;
+&lt;p&gt;example.com を S3 の Web サイトをホスティングする独自ドメインとして利用することも可能.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Mac Terminal の設定ファイルをまとめています]]></title><description><![CDATA[zshrc, vimrc, tmux, prezto の設定ファイル一覧です. 設定 zsh vim tmux prezto brew]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/env/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/env/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;zshrc, vimrc, tmux, prezto の設定ファイル一覧です.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -145,7 +240,7 @@ pixman                          tmux&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</conte
 &lt;td&gt;&lt;a href=&quot;/env/brew/&quot;&gt;brew&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</content:encoded></item><item><title><![CDATA[prezto の設定ファイル]]></title><description><![CDATA[.zpreztorc(~/.zpreztorc)]]></description><link>https://gatsby-starter-blog-demo.netlify.app/env/prezto/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/env/prezto/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;.zpreztorc(~/.zpreztorc)&lt;/h3&gt;
+&lt;/table&gt;</content:encoded></item><item><title><![CDATA[prezto の設定ファイルを公開します]]></title><description><![CDATA[.zpreztorc(~/.zpreztorc)]]></description><link>https://gatsby-starter-blog-demo.netlify.app/env/prezto/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/env/prezto/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;.zpreztorc(~/.zpreztorc)&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.zpreztorc&quot;&gt;&lt;pre class=&quot;language-.zpreztorc&quot;&gt;&lt;code class=&quot;language-.zpreztorc&quot;&gt;# Color output (auto set to &amp;#39;no&amp;#39; on dumb terminals).
 zstyle &amp;#39;:prezto:*:*&amp;#39; color &amp;#39;yes&amp;#39;
 
@@ -163,7 +258,7 @@ zstyle &amp;#39;:prezto:load&amp;#39; pmodule \
   &amp;#39;prompt&amp;#39;
 
 # Set the key mapping style to &amp;#39;emacs&amp;#39; or &amp;#39;vi&amp;#39;.
-zstyle &amp;#39;:prezto:module:editor&amp;#39; key-bindings &amp;#39;emacs&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[vim の設定ファイル]]></title><description><![CDATA[vimrc (~/.vimrc)]]></description><link>https://gatsby-starter-blog-demo.netlify.app/env/vim/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/env/vim/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;vimrc (~/.vimrc)&lt;/h2&gt;
+zstyle &amp;#39;:prezto:module:editor&amp;#39; key-bindings &amp;#39;emacs&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[vim の設定ファイルを公開します]]></title><description><![CDATA[vimrc (~/.vimrc)]]></description><link>https://gatsby-starter-blog-demo.netlify.app/env/vim/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/env/vim/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;vimrc (~/.vimrc)&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.vimrc&quot;&gt;&lt;pre class=&quot;language-.vimrc&quot;&gt;&lt;code class=&quot;language-.vimrc&quot;&gt;&amp;quot; 行番号を表示
 set number
 &amp;quot; vim の矩形選択で文字が無くても右へ進める
@@ -194,7 +289,7 @@ set showmatch
 &amp;quot; dracula
 packadd! dracula
 syntax enable
-colorscheme dracula&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[zsh の設定ファイル]]></title><description><![CDATA[zshrc (~/.zshrc) .aliasenv(~/.zsh/aliasenv) .env(~/.zsh/env) .pecoenv(~/.zsh/pecoenv) .zplugenv(~/.zsh/zplugenv)]]></description><link>https://gatsby-starter-blog-demo.netlify.app/env/zsh/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/env/zsh/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;zshrc (~/.zshrc)&lt;/h3&gt;
+colorscheme dracula&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[zsh の設定ファイルを公開します]]></title><description><![CDATA[zshrc (~/.zshrc) .aliasenv(~/.zsh/aliasenv) .env(~/.zsh/env) .pecoenv(~/.zsh/pecoenv) .zplugenv(~/.zsh/zplugenv)]]></description><link>https://gatsby-starter-blog-demo.netlify.app/env/zsh/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/env/zsh/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;zshrc (~/.zshrc)&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.zshrc&quot;&gt;&lt;pre class=&quot;language-.zshrc&quot;&gt;&lt;code class=&quot;language-.zshrc&quot;&gt;# Source Prezto.
 if [[ -s &amp;quot;${ZDOTDIR:-$HOME}/.zprezto/init.zsh&amp;quot; ]]; then
   source &amp;quot;${ZDOTDIR:-$HOME}/.zprezto/init.zsh&amp;quot;
@@ -303,7 +398,7 @@ autoload -U compinit; compinit -C
 zstyle &amp;#39;:completion:*&amp;#39; use-cache yes
 zstyle &amp;#39;:completion:*&amp;#39; cache-path ~/.zsh/cache
 ### 補完候補に色を付ける。
-zstyle &amp;#39;:completion:*&amp;#39; list-colors &amp;quot;${(s.:.)LS_COLORS}&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[tmux の設定ファイル]]></title><description><![CDATA[.tmux.conf]]></description><link>https://gatsby-starter-blog-demo.netlify.app/env/tmux/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/env/tmux/</guid><pubDate>Fri, 06 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;.tmux.conf&lt;/h2&gt;
+zstyle &amp;#39;:completion:*&amp;#39; list-colors &amp;quot;${(s.:.)LS_COLORS}&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[tmux の設定ファイルを公開します]]></title><description><![CDATA[.tmux.conf]]></description><link>https://gatsby-starter-blog-demo.netlify.app/env/tmux/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/env/tmux/</guid><pubDate>Fri, 06 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;.tmux.conf&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.tmux.conf&quot;&gt;&lt;pre class=&quot;language-.tmux.conf&quot;&gt;&lt;code class=&quot;language-.tmux.conf&quot;&gt;# Prefix
 set -g prefix C-t
 bind-key C-t send-prefix
@@ -390,7 +485,7 @@ bind e setw synchronize-panes on
 bind E setw synchronize-panes off
 
 # tpmを起動
-run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Blog]]></title><link>https://gatsby-starter-blog-demo.netlify.app/blog/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/</guid><pubDate>Mon, 26 Oct 2020 00:00:00 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[AWS]]></title><description><![CDATA[概要 以下の本を参考にして, AWS のサービスについて勉強しながらまとめています. AWS 認定資格試験テキスト　 AWS 認定 ソリューションアーキテクト-アソシエイト サービス VPC Route53 CloudFront]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/infra/aws/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/infra/aws/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;概要&lt;/h2&gt;
+run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Blog一覧]]></title><link>https://gatsby-starter-blog-demo.netlify.app/blog/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/</guid><pubDate>Mon, 26 Oct 2020 00:00:00 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[ソリューションアーキテクト-アソシエイト用のAWSサービス一覧まとめ]]></title><description><![CDATA[概要 以下の本を参考にして, AWS のサービスについて勉強しながらまとめています. AWS 認定資格試験テキスト　 AWS 認定 ソリューションアーキテクト-アソシエイト サービス VPC Route53 CloudFront]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/infra/aws/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/infra/aws/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;概要&lt;/h2&gt;
 &lt;p&gt;以下の本を参考にして, AWS のサービスについて勉強しながらまとめています.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/AWS%E8%AA%8D%E5%AE%9A%E8%B3%87%E6%A0%BC%E8%A9%A6%E9%A8%93%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88-AWS%E8%AA%8D%E5%AE%9A-%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%88-%E3%82%A2%E3%82%BD%E3%82%B7%E3%82%A8%E3%82%A4%E3%83%88-%E4%BD%90%E3%80%85%E6%9C%A8-%E6%8B%93%E9%83%8E-ebook/dp/B07R1H87Y1/ref=sr_1_1&quot;&gt;AWS 認定資格試験テキスト　 AWS 認定 ソリューションアーキテクト-アソシエイト&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;サービス&lt;/h2&gt;
@@ -601,106 +696,4 @@ run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/di
 &lt;li&gt;SwiftUI&lt;/li&gt;
 &lt;li&gt;swift-format&lt;/li&gt;
 &lt;li&gt;SwiftDate&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Presto(Trino)]]></title><description><![CDATA[概要 Presto とは, Facebook が公開した新しい分散処理基盤.
-大規模なデータセットに対して, インタラクティブに結果を返すように開発されたものである.
-PrestoはHiveやImpalaと同じ「SQL Query Engine」であり, 特に数百GB…]]></description><link>https://gatsby-starter-blog-demo.netlify.app/blog/infra/presto/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.app/blog/infra/presto/</guid><pubDate>Fri, 01 May 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;概要&lt;/h2&gt;
-&lt;p&gt;Presto とは, Facebook が公開した新しい分散処理基盤.
-大規模なデータセットに対して, インタラクティブに結果を返すように開発されたものである.
-PrestoはHiveやImpalaと同じ「SQL Query Engine」であり, 特に数百GBを超える大規模データに対してもインタラクティブなレスポンスを（コンマ0秒以下，遅くても2,3秒）返す.
-&lt;a href=&quot;https://tug.red/entry/2014/07/10/150250/&quot;&gt;参考:『Prestoとは何か，Prestoで何ができるか』&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;現在, 使用されている Presto としては,
-&lt;a href=&quot;https://prestodb.io/&quot;&gt;PrestoDB&lt;/a&gt; と &lt;a href=&quot;https://trino.io/&quot;&gt;Trino(旧PrestoSQL)&lt;/a&gt; がある.
-PrestoDB は 2012 年に Facebook で作成されていて, Trino は 2018 年に オープンソースコミュニティとして作成されたものである.&lt;/p&gt;
-&lt;p&gt;この記事は, Trino に関しての記事となっています.&lt;/p&gt;
-&lt;h2&gt;Trino&lt;/h2&gt;
-&lt;p&gt;分散クエリを使用して, 大量のデータに効率的に取得するために設計されたツールです.
-従来のリレーショナルデータベースや Cassandra など, さまざまな種類のデータソースで動作するように拡張できます.
-また, 数種類のデータソース間でのデータ結合(JOIN)なども行うことができます.&lt;/p&gt;
-&lt;h2&gt;DEMO&lt;/h2&gt;
-&lt;p&gt;MySQL と PostgreSQL の2つのデータソースを使って, 動作確認をしてみます.
-今回は, DEMO 用にリポジトリ &lt;a href=&quot;https://github.com/azuma317/trino-sample&quot;&gt;trino-sample&lt;/a&gt; を作りました.
-動作確認に関して, trino から Docker イメージが提供されているのでそちらを使用します.
-&lt;a href=&quot;https://hub.docker.com/r/trinodb/trino&quot;&gt;dockerhub - trino&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;Trino の設定&lt;/h3&gt;
-&lt;h4&gt;データソース&lt;/h4&gt;
-&lt;p&gt;データソースの設定については, &lt;code class=&quot;language-text&quot;&gt;/etc/trino/catalog/&lt;/code&gt; 配下にデータソースごとの接続情報を記述します.&lt;/p&gt;
-&lt;p&gt;設定例&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;properties&quot;&gt;&lt;pre class=&quot;language-properties&quot;&gt;&lt;code class=&quot;language-properties&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# MySQL&lt;/span&gt;
-&lt;span class=&quot;token attr-name&quot;&gt;connector.name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;mysql&lt;/span&gt;
-&lt;span class=&quot;token attr-name&quot;&gt;connection-url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;jdbc:mysql://mysql:3306?autoReconnect=true&amp;amp;useSSL=false&lt;/span&gt;
-&lt;span class=&quot;token attr-name&quot;&gt;connection-user&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;root&lt;/span&gt;
-&lt;span class=&quot;token attr-name&quot;&gt;connection-password&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;password&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;# PostgreSQL&lt;/span&gt;
-&lt;span class=&quot;token attr-name&quot;&gt;connector.name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;postgresql&lt;/span&gt;
-&lt;span class=&quot;token attr-name&quot;&gt;connection-url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;jdbc:postgresql://postgresql:5432/mydb&lt;/span&gt;
-&lt;span class=&quot;token attr-name&quot;&gt;connection-user&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;postgres&lt;/span&gt;
-&lt;span class=&quot;token attr-name&quot;&gt;connection-password&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;password&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4&gt;Config&lt;/h4&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;config.properties&lt;/code&gt; で coordinator や worker の設定, ポートの設定等を行います.
-検証等で, coordinator かつ worker として扱いたい場合は,
-&lt;code class=&quot;language-text&quot;&gt;node-scheduler.include-coordinator=true&lt;/code&gt; の設定を付ける必要があります.&lt;/p&gt;
-&lt;h4&gt;クラスタ&lt;/h4&gt;
-&lt;p&gt;基本的に Presto は, coordinator, worker のクラスタで動作します.
-&lt;code class=&quot;language-text&quot;&gt;node.properties&lt;/code&gt; でクラスタID: &lt;code class=&quot;language-text&quot;&gt;node.environment&lt;/code&gt; であったり,
-ノードID: &lt;code class=&quot;language-text&quot;&gt;node.id&lt;/code&gt; であったりを設定します.&lt;/p&gt;
-&lt;h3&gt;動作確認&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;zsh&quot;&gt;&lt;pre class=&quot;language-zsh&quot;&gt;&lt;code class=&quot;language-zsh&quot;&gt;$ git clone git@github.com:azuma317/trino-sample.git
-$ docker compose up -d
-# mysql をデフォルトで接続したい場合
-$ ./bin/trino --server localhost:8080 --catalog mysql --schema mydb
-# postgresql をデフォルトで接続したい場合
-$ ./bin/trino --server localhost:8080 --catalog postgresql --schema public
-
-# mysql へのクエリの投げ方
-trino:mydb&amp;gt; select * from mysql.mydb.users;
- id |        name
-----+---------------------
-  1 | Gary Singh Johnson
-  2 | Nguyen Joseph Gupta
-  3 | Raul Bryan Ruiz
-  4 | Earl Craig Caldwell
-  5 | Wes Sean Parks
-(5 rows)
-
-Query 20210505_055704_00011_6tmbi, FINISHED, 1 node
-Splits: 17 total, 17 done (100.00%)
-0.22 [5 rows, 0B] [22 rows/s, 0B/s]
-
-# postgresql へのクエリの投げ方
-trino:mydb&amp;gt; select * from postgresql.public.users;
- user_id |       user_name
----------+-----------------------
-       1 | Danilo Hoang Bhandari
-       2 | Jacques Ace Faulkner
-       3 | Dipak Bubba Hopper
-       4 | Mihir Aji Ace
-       5 | Kabir Bayu Humphries
-(5 rows)
-
-Query 20210505_060105_00012_6tmbi, FINISHED, 1 node
-Splits: 17 total, 17 done (100.00%)
-0.22 [5 rows, 0B] [22 rows/s, 0B/s]
-
-# mysql, postgresql へのクエリの投げ方
-trino:mydb&amp;gt; select id, name from mysql.mydb.users
-         -&amp;gt; union
-         -&amp;gt; select user_id as id, user_name as name from postgresql.public.users
-         -&amp;gt; order by id;
- id |         name
-----+-----------------------
-  1 | Danilo Hoang Bhandari
-  1 | Gary Singh Johnson
-  2 | Nguyen Joseph Gupta
-  2 | Jacques Ace Faulkner
-  3 | Dipak Bubba Hopper
-  3 | Raul Bryan Ruiz
-  4 | Earl Craig Caldwell
-  4 | Mihir Aji Ace
-  5 | Wes Sean Parks
-  5 | Kabir Bayu Humphries
-(10 rows)
-
-Query 20210505_060327_00018_6tmbi, FINISHED, 1 node
-Splits: 68 total, 68 done (100.00%)
-0.22 [10 rows, 0B] [45 rows/s, 0B/s]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item></channel></rss>
+&lt;/ul&gt;</content:encoded></item></channel></rss>
