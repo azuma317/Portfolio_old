@@ -11,6 +11,8 @@
     "@emotion/core": "^10.1.1",
     "@emotion/styled": "^10.0.27",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@headlessui/react": "^1.1.1",
+    "@heroicons/react": "^1.0.1",
     "@types/react-helmet": "^6.1.1",
     "gatsby": "^3.4.0",
     "gatsby-background-image": "^1.5.3",
