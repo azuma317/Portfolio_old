@@ -13,3 +13,4 @@ zshrc, vimrc, tmux, prezto の設定ファイル一覧です.
 | [vim](/env/vim/)       |
 | [tmux](/env/tmux/)     |
 | [prezto](/env/prezto/) |
+| [brew](/env/brew/)     |

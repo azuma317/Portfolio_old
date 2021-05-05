@@ -14,7 +14,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.nodebrew/current/bin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/usr/local/opt/libpq/bin
 
 # setup rbenv
 eval "$(rbenv init -)"
@@ -30,6 +30,11 @@ export ZSH_HOME="${HOME}/.zsh"
 
 # aliasの読み込み
 . $ZSH_HOME/alias_env
+
+# Java11
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
+# Java1.8
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
 
 ### zsh-autosuggestionsの設定（補完の色を変更）
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5D6D7E,bg=clear"
