@@ -1,5 +1,5 @@
 ---
-title: tmux の設定ファイル
+title: tmux の設定ファイルを公開します
 date: '2020-11-06T00:00:00.000Z'
 description: 'tmux の設定ファイルを公開します.'
 group: ''

@@ -1,7 +1,7 @@
 ---
-title: Presto(Trino)
-date: '2020-05-01T00:00:00.000Z'
-description: 'Presto(Trino)を触ってみて'
+title: Presto(TrinoDB)をDockerで動かしてみた
+date: '2021-05-01T00:00:00.000Z'
+description: 'TrinoDBの設定や動作確認を行いました。'
 group: 'Blog'
 ---
 

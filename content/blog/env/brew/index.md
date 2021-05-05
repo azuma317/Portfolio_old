@@ -1,7 +1,7 @@
 ---
-title: brew の設定
+title: brewでインストールしているもの
 date: '2021-05-05T00:00:00.000Z'
-description: 'brew の設定です.'
+description: 'brewでインストールしているものを公開します.'
 group: ''
 ---
 

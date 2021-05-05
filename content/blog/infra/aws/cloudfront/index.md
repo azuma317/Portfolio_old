@@ -1,7 +1,7 @@
 ---
 title: CloudFrontのまとめ
 date: '2020-12-10T00:00:00.000Z'
-description: ''
+description: 'CloudFrontについてまとめてみました。'
 group: ''
 ---
 

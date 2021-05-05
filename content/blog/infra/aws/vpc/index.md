@@ -1,7 +1,7 @@
 ---
 title: VPCのまとめ
 date: '2020-09-25T00:00:00.000Z'
-description: ''
+description: 'VPCについてまとめてみました。'
 group: ''
 ---
 

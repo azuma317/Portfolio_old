@@ -1,7 +1,7 @@
 ---
-title: terminal の設定ファイル
+title: Mac Terminal の設定ファイルをまとめています
 date: '2020-11-07T00:00:00.000Z'
-description: 'terminal の設定ファイル一覧です.'
+description: 'zsh,vim,tmux,prezto,brew等の設定をまとめています。'
 group: 'Blog'
 ---
 
