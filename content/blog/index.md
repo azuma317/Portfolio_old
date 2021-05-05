@@ -1,6 +1,6 @@
 ---
-title: Blog一覧
+title: Tech Blog
 date: '2020-10-26T00:00:00.000Z'
-description: 'Azuma Blog 一覧'
+description: 'Azuma Tech Blog'
 group: 'BlogList'
 ---

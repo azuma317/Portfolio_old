@@ -15,13 +15,20 @@
   h3 {
     @apply mb-4 mt-8 text-2xl font-black;
   }
+  h4 {
+    @apply mb-2 mt-4 text-lg font-black;
+  }
   a {
     @apply text-accent hover:text-primary no-underline shadow-none;
   }
   p {
-    @apply text-primary mb-8;
+    @apply mb-8 text-primary;
   }
   li {
-    @apply text-primary mb-4;
+    @apply mb-4 text-primary;
+  }
+  pre,
+  code {
+    @apply whitespace-pre-wrap bg-code-background;
   }
 }
