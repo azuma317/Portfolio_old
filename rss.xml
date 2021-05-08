@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://pages.azumax.work</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 05 May 2021 07:09:22 GMT</lastBuildDate><item><title><![CDATA[brewでインストールしているもの]]></title><description><![CDATA[brew install brew list]]></description><link>https://pages.azumax.work/env/brew/</link><guid isPermaLink="false">https://pages.azumax.work/env/brew/</guid><pubDate>Wed, 05 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;brew install&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://pages.azumax.work</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 08 May 2021 05:16:53 GMT</lastBuildDate><item><title><![CDATA[brewでインストールしているもの]]></title><description><![CDATA[brew install brew list]]></description><link>https://pages.azumax.work/env/brew/</link><guid isPermaLink="false">https://pages.azumax.work/env/brew/</guid><pubDate>Wed, 05 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;brew install&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;zsh&quot;&gt;&lt;pre class=&quot;language-zsh&quot;&gt;&lt;code class=&quot;language-zsh&quot;&gt;$ brew tap homebrew/cask-versions
 $ brew install libpq corretto11 swift-format ffmpeg homebrew/cask/sequel-ace \
 nodebrew node tig ag tmux reattach-to-user-namespace peco watch tree htop peco \
@@ -47,13 +47,13 @@ peco                            tig
 glib                            libogg                          libxext
 pixman                          tmux&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Presto(TrinoDB)をDockerで動かしてみた]]></title><description><![CDATA[概要 Presto とは, Facebook が公開した新しい分散処理基盤.
 大規模なデータセットに対して, インタラクティブに結果を返すように開発されたものである.
-PrestoはHiveやImpalaと同じ「SQL Query Engine」であり, 特に数百GB…]]></description><link>https://pages.azumax.work/blog/infra/presto/</link><guid isPermaLink="false">https://pages.azumax.work/blog/infra/presto/</guid><pubDate>Sat, 01 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;概要&lt;/h2&gt;
+Presto は Hive や Impala と同じ「SQL Query Engine」であり, 特に数百 GB…]]></description><link>https://pages.azumax.work/blog/infra/presto/</link><guid isPermaLink="false">https://pages.azumax.work/blog/infra/presto/</guid><pubDate>Sat, 01 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;概要&lt;/h2&gt;
 &lt;p&gt;Presto とは, Facebook が公開した新しい分散処理基盤.
 大規模なデータセットに対して, インタラクティブに結果を返すように開発されたものである.
-PrestoはHiveやImpalaと同じ「SQL Query Engine」であり, 特に数百GBを超える大規模データに対してもインタラクティブなレスポンスを（コンマ0秒以下，遅くても2,3秒）返す.
-&lt;a href=&quot;https://tug.red/entry/2014/07/10/150250/&quot;&gt;参考:『Prestoとは何か，Prestoで何ができるか』&lt;/a&gt;&lt;/p&gt;
+Presto は Hive や Impala と同じ「SQL Query Engine」であり, 特に数百 GB を超える大規模データに対してもインタラクティブなレスポンスを（コンマ 0 秒以下，遅くても 2,3 秒）返す.
+&lt;a href=&quot;https://tug.red/entry/2014/07/10/150250/&quot;&gt;参考:『Presto とは何か，Presto で何ができるか』&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;現在, 使用されている Presto としては,
-&lt;a href=&quot;https://prestodb.io/&quot;&gt;PrestoDB&lt;/a&gt; と &lt;a href=&quot;https://trino.io/&quot;&gt;Trino(旧PrestoSQL)&lt;/a&gt; がある.
+&lt;a href=&quot;https://prestodb.io/&quot;&gt;PrestoDB&lt;/a&gt; と &lt;a href=&quot;https://trino.io/&quot;&gt;Trino(旧 PrestoSQL)&lt;/a&gt; がある.
 PrestoDB は 2012 年に Facebook で作成されていて, Trino は 2018 年に オープンソースコミュニティとして作成されたものである.&lt;/p&gt;
 &lt;p&gt;この記事は, Trino に関しての記事となっています.&lt;/p&gt;
 &lt;h2&gt;Trino&lt;/h2&gt;
@@ -61,7 +61,7 @@ PrestoDB は 2012 年に Facebook で作成されていて, Trino は 2018 年�
 従来のリレーショナルデータベースや Cassandra など, さまざまな種類のデータソースで動作するように拡張できます.
 また, 数種類のデータソース間でのデータ結合(JOIN)なども行うことができます.&lt;/p&gt;
 &lt;h2&gt;DEMO&lt;/h2&gt;
-&lt;p&gt;MySQL と PostgreSQL の2つのデータソースを使って, 動作確認をしてみます.
+&lt;p&gt;MySQL と PostgreSQL の 2 つのデータソースを使って, 動作確認をしてみます.
 今回は, DEMO 用にリポジトリ &lt;a href=&quot;https://github.com/azuma317/trino-sample&quot;&gt;trino-sample&lt;/a&gt; を作りました.
 動作確認に関して, trino から Docker イメージが提供されているのでそちらを使用します.
 &lt;a href=&quot;https://hub.docker.com/r/trinodb/trino&quot;&gt;dockerhub - trino&lt;/a&gt;&lt;/p&gt;
@@ -86,8 +86,8 @@ PrestoDB は 2012 年に Facebook で作成されていて, Trino は 2018 年�
 &lt;code class=&quot;language-text&quot;&gt;node-scheduler.include-coordinator=true&lt;/code&gt; の設定を付ける必要があります.&lt;/p&gt;
 &lt;h4&gt;クラスタ&lt;/h4&gt;
 &lt;p&gt;基本的に Presto は, coordinator, worker のクラスタで動作します.
-&lt;code class=&quot;language-text&quot;&gt;node.properties&lt;/code&gt; でクラスタID: &lt;code class=&quot;language-text&quot;&gt;node.environment&lt;/code&gt; であったり,
-ノードID: &lt;code class=&quot;language-text&quot;&gt;node.id&lt;/code&gt; であったりを設定します.&lt;/p&gt;
+&lt;code class=&quot;language-text&quot;&gt;node.properties&lt;/code&gt; でクラスタ ID: &lt;code class=&quot;language-text&quot;&gt;node.environment&lt;/code&gt; であったり,
+ノード ID: &lt;code class=&quot;language-text&quot;&gt;node.id&lt;/code&gt; であったりを設定します.&lt;/p&gt;
 &lt;h3&gt;動作確認&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;zsh&quot;&gt;&lt;pre class=&quot;language-zsh&quot;&gt;&lt;code class=&quot;language-zsh&quot;&gt;$ git clone git@github.com:azuma317/trino-sample.git
 $ docker compose up -d
@@ -485,7 +485,7 @@ bind e setw synchronize-panes on
 bind E setw synchronize-panes off
 
 # tpmを起動
-run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Blog一覧]]></title><link>https://pages.azumax.work/blog/</link><guid isPermaLink="false">https://pages.azumax.work/blog/</guid><pubDate>Mon, 26 Oct 2020 00:00:00 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[ソリューションアーキテクト-アソシエイト用のAWSサービス一覧まとめ]]></title><description><![CDATA[概要 以下の本を参考にして, AWS のサービスについて勉強しながらまとめています. AWS 認定資格試験テキスト　 AWS 認定 ソリューションアーキテクト-アソシエイト サービス VPC Route53 CloudFront]]></description><link>https://pages.azumax.work/blog/infra/aws/</link><guid isPermaLink="false">https://pages.azumax.work/blog/infra/aws/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;概要&lt;/h2&gt;
+run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Tech Blog]]></title><link>https://pages.azumax.work/blog/</link><guid isPermaLink="false">https://pages.azumax.work/blog/</guid><pubDate>Mon, 26 Oct 2020 00:00:00 GMT</pubDate><content:encoded></content:encoded></item><item><title><![CDATA[ソリューションアーキテクト-アソシエイト用のAWSサービス一覧まとめ]]></title><description><![CDATA[概要 以下の本を参考にして, AWS のサービスについて勉強しながらまとめています. AWS 認定資格試験テキスト　 AWS 認定 ソリューションアーキテクト-アソシエイト サービス VPC Route53 CloudFront]]></description><link>https://pages.azumax.work/blog/infra/aws/</link><guid isPermaLink="false">https://pages.azumax.work/blog/infra/aws/</guid><pubDate>Fri, 25 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;概要&lt;/h2&gt;
 &lt;p&gt;以下の本を参考にして, AWS のサービスについて勉強しながらまとめています.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/AWS%E8%AA%8D%E5%AE%9A%E8%B3%87%E6%A0%BC%E8%A9%A6%E9%A8%93%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88-AWS%E8%AA%8D%E5%AE%9A-%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%88-%E3%82%A2%E3%82%BD%E3%82%B7%E3%82%A8%E3%82%A4%E3%83%88-%E4%BD%90%E3%80%85%E6%9C%A8-%E6%8B%93%E9%83%8E-ebook/dp/B07R1H87Y1/ref=sr_1_1&quot;&gt;AWS 認定資格試験テキスト　 AWS 認定 ソリューションアーキテクト-アソシエイト&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;サービス&lt;/h2&gt;
