@@ -19,8 +19,8 @@ const Header: React.FC<Props> = ({ activePage }) => (
   <Disclosure as="header">
     {({ open }) => (
       <>
-        <div tw="mx-auto px-5 max-w-6xl sm:px-0 sm:h-16 md:px-8">
-          <div tw="relative flex items-center justify-between h-16">
+        <div tw="mx-auto px-5 max-w-6xl sm:px-0 sm:h-24 md:px-8">
+          <div tw="relative flex items-center justify-between h-16 sm:h-24">
             <div tw="absolute inset-y-0 left-0 flex items-center sm:hidden">
               <Disclosure.Button tw="inline-flex items-center justify-center p-2 rounded-md focus:outline-none">
                 {open ? (
