@@ -1,16 +1,23 @@
 import React from 'react'
-import 'twin.macro'
+import tw, { theme } from 'twin.macro'
+import { css } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
 import {
   AiFillTwitterCircle,
   AiFillGithub,
   AiFillInstagram,
 } from 'react-icons/ai'
-import Nav from './atoms/nav'
 
 type Props = {
   activePage: string
 }
+
+const navigation = [
+  { name: 'Home', href: '/' },
+  { name: 'Blog', href: '/blog/' },
+  { name: 'Projects', href: '/projects/' },
+  { name: 'Portfolio', href: '/portfolio/' },
+]
 
 const Footer: React.FC<Props> = ({ activePage }) => {
   const data = useStaticQuery(graphql`
@@ -35,8 +42,34 @@ const Footer: React.FC<Props> = ({ activePage }) => {
     <footer tw="relative block m-auto px-5 max-w-6xl overflow-hidden sm:px-12 md:px-20">
       <div tw="block m-auto h-full">
         <div>
-          <div tw="mb-2 mt-4">
-            <Nav activePage={activePage} justify="end" />
+          <div tw="mx-auto max-w-6xl">
+            <div tw="relative flex items-center justify-between h-16">
+              <div tw="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
+                <div tw="hidden sm:block sm:ml-6">
+                  <div tw="flex space-x-4">
+                    {navigation.map(item => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        css={[
+                          css`
+                            color: ${item.href === activePage
+                              ? theme('colors.accent')
+                              : theme('colors.secondary')};
+                          `,
+                          tw`px-3 py-2 text-base font-medium rounded-md`,
+                        ]}
+                        aria-current={
+                          item.href === activePage ? 'page' : undefined
+                        }
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div tw="flex flex-col-reverse md:flex-row md:justify-between md:mt-8">
             <span
