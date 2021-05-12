@@ -1,14 +1,9 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
-import { css } from '@emotion/core'
+import 'twin.macro'
 
-type Props = {
-  location: Location
-}
-
-const Bio: React.FC<Props> = ({ location }) => {
-  const isRoot = location.pathname === '/'
+const Bio: React.FC<unknown> = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
@@ -34,36 +29,16 @@ const Bio: React.FC<Props> = ({ location }) => {
   `)
 
   const { author } = data.site.siteMetadata
-  if (isRoot) {
-    return (
-      <div css={styles.bio}>
-        <Image
-          fixed={data.avatar.childImageSharp.fixed}
-          alt={author.name}
-          style={styles.bio_image}
-          imgStyle={{
-            borderRadius: '50%',
-          }}
-        />
-        <div css={styles.bio_description}>
-          <strong>{author.name}</strong>
-          <br />
-          <p>{author.introduction}</p>
-        </div>
-      </div>
-    )
-  }
   return (
-    <div css={styles.bio}>
+    <div tw="flex">
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
-        style={styles.bio_image}
         imgStyle={{
           borderRadius: '50%',
         }}
       />
-      <div css={styles.bio_description}>
+      <div tw="block ml-5">
         <strong>{author.name}</strong>
         <br />
         <p>{author.introduction}</p>
@@ -73,18 +48,3 @@ const Bio: React.FC<Props> = ({ location }) => {
 }
 
 export default Bio
-
-const styles = {
-  bio: css`
-    display: flex;
-  `,
-  bio_description: css`
-    display: block;
-    margin-left: 1.25rem;
-  `,
-  bio_image: css`
-    margin-bottom: 0;
-    min-width: 50;
-    border-radius: 100%;
-  `,
-}
