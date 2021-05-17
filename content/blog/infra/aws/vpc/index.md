@@ -1,6 +1,7 @@
 ---
 title: VPCのまとめ
-date: '2020-09-25T00:00:00.000Z'
+createdDate: '2020-09-25T00:00:00.000Z'
+updatedDate: '2021-05-17T00:00:00.000Z'
 description: 'VPCについてまとめてみました。'
 group: ''
 ---

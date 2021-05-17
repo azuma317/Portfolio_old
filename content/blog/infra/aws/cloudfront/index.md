@@ -1,6 +1,7 @@
 ---
 title: CloudFrontのまとめ
-date: '2020-12-10T00:00:00.000Z'
+createdDate: '2020-12-10T00:00:00.000Z'
+updatedDate: '2021-05-17T00:00:00.000Z'
 description: 'CloudFrontについてまとめてみました。'
 group: ''
 ---
