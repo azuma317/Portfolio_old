@@ -1,5 +1,6 @@
 ---
 title: Terminal の設定ファイルをまとめています
+date: '2020-11-07T00:00:00.000Z'
 createdDate: '2020-11-07T00:00:00.000Z'
 updatedDate: '2021-05-17T00:00:00.000Z'
 description: 'zsh,vim,tmux,prezto,brew等の設定をまとめています。'

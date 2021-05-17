@@ -1,5 +1,6 @@
 ---
 title: Presto(TrinoDB)をDockerで動かしてみた
+date: '2021-05-01T00:00:00.000Z'
 createdDate: '2021-05-01T00:00:00.000Z'
 updatedDate: '2021-05-17T00:00:00.000Z'
 description: 'TrinoDBの設定や動作確認を行いました。'

@@ -1,5 +1,6 @@
 ---
 title: brewでインストールしているもの
+date: '2021-05-05T00:00:00.000Z'
 createdDate: '2021-05-05T00:00:00.000Z'
 updatedDate: '2021-05-17T00:00:00.000Z'
 description: 'brewでインストールしているものを公開します.'
