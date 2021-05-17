@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://pages.azumax.work</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 12 May 2021 15:04:15 GMT</lastBuildDate><item><title><![CDATA[brewでインストールしているもの]]></title><description><![CDATA[brew install brew list]]></description><link>https://pages.azumax.work/env/brew/</link><guid isPermaLink="false">https://pages.azumax.work/env/brew/</guid><pubDate>Wed, 05 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;brew install&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://pages.azumax.work</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 17 May 2021 15:15:14 GMT</lastBuildDate><item><title><![CDATA[brewでインストールしているもの]]></title><description><![CDATA[brew install brew list]]></description><link>https://pages.azumax.work/env/brew/</link><guid isPermaLink="false">https://pages.azumax.work/env/brew/</guid><pubDate>Wed, 05 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;brew install&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;zsh&quot;&gt;&lt;pre class=&quot;language-zsh&quot;&gt;&lt;code class=&quot;language-zsh&quot;&gt;$ brew tap homebrew/cask-versions
 $ brew install libpq corretto11 swift-format ffmpeg homebrew/cask/sequel-ace \
 nodebrew node tig ag tmux reattach-to-user-namespace peco watch tree htop peco \
@@ -158,14 +158,16 @@ Splits: 68 total, 68 done (100.00%)
 &lt;li&gt;Terrafrom による AWS リソースの作成&lt;/li&gt;
 &lt;li&gt;Fluentd, Kinesis Firehose, S3 を使用したログ収集基盤の構築&lt;/li&gt;
 &lt;li&gt;EC2, ALB によるサーバー構築&lt;/li&gt;
+&lt;li&gt;Github Hook, Lambda によるドキュメントサーバー構築&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;ミドルウェア&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Apache, Tomcat の設定やバージョンアップ&lt;/li&gt;
+&lt;li&gt;Apache, Tomcat の設定管理&lt;/li&gt;
+&lt;li&gt;Apache の Prefork によるパフォーマンスチューニング ( MPM )&lt;/li&gt;
 &lt;li&gt;Logrotate によるログファイルの永続化&lt;/li&gt;
 &lt;li&gt;Datadog を使用した EC2 インスタンスの状態管理&lt;/li&gt;
-&lt;li&gt;Ansible によるミドルウェアの IaC(Infrastructure as Code)&lt;/li&gt;
-&lt;li&gt;Embulk によるバッチサーバーの管理&lt;/li&gt;
+&lt;li&gt;Ansible によるミドルウェアの IaC ( Infrastructure as Code )&lt;/li&gt;
+&lt;li&gt;Embulk, Digdag によるバッチサーバーの管理&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Docker&lt;/h3&gt;
 &lt;ul&gt;
@@ -178,7 +180,7 @@ Splits: 68 total, 68 done (100.00%)
 &lt;/ul&gt;
 &lt;h3&gt;分析基盤&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Presto, Redash を使用したデータレイク, RDS 間の分析基盤構築&lt;/li&gt;
+&lt;li&gt;Presto, Redash を使用した分析基盤構築&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;個人開発（Swift）&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/projects/&quot;&gt;こちら&lt;/a&gt; にまとめています.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[CloudFrontのまとめ]]></title><description><![CDATA[概要 CloudFront: Amazon CloudFront HTML, CSS, 画像といった静的ファイルをキャッシュして, 配信する CDN(Contents Delivery Network…]]></description><link>https://pages.azumax.work/infra/aws/cloudfront/</link><guid isPermaLink="false">https://pages.azumax.work/infra/aws/cloudfront/</guid><pubDate>Thu, 10 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;概要&lt;/h2&gt;
@@ -216,7 +218,7 @@ Splits: 68 total, 68 done (100.00%)
 &lt;p&gt;Alias レコードは, CloudFront や ELB といった AWS リソース FQDN を指定できる.&lt;/p&gt;
 &lt;p&gt;Alias レコードは, CNAME レコードと違って, Zone Apex も登録できる.&lt;/p&gt;
 &lt;p&gt;Zone Apex は, 最上位ドメインのことで,&lt;/p&gt;
-&lt;p&gt;example.com を S3 の Web サイトをホスティングする独自ドメインとして利用することも可能.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Mac Terminal の設定ファイルをまとめています]]></title><description><![CDATA[zshrc, vimrc, tmux, prezto の設定ファイル一覧です. 設定 zsh vim tmux prezto brew]]></description><link>https://pages.azumax.work/blog/env/</link><guid isPermaLink="false">https://pages.azumax.work/blog/env/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;zshrc, vimrc, tmux, prezto の設定ファイル一覧です.&lt;/p&gt;
+&lt;p&gt;example.com を S3 の Web サイトをホスティングする独自ドメインとして利用することも可能.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Terminal の設定ファイルをまとめています]]></title><description><![CDATA[zshrc, vimrc, tmux, prezto の設定ファイル一覧です. 設定 zsh vim tmux prezto brew]]></description><link>https://pages.azumax.work/blog/env/</link><guid isPermaLink="false">https://pages.azumax.work/blog/env/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;zshrc, vimrc, tmux, prezto の設定ファイル一覧です.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
