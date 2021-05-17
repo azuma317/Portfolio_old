@@ -13,7 +13,7 @@ const Post: React.FC<Props> = ({ post }) => (
         {post.frontmatter?.title || post.fields?.slug || ''}
       </Link>
     </h3>
-    <small>{post.frontmatter?.date}</small>
+    <small>{post.frontmatter?.createdDate}</small>
     <section
       dangerouslySetInnerHTML={{
         __html: post.frontmatter?.description || post.excerpt || '',

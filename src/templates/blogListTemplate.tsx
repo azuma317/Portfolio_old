@@ -46,12 +46,12 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        createdDate(formatString: "MMMM DD, YYYY")
         description
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___createdDate], order: DESC }
       filter: { frontmatter: { group: { eq: "Blog" } } }
       limit: 10
     ) {
@@ -62,7 +62,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            createdDate(formatString: "MMMM DD, YYYY")
             title
             description
           }

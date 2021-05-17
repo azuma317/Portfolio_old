@@ -24,7 +24,7 @@ const BlogPostTemplate: React.FC<Props> = ({ location, data }) => {
       <Title title={title} />
       <article>
         <h1>{title}</h1>
-        <p tw="block">{post?.frontmatter?.date}</p>
+        <p tw="block">{post?.frontmatter?.createdDate}</p>
         <section dangerouslySetInnerHTML={{ __html: post?.html || '' }} />
       </article>
     </Layout>
@@ -46,7 +46,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        createdDate(formatString: "MMMM DD, YYYY")
         description
       }
     }
