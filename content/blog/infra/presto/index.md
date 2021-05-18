@@ -2,7 +2,7 @@
 title: Presto(TrinoDB)をDockerで動かしてみた
 date: '2021-05-01T00:00:00.000Z'
 createdDate: '2021-05-01T00:00:00.000Z'
-updatedDate: '2021-05-17T00:00:00.000Z'
+updatedDate: '2021-05-18T00:00:00.000Z'
 description: 'TrinoDBの設定や動作確認を行いました。'
 group: 'Blog'
 ---
@@ -11,7 +11,8 @@ group: 'Blog'
 
 Presto とは, Facebook が公開した新しい分散処理基盤.
 大規模なデータセットに対して, インタラクティブに結果を返すように開発されたものである.
-Presto は Hive や Impala と同じ「SQL Query Engine」であり, 特に数百 GB を超える大規模データに対してもインタラクティブなレスポンスを（コンマ 0 秒以下，遅くても 2,3 秒）返す.
+Presto は Hive や Impala と同じ「SQL Query Engine」であり, 特に数百 GB を超える大規模データに対しても
+インタラクティブなレスポンスを（コンマ 0 秒以下，遅くても 2,3 秒）返す.  
 [参考:『Presto とは何か，Presto で何ができるか』](https://tug.red/entry/2014/07/10/150250/)
 
 現在, 使用されている Presto としては,
@@ -30,7 +31,7 @@ PrestoDB は 2012 年に Facebook で作成されていて, Trino は 2018 年�
 
 MySQL と PostgreSQL の 2 つのデータソースを使って, 動作確認をしてみます.
 今回は, DEMO 用にリポジトリ [trino-sample](https://github.com/azuma317/trino-sample) を作りました.
-動作確認に関して, trino から Docker イメージが提供されているのでそちらを使用します.
+動作確認に関して, trino から Docker イメージが提供されているのでそちらを使用します.  
 [dockerhub - trino](https://hub.docker.com/r/trinodb/trino)
 
 ### Trino の設定
@@ -72,8 +73,10 @@ connection-password=password
 ```zsh
 $ git clone git@github.com:azuma317/trino-sample.git
 $ docker compose up -d
+
 # mysql をデフォルトで接続したい場合
 $ ./bin/trino --server localhost:8080 --catalog mysql --schema mydb
+
 # postgresql をデフォルトで接続したい場合
 $ ./bin/trino --server localhost:8080 --catalog postgresql --schema public
 
