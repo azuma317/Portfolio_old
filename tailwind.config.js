@@ -16,8 +16,8 @@ module.exports = {
       secondary: '#4a5568',
       tertiary: '#4a5568',
 
-      'code-background': '#edf2f7',
-      'code-text': '#2d3748',
+      'code-background': '#364549',
+      'code-text': '#e3e3e3',
       'code-comment': '#718096',
       'code-punctuation': '#39adb5',
       'code-const': '#7c4dff',

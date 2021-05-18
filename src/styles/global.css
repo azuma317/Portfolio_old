@@ -7,7 +7,7 @@
     @apply min-h-screen font-serif overflow-x-hidden;
   }
   h1 {
-    @apply text-5xl font-black border-0;
+    @apply text-4xl font-black border-0;
   }
   h2 {
     @apply mb-8 mt-12 text-3xl font-black border-0;
@@ -27,8 +27,10 @@
   li {
     @apply mb-4 text-primary;
   }
-  pre,
+  pre {
+    @apply p-2 text-code-text whitespace-pre-wrap bg-code-background;
+  }
   code {
-    @apply whitespace-pre-wrap bg-code-background;
+    @apply p-1 text-code-text bg-code-background;
   }
 }
