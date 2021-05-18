@@ -7,7 +7,7 @@ module.exports = {
     },
     colors: {
       'bg-accent': '#63b3ed',
-      'bg-primary': '#ffffff',
+      'bg-primary': '#f6f6f4',
       'bg-secondary': '#edf2f7',
       'bg-accent-hover': '#4299e1',
 
@@ -16,8 +16,8 @@ module.exports = {
       secondary: '#4a5568',
       tertiary: '#4a5568',
 
-      'code-background': '#364549',
-      'code-text': '#e3e3e3',
+      'code-background': '#212525',
+      'code-text': '#dee4e3',
       'code-comment': '#718096',
       'code-punctuation': '#39adb5',
       'code-const': '#7c4dff',

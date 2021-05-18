@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply min-h-screen font-serif overflow-x-hidden;
+    @apply min-h-screen font-serif bg-bg-primary overflow-x-hidden;
   }
   h1 {
     @apply text-4xl font-black border-0;
