@@ -2,7 +2,7 @@
 title: Projects
 date: '2020-08-01T01:00:00.000Z'
 createdDate: '2020-08-01T01:00:00.000Z'
-updatedDate: '2021-05-17T00:00:00.000Z'
+updatedDate: '2021-06-16T00:00:00.000Z'
 description: '個人開発についての内容です。'
 group: 'Projects'
 ---
@@ -76,3 +76,21 @@ group: 'Projects'
 - SwiftUI
 - swift-format
 - SwiftDate
+
+## Blog
+
+### 概要
+
+GatsbyJS, TypeScript を使用して, ポートフォリオや技術ブログを管理しています。
+
+### サイト
+
+https://pages.azumax.work/
+
+### 使用ライブラリ
+
+- GatsbyJS
+- TypeScript
+- Tailwind CSS
+- Prettier
+- ESLint
