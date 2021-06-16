@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://pages.azumax.work</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 18 May 2021 15:13:10 GMT</lastBuildDate><item><title><![CDATA[brewでインストールしているもの]]></title><description><![CDATA[brew install brew list]]></description><link>https://pages.azumax.work/env/brew/</link><guid isPermaLink="false">https://pages.azumax.work/env/brew/</guid><pubDate>Wed, 05 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;brew install&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://pages.azumax.work</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 16 Jun 2021 14:41:29 GMT</lastBuildDate><item><title><![CDATA[brewでインストールしているもの]]></title><description><![CDATA[brew install brew list]]></description><link>https://pages.azumax.work/env/brew/</link><guid isPermaLink="false">https://pages.azumax.work/env/brew/</guid><pubDate>Wed, 05 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;brew install&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;zsh&quot;&gt;&lt;pre class=&quot;language-zsh&quot;&gt;&lt;code class=&quot;language-zsh&quot;&gt;$ brew tap homebrew/cask-versions
 $ brew install libpq corretto11 swift-format ffmpeg homebrew/cask/sequel-ace \
 nodebrew node tig ag tmux reattach-to-user-namespace peco watch tree htop peco \
@@ -161,16 +161,21 @@ Splits: 68 total, 68 done (100.00%)
 &lt;li&gt;Terrafrom による AWS リソースの作成&lt;/li&gt;
 &lt;li&gt;Fluentd, Kinesis Firehose, S3 を使用したログ収集基盤の構築&lt;/li&gt;
 &lt;li&gt;EC2, ALB によるサーバー構築&lt;/li&gt;
+&lt;li&gt;Fargate によるサーバー構築&lt;/li&gt;
 &lt;li&gt;Github Hook, Lambda によるドキュメントサーバー構築&lt;/li&gt;
+&lt;li&gt;Redshift, Athena を使った分析基盤構築&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;ミドルウェア&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Apache, Tomcat の設定管理&lt;/li&gt;
 &lt;li&gt;Apache の Prefork によるパフォーマンスチューニング ( MPM )&lt;/li&gt;
-&lt;li&gt;Logrotate によるログファイルの永続化&lt;/li&gt;
+&lt;li&gt;Logrotate, S3 によるログファイルの永続化&lt;/li&gt;
 &lt;li&gt;Datadog を使用した EC2 インスタンスの状態管理&lt;/li&gt;
 &lt;li&gt;Ansible によるミドルウェアの IaC ( Infrastructure as Code )&lt;/li&gt;
 &lt;li&gt;Embulk, Digdag によるバッチサーバーの管理&lt;/li&gt;
+&lt;li&gt;Nginx, php-fpm による WordPress 構築&lt;/li&gt;
+&lt;li&gt;Presto, Redash, Kibana を使用した分析基盤構築&lt;/li&gt;
+&lt;li&gt;cron, autofs, fstab, ssh, syslog の設定管理&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Docker&lt;/h3&gt;
 &lt;ul&gt;
@@ -180,12 +185,9 @@ Splits: 68 total, 68 done (100.00%)
 &lt;h3&gt;CI/CD&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Groovy を使用した Jenkins 自動デプロイ作成&lt;/li&gt;
+&lt;li&gt;GitHub Actions で GitHub Pages へデプロイ&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;分析基盤&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Presto, Redash を使用した分析基盤構築&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;個人開発（Swift）&lt;/h2&gt;
+&lt;h2&gt;個人開発&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/projects/&quot;&gt;こちら&lt;/a&gt; にまとめています.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[CloudFrontのまとめ]]></title><description><![CDATA[概要 CloudFront: Amazon CloudFront HTML, CSS, 画像といった静的ファイルをキャッシュして, 配信する CDN(Contents Delivery Network…]]></description><link>https://pages.azumax.work/infra/aws/cloudfront/</link><guid isPermaLink="false">https://pages.azumax.work/infra/aws/cloudfront/</guid><pubDate>Thu, 10 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;概要&lt;/h2&gt;
 &lt;p&gt;CloudFront: Amazon CloudFront&lt;/p&gt;
 &lt;p&gt;HTML, CSS, 画像といった静的ファイルをキャッシュして, 配信する CDN(Contents Delivery Network).&lt;/p&gt;
@@ -215,7 +217,7 @@ Splits: 68 total, 68 done (100.00%)
 &lt;h2&gt;ホストゾーンとレコード情報&lt;/h2&gt;
 &lt;p&gt;ホストゾーンはレコード情報の管理単位で,&lt;/p&gt;
 &lt;p&gt;レコード情報はドメイン名と IP アドレスを変換する情報である.&lt;/p&gt;
-&lt;p&gt;「example.com」がホストゾーンで, 「www.example.com は 192.168.0.100 である」がレコード情報.&lt;/p&gt;
+&lt;p&gt;「example.com」がホストゾーンで, 「&lt;a href=&quot;http://www.example.com&quot;&gt;www.example.com&lt;/a&gt; は 192.168.0.100 である」がレコード情報.&lt;/p&gt;
 &lt;p&gt;レコード情報には, A レコード, MX レコード, CNAME レコードといった種類がある.&lt;/p&gt;
 &lt;p&gt;Route53 の特徴的なレコードして, Alias レコードがある.&lt;/p&gt;
 &lt;p&gt;Alias レコードは, CloudFront や ELB といった AWS リソース FQDN を指定できる.&lt;/p&gt;
@@ -294,7 +296,7 @@ set showmatch
 &amp;quot; dracula
 packadd! dracula
 syntax enable
-colorscheme dracula&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[zsh の設定ファイルを公開します]]></title><description><![CDATA[zshrc (~/.zshrc) .aliasenv(~/.zsh/aliasenv) .env(~/.zsh/env) .pecoenv(~/.zsh/pecoenv) .zplugenv(~/.zsh/zplugenv)]]></description><link>https://pages.azumax.work/env/zsh/</link><guid isPermaLink="false">https://pages.azumax.work/env/zsh/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;zshrc (~/.zshrc)&lt;/h3&gt;
+colorscheme dracula&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[zsh の設定ファイルを公開します]]></title><description><![CDATA[zshrc (~/.zshrc) .alias_env(~/.zsh/alias_env) .env(~/.zsh/env) .peco_env(~/.zsh/peco_env) .zplug_env(~/.zsh/zplug_env)]]></description><link>https://pages.azumax.work/env/zsh/</link><guid isPermaLink="false">https://pages.azumax.work/env/zsh/</guid><pubDate>Sat, 07 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;zshrc (~/.zshrc)&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.zshrc&quot;&gt;&lt;pre class=&quot;language-.zshrc&quot;&gt;&lt;code class=&quot;language-.zshrc&quot;&gt;# Source Prezto.
 if [[ -s &amp;quot;${ZDOTDIR:-$HOME}/.zprezto/init.zsh&amp;quot; ]]; then
   source &amp;quot;${ZDOTDIR:-$HOME}/.zprezto/init.zsh&amp;quot;
@@ -333,11 +335,11 @@ SAVEHIST=10000
 
 # pecoの読み込み
 . $ZSH_HOME/peco_env&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;.alias&lt;em&gt;env(~/.zsh/alias&lt;/em&gt;env)&lt;/h3&gt;
+&lt;h3&gt;.alias_env(~/.zsh/alias_env)&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.alias_env&quot;&gt;&lt;pre class=&quot;language-.alias_env&quot;&gt;&lt;code class=&quot;language-.alias_env&quot;&gt;# alias&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;.env(~/.zsh/env)&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.env&quot;&gt;&lt;pre class=&quot;language-.env&quot;&gt;&lt;code class=&quot;language-.env&quot;&gt;# Global veriable&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;.peco&lt;em&gt;env(~/.zsh/peco&lt;/em&gt;env)&lt;/h3&gt;
+&lt;h3&gt;.peco_env(~/.zsh/peco_env)&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.peco_env&quot;&gt;&lt;pre class=&quot;language-.peco_env&quot;&gt;&lt;code class=&quot;language-.peco_env&quot;&gt;# pecoの設定
 ## history検索
 function peco-select-history() {
@@ -375,7 +377,7 @@ bindkey &amp;#39;^r&amp;#39; peco-select-history
 #}
 #zle -N peco-cdr
 #bindkey &amp;#39;^j&amp;#39; peco-cdr&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;.zplug&lt;em&gt;env(~/.zsh/zplug&lt;/em&gt;env)&lt;/h3&gt;
+&lt;h3&gt;.zplug_env(~/.zsh/zplug_env)&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;.zplug_env&quot;&gt;&lt;pre class=&quot;language-.zplug_env&quot;&gt;&lt;code class=&quot;language-.zplug_env&quot;&gt;export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 zplug &amp;quot;dracula/zsh&amp;quot;, as:theme
@@ -504,11 +506,11 @@ run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/di
 &lt;p&gt;ネットワーク空間を構築する際は、可能な限り大きなサイズ(/16)で作成したほうが良い。&lt;/p&gt;
 &lt;p&gt;確保した空間が小さく、IP アドレスが不足した場合、あとから拡張するのは困難。&lt;/p&gt;
 &lt;h2&gt;IP アドレス（CIDR ブロック）&lt;/h2&gt;
-&lt;p&gt;IP アドレスは、クラス A(10.0.0.0~10.255.255.255), クラス B(172.16.0.0~172.31.255.255), クラス C(192.168.0.0~192.168.255.255)が使える。&lt;/p&gt;
+&lt;p&gt;IP アドレスは、クラス A(10.0.0.0&lt;del&gt;10.255.255.255), クラス B(172.16.0.0&lt;/del&gt;172.31.255.255), クラス C(192.168.0.0~192.168.255.255)が使える。&lt;/p&gt;
 &lt;p&gt;ただし、クラス A でも /8 で CIDR ブロックを取ることができず、/16 でなければならない。&lt;/p&gt;
 &lt;h2&gt;サブネット&lt;/h2&gt;
 &lt;p&gt;サブネットは、VPC 内部に作るアドレスレンジである。&lt;/p&gt;
-&lt;p&gt;VPC では、/16 ~/28 まで設定できる。（IP アドレス数は 16~65536 個）&lt;/p&gt;
+&lt;p&gt;VPC では、/16 &lt;del&gt;/28 まで設定できる。（IP アドレス数は 16&lt;/del&gt;65536 個）&lt;/p&gt;
 &lt;p&gt;サブネット作成時にアベイラビリティゾーンを指定するが、作成後は変更できない。&lt;/p&gt;
 &lt;p&gt;サブネットごとにルートテーブルとネットワーク ACL を 1 つだけ指定する。&lt;/p&gt;
 &lt;p&gt;1 つの VPC で作れるサブネット数は 200 個。(リクエストすることで拡張できる)&lt;/p&gt;
@@ -701,4 +703,17 @@ run -b &amp;#39;~/.tmux/plugins/tpm/tpm&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/di
 &lt;li&gt;SwiftUI&lt;/li&gt;
 &lt;li&gt;swift-format&lt;/li&gt;
 &lt;li&gt;SwiftDate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Blog&lt;/h2&gt;
+&lt;h3&gt;概要&lt;/h3&gt;
+&lt;p&gt;GatsbyJS, TypeScript を使用して, ポートフォリオや技術ブログを管理しています。&lt;/p&gt;
+&lt;h3&gt;サイト&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://pages.azumax.work/&quot;&gt;https://pages.azumax.work/&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;使用ライブラリ&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;GatsbyJS&lt;/li&gt;
+&lt;li&gt;TypeScript&lt;/li&gt;
+&lt;li&gt;Tailwind CSS&lt;/li&gt;
+&lt;li&gt;Prettier&lt;/li&gt;
+&lt;li&gt;ESLint&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item></channel></rss>
