@@ -52,7 +52,12 @@ network:
 
 ```
 # Wifi 設定の有効化
-$ sudo netplan apply
+$ sudo netplan --debug try
+$ sudo netplan --debug generate
+$ sudo netplan --debug apply
+
+# 念の為, 再起動
+$ sudo reboot
 
 # IPアドレスを取得
 $ ip route show
@@ -64,3 +69,7 @@ default via 192.168.3.1 dev wlan0 proto dhcp src 192.168.3.13 metric 600
 wifi 経由で SSH するので, wlan0 の IP である `192.168.3.13` を使います.
 
 この上記の設定をラズパイの数だけ設定します.
+
+今回, 2 台のラズパイに設定し, `192.168.3.13` と `192.168.3.14` の IP を取得しました.
+
+### Ethernet の設定
