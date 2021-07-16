@@ -1,5 +1,5 @@
 ---
-title: Kubernetesの記事まとめ
+title: ラズパイで Kubernetes を構築
 date: '2020-09-25T00:00:00.000Z'
 createdDate: '2021-07-10T00:00:00.000Z'
 updatedDate: '2021-07-10T00:00:00.000Z'
@@ -11,7 +11,7 @@ group: 'Blog'
 
 [おうち Kubernetes](https://github.com/CyberAgentHack/home-kubernetes-2020) という記事を見て, Kubernetes の勉強がてらラズパイ買って構築してみようと思ったのが始まりです.
 
-「先に動くものを作ってその後学ぶ」というのが自分の独学のやり方なので, ひとまず動くところまでを記事にしたいと思います。
+「先に動くものを作ってその後学ぶ」というのが自分の独学のやり方なので, ひとまず動くところまでを記事にしたいと思います.
 
 ## 初期設定
 
@@ -187,14 +187,14 @@ ff02::3 ip6-allhosts
 
 ここからは, [おうち Kubernetes](https://github.com/CyberAgentHack/home-kubernetes-2020) の [証明書の生成](https://github.com/CyberAgentHack/home-kubernetes-2020/tree/master/how-to-create-cluster-logical-hardway#証明書の生成) 以降の手順と同じなので, その手順を行うことで, nginx の Welcome 画面が見れるようになりました.
 
-### Kubernetes 構築に関してのわからなかったところ
+### Kubernetes 構築に関してのわからなかった単語
 
 Kubernetes を構築した際に, わからない部分が多くあったので, そちらを羅列して, 別記事にてまとめてみようと思います.
 
-- Kubernetesのコンポーネント
-    - etcd
-    - api server
-    - controller manager
-    - scheduler
-    - proxy
-    - NodePort
+- Kubernetes のコンポーネント
+  - etcd
+  - api server
+  - controller manager
+  - scheduler
+  - proxy
+  - NodePort
