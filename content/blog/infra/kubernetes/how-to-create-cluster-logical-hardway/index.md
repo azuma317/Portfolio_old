@@ -15,6 +15,8 @@ group: 'Blog'
 
 ## 初期設定
 
+### OS のインストール
+
 ### Ubuntu の起動
 
 ディスプレイやキーボードを接続し, 起動します.
@@ -132,6 +134,7 @@ $ sudo ifconfig eth0 10.0.0.12 netmask 255.255.255.0 broadcast 10.0.0.255
 IP の確認をします.
 
 ```
+# k8s1
 $ ifconfig
 eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet 10.0.0.11  netmask 255.255.255.0  broadcast 10.0.0.255
@@ -161,3 +164,37 @@ wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX packets 101206  bytes 11421184 (11.4 MB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
+
+`/etc/hosts` の設定をして, ラズパイ同士で名前解決ができるようにします.
+
+/etc/hosts
+
+```
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+10.0.0.11 k8s1
+10.0.0.12 k8s2
+```
+
+### Kubernetes クラスタの構築
+
+ここからは, [おうち Kubernetes](https://github.com/CyberAgentHack/home-kubernetes-2020) の [証明書の生成](https://github.com/CyberAgentHack/home-kubernetes-2020/tree/master/how-to-create-cluster-logical-hardway#証明書の生成) 以降の手順と同じなので, その手順を行うことで, nginx の Welcome 画面が見れるようになりました.
+
+### Kubernetes 構築に関してのわからなかったところ
+
+Kubernetes を構築した際に, わからない部分が多くあったので, そちらを羅列して, 別記事にてまとめてみようと思います.
+
+- Kubernetesのコンポーネント
+    - etcd
+    - api server
+    - controller manager
+    - scheduler
+    - proxy
+    - NodePort
