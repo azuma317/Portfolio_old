@@ -1,4 +1,48 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://pages.azumax.work</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 22 Jul 2021 13:59:13 GMT</lastBuildDate><item><title><![CDATA[Kubernetesのまとめ]]></title><description><![CDATA[概要 Kubernetes の勉強も兼ねて, 家のラズパイで Kubernetes クラスタを構築しながらその内容を記事にします. 記事 ラズパイで Kubernetes を構築]]></description><link>https://pages.azumax.work/infra/kubernetes/</link><guid isPermaLink="false">https://pages.azumax.work/infra/kubernetes/</guid><pubDate>Sat, 10 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;概要&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Azuma Blog]]></title><description><![CDATA[インフラやiOSアプリ開発についての個人的な知見をためておく場所です。]]></description><link>https://pages.azumax.work</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 24 Jul 2021 08:50:09 GMT</lastBuildDate><item><title><![CDATA[Kubernetes のコンポーネント]]></title><description><![CDATA[個人で勉強するため, Kubernetes ドキュメント を参考にまとめています. Kubernetes クラスタは, コンテナ化されたアプリケーションを実行するノードと呼ばれるワーカーマシンの集合です. ワーカーノードは, アプリケーションのコンポーネントである Pod…]]></description><link>https://pages.azumax.work/blog/infra/kubernetes/components/</link><guid isPermaLink="false">https://pages.azumax.work/blog/infra/kubernetes/components/</guid><pubDate>Thu, 22 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;個人で勉強するため, &lt;a href=&quot;https://kubernetes.io/ja/docs/concepts/overview/components/&quot;&gt;Kubernetes ドキュメント&lt;/a&gt; を参考にまとめています.&lt;/p&gt;
+&lt;p&gt;Kubernetes クラスタは, コンテナ化されたアプリケーションを実行するノードと呼ばれるワーカーマシンの集合です.&lt;/p&gt;
+&lt;p&gt;ワーカーノードは, アプリケーションのコンポーネントである Pod をホストします.&lt;/p&gt;
+&lt;p&gt;マスターノードは, クラスタ内のワーカーノードと Pod を管理します.&lt;/p&gt;
+&lt;p&gt;コントロールプレーンは, クラスタ内のワーカーノードと Pod を管理します.&lt;/p&gt;
+&lt;h2&gt;コントロールプレーンコンポーネント&lt;/h2&gt;
+&lt;p&gt;コントロールプレーンコンポーネントは, クラスタに関する全体的な決定（スケジューリングなど）を行います.&lt;/p&gt;
+&lt;p&gt;コントロールプレーンコンポーネントは, クラスタ内のどのマシンでも実行できますが, シンプルにするため, セットアップスクリプトは通常, すべてのコントロールプレーンコンポーネントを同じマシンで起動し, そのマシンではユーザーコンテナを実行します.&lt;/p&gt;
+&lt;h3&gt;kube-apiserver&lt;/h3&gt;
+&lt;p&gt;API サーバーは, Kubernetes API を外部に提供する Kubernetes コントロールプレーンのコンポーネントです.
+API サーバーは Kubernetes コントロールプレーンのフロントエンドになります.&lt;/p&gt;
+&lt;p&gt;Kubernetes API サーバーの主な実装は kube-apiserver です.
+kube-apiserver は水平方向にスケールするように設計されています.
+複数の kube-apiserver インスタンスを実行することで, インスタンス間でトラフィックを分散させることが可能です.&lt;/p&gt;
+&lt;h3&gt;etcd&lt;/h3&gt;
+&lt;p&gt;一貫性, 高可用性を持ったキーバリューストアで, Kubernetes のすべてのクラスタ情報の保存場所として利用されています.&lt;/p&gt;
+&lt;p&gt;etcd を Kubernetes のデータストアとして使用する場合, 必ずデータの&lt;a href=&quot;https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#backing-up-an-etcd-cluster&quot;&gt;バックアッププラン&lt;/a&gt;を作成してください&lt;/p&gt;
+&lt;h3&gt;kube-scheduler&lt;/h3&gt;
+&lt;p&gt;コントロールプレーン上で動作するコンポーネントで, 新しく作られた Pod にノードが割り当てられているか監視し, 割り当てられていなかった場合にその Pod を実行するノードを選択します.&lt;/p&gt;
+&lt;p&gt;スケジューリングの決定は, Pod あるいは Pod 群のりソール要求量, ハードウェア/ソフトウェア/ポリシーによる制約, アフィニティ及びアンチアフィニティの指定, データの局所性, ワークロード間の干渉, 有効期限などを考慮して行われます.&lt;/p&gt;
+&lt;h3&gt;kube-controller-manager&lt;/h3&gt;
+&lt;p&gt;コントロールプレーン上で動作するコンポーネントで, 複数のコントローラープロセスを実行しまう.&lt;/p&gt;
+&lt;p&gt;論理的には, 各コントローラーは個別のプロセスですが, 複雑さを減らすために一つの実行ファイルにまとめてコンパイルされ, 探知角プロセスとして動きます.&lt;/p&gt;
+&lt;p&gt;コントローラーには以下が含まれます.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ノードコントローラー: ノードがダウンした場合の通知と対応を担当します.&lt;/li&gt;
+&lt;li&gt;レプリケーションコントローラー: システム内の全レプリケーションコントローラーオブジェクトについて, Pod の数を正しく保つ枠割を持ちます.&lt;/li&gt;
+&lt;li&gt;エンドポイントコントローラー: エンドポイントオブジェクトを注入します（つあり, Service と Pod を紐付けます）。&lt;/li&gt;
+&lt;li&gt;サービスアカウントとトークンコントローラー: 新規の名前空間に対して, デフォルトアカウントと API アクセストークンを作成します.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;ノードコンポーネント&lt;/h2&gt;
+&lt;p&gt;ノードコンポーネントはすべてのノードで実行され, 稼働中の Pod の管理や Kubernetes の実行環境を提供します.&lt;/p&gt;
+&lt;h3&gt;kubelet&lt;/h3&gt;
+&lt;p&gt;クラスタ内の各ノードで実行されるエージェントです.
+各コンテナが Pod で実行されていることを保証します.&lt;/p&gt;
+&lt;p&gt;Kubelet は, 様々なメカニズムを通じて提供される PodSpec のセットを取得し, それらの PodSpec に記述されているコンテナが正常に実行されている状態を保証します.kubelet は, Kubernetes が作成したものではないコンテナは管理しません.&lt;/p&gt;
+&lt;h3&gt;kube-proxy&lt;/h3&gt;
+&lt;p&gt;kube-proxy はクラスタ内の各 node で動作しているネットワークプロキシで, Kubernetes の Service コンセプトの一部を実装しています.&lt;/p&gt;
+&lt;p&gt;kube-proxy は, Node のネットワークルールをメンテナンスします.
+これらのネットワークルールにより, クラスタの内部または外部のネットワークセッションから Pod へのネットワーク通信が可能になります.&lt;/p&gt;
+&lt;p&gt;kube-proxy は, オペレーティングシステムにパケットフィルタリング層があり, かつ使用可能な場合, パケットフィルタリング層を使用します.それ以外の場合は自身でトラフィックを転送します.&lt;/p&gt;
+&lt;h3&gt;コンテナランタイム&lt;/h3&gt;
+&lt;p&gt;コンテナランタイムは, コンテナの実行を担当するソフトウェアです.&lt;/p&gt;
+&lt;p&gt;Kubernetes は次の複数のコンテナランタイムをサポートします.
+Docker, containerd, CRI-O, 及びすべての &lt;a href=&quot;https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md&quot;&gt;Kubernetes CRI&lt;/a&gt; 実装です.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Kubernetesのまとめ]]></title><description><![CDATA[概要 Kubernetes の勉強も兼ねて, 家のラズパイで Kubernetes クラスタを構築しながらその内容を記事にします. 記事 ラズパイで Kubernetes を構築]]></description><link>https://pages.azumax.work/infra/kubernetes/</link><guid isPermaLink="false">https://pages.azumax.work/infra/kubernetes/</guid><pubDate>Sat, 10 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;概要&lt;/h2&gt;
 &lt;p&gt;Kubernetes の勉強も兼ねて, 家のラズパイで Kubernetes クラスタを構築しながらその内容を記事にします.&lt;/p&gt;
 &lt;h2&gt;記事&lt;/h2&gt;
 &lt;ul&gt;
