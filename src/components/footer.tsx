@@ -1,6 +1,6 @@
 import React from 'react'
 import tw, { theme } from 'twin.macro'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { useStaticQuery, graphql } from 'gatsby'
 import {
   AiFillTwitterCircle,

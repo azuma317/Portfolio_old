@@ -2,7 +2,7 @@ import React from 'react'
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import tw, { theme } from 'twin.macro'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 type Props = {
   activePage: string

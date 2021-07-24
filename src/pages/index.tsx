@@ -13,7 +13,6 @@ const Index: React.FC<Props> = ({ location }) => (
     <SEO />
     <Title />
     <Bio />
-    これから, TypeScript を頑張っていきたい。
   </Layout>
 )
 
