@@ -125,5 +125,12 @@ module.exports = {
         output: '/',
       },
     },
+    {
+      resolve: 'gatsby-plugin-htaccess',
+      options: {
+        https: true,
+        host: 'pages.azumax.work',
+      }
+    }
   ],
 }
