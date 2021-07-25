@@ -128,7 +128,10 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-htaccess',
       options: {
+        RewriteBase: '/',
         https: true,
+        www: false,
+        SymLinksIfOwnerMatch: true,
         host: 'pages.azumax.work',
       }
     }
