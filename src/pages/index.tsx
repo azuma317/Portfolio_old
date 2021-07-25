@@ -13,6 +13,7 @@ const Index: React.FC<Props> = ({ location }) => (
     <SEO />
     <Title />
     <Bio />
+    個人開発では, TypeScript と SwiftUI を頑張っていきたい.
   </Layout>
 )
 
