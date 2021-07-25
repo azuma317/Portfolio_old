@@ -133,7 +133,7 @@ module.exports = {
         www: false,
         SymLinksIfOwnerMatch: true,
         host: 'pages.azumax.work',
-      }
-    }
+      },
+    },
   ],
 }
