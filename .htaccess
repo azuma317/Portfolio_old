@@ -226,10 +226,12 @@ AddDefaultCharset utf-8
 
 
     # (3)
-    ### SYMLINKS-IF-OWNER-MATCH ###
+    
+    Options +SymLinksIfOwnerMatch
+
 
     # (4)
-    ### REWRITE-BASE ###
+    RewriteBase /
 
     # (5)
     # RewriteOptions <options>
@@ -340,7 +342,7 @@ AddDefaultCharset utf-8
 
     RewriteEngine On
 
-    ### CUSTOM-REWRITES ###
+    RewriteRule ^(.*)$ https://pages.azumax.work/$1 [R=301,L]
 
 </IfModule>
 
