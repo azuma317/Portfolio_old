@@ -5,6 +5,7 @@ createdDate: '2021-04-03T00:00:00.000Z'
 updatedDate: '2021-06-16T00:00:00.000Z'
 description: '本職: インフラエンジニア, 趣味: iOS アプリ開発.'
 group: 'Portfolio'
+tags: ['portfolio', 'infra']
 ---
 
 本職: インフラエンジニア, 趣味: iOS アプリ開発.

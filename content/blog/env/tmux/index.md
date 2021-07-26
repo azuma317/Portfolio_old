@@ -5,6 +5,7 @@ createdDate: '2020-11-06T00:00:00.000Z'
 updatedDate: '2021-05-17T00:00:00.000Z'
 description: 'tmux の設定ファイルを公開します.'
 group: ''
+tags: ['tmux', 'zsh']
 ---
 
 ## .tmux.conf

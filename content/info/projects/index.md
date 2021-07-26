@@ -5,6 +5,7 @@ createdDate: '2020-08-01T01:00:00.000Z'
 updatedDate: '2021-06-16T00:00:00.000Z'
 description: '個人開発についての内容です。'
 group: 'Projects'
+tags: ['iOS', 'Swift', 'GatsbyJS', 'TypeScript', 'Tailwind CSS']
 ---
 
 ## [ReWrite](https://apps.apple.com/jp/app/id1505143601)
