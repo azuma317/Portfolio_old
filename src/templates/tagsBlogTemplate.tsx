@@ -22,14 +22,14 @@ const TagsBlogTemplate: React.FC<Props> = ({ location, data }) => {
       <SEO title={title} description={description} />
       <Title title={title} />
       <h1>{title}</h1>
-      {edges.map(({ node }) => {
-        return (
-          <Post key={node.fields?.slug} post={node} />
-        )
-      })}
+      {edges.map(({ node }) => (
+        <Post key={node.fields?.slug} post={node} />
+      ))}
     </Layout>
   )
 }
+
+export default TagsBlogTemplate
 
 export const pageQuery = graphql`
   query BlogByTag($tag: String!) {
