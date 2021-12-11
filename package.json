@@ -71,7 +71,10 @@
     "postcss": "^8.4.4",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwind": "^2.2.12",
-    "tailwindcss": "^3.0.1"
+    "tailwindcss": "^3.0.1",
+    "immer": ">=9.0.6",
+    "object-path": ">=0.11.8",
+    "trim": ">=0.0.3"
   },
   "babelMacros": {
     "twin": {
