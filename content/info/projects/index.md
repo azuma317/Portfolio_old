@@ -60,24 +60,6 @@ tags: ['iOS', 'swift', 'gatsby', 'typescript', 'tailwind']
 - RxGesture: UI イベント周りで使用しています.
 - RxDataSources: タスク一覧画面で使用しています.
 
-## Zebra（仮）
-
-### 概要
-
-現在 SwiftUI で作成中のアプリです.
-タスク管理アプリで Log アプリの改良版です.
-
-### プレビュー
-
-![Zebra](../../assets/project/Zebra_Preview.png)
-
-### 使用ライブラリ
-
-- Firestore
-- SwiftUI
-- swift-format
-- SwiftDate
-
 ## Blog
 
 ### 概要
@@ -86,7 +68,7 @@ GatsbyJS, TypeScript を使用して, ポートフォリオや技術ブログを
 
 ### サイト
 
-https://pages.azumax.work/
+<https://pages.azumax.work/>
 
 ### 使用ライブラリ
 

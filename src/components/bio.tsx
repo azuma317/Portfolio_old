@@ -20,25 +20,23 @@ const Bio: React.FC<unknown> = function() {
         siteMetadata {
           author {
             name
-            introduction
           }
         }
       }
     }
   `)
 
-  const { author } = data.site.siteMetadata
   return (
     <div tw="flex flex-col-reverse items-center mt-12 lg:flex-row lg:justify-between lg:space-x-6">
       <p tw="max-w-3xl font-semibold lg:mt-0 sm:text-4xl sm:text-left md:text-center lg:text-left">
-        Hi, I’m Azuma. I’m an infrastructure engineer with deep interest in modern web development.
+        Hi, I'm Azuma. I'm an infrastructure engineer with deep interest in modern web development.
       </p>
       <div tw="relative">
         <div tw="absolute top-0 flex items-center justify-center w-full h-full">
           <div tw="w-32 h-32 overflow-hidden rounded-full md:h-40 md:w-40 lg:h-48 lg:w-48">
             <GatsbyImage
               image={data.avatar.childImageSharp.gatsbyImageData}
-              alt={author.name}
+              alt={data.site.siteMetadata.author.name}
             />
           </div>
         </div>
