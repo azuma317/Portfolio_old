@@ -7,7 +7,7 @@ type Props = {
   description?: string
 }
 
-const SEO: React.FC<Props> = ({ title, description }) => {
+const SEO: React.FC<Props> = function({ title, description }) {
   const { site } = useStaticQuery(
     graphql`
       query {

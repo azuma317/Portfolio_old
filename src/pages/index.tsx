@@ -8,13 +8,12 @@ type Props = {
   location: Location
 }
 
-const Index: React.FC<Props> = ({ location }) => (
-  <Layout location={location}>
+const Index: React.FC<Props> = function({ location }) {
+  return <Layout location={location}>
     <SEO />
     <Title />
     <Bio />
-    個人開発では, TypeScript と SwiftUI を頑張っていきたい.
   </Layout>
-)
+}
 
 export default Index

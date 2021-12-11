@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import 'twin.macro'
 
-const Bio: React.FC<unknown> = () => {
+const Bio: React.FC<unknown> = function() {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {

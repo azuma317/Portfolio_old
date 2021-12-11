@@ -11,7 +11,7 @@ type Props = {
   data: BlogListQuery
 }
 
-const BlogListTemplate: React.FC<Props> = ({ location, data }) => {
+const BlogListTemplate: React.FC<Props> = function({ location, data }) {
   const posts = data.allMarkdownRemark.edges
   const post = data.markdownRemark
   const title = post?.frontmatter?.title || data.site?.siteMetadata?.title || ''

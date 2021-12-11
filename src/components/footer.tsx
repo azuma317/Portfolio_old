@@ -19,7 +19,7 @@ const navigation = [
   { name: 'Portfolio', href: '/portfolio/' },
 ]
 
-const Footer: React.FC<Props> = ({ activePage }) => {
+const Footer: React.FC<Props> = function({ activePage }) {
   const data = useStaticQuery(graphql`
     query FooterQuery {
       site {

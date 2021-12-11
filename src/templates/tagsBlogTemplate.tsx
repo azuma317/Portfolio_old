@@ -12,7 +12,7 @@ type Props = {
   data: BlogByTagQuery
 }
 
-const TagsBlogTemplate: React.FC<Props> = ({ location, data }) => {
+const TagsBlogTemplate: React.FC<Props> = function({ location, data }) {
   const { edges, totalCount } = data.allMarkdownRemark
   const title = data.site?.siteMetadata?.title || ''
   const description = data.site?.siteMetadata?.description || ''

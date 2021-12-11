@@ -11,7 +11,7 @@ type Props = {
   data: BlogPostBySlugQuery
 }
 
-const BlogPostTemplate: React.FC<Props> = ({ location, data }) => {
+const BlogPostTemplate: React.FC<Props> = function({ location, data }) {
   const post = data.markdownRemark
   const title = post?.frontmatter?.title || data.site?.siteMetadata?.title || ''
 

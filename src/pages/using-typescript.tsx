@@ -9,12 +9,12 @@ type DataProps = {
   }
 }
 
-const UsingTypescript: React.FC<PageProps<DataProps>> = ({
+const UsingTypescript: React.FC<PageProps<DataProps>> = function({
   data,
   path,
   location,
-}) => (
-  <Layout location={location}>
+}) {
+  return <Layout location={location}>
     <SEO title="Using TypeScript" />
     <h1>Gatsby supports TypeScript by default!</h1>
     <p>
@@ -39,7 +39,7 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({
     </p>
     <Link to="/">Go back to the homepage</Link>
   </Layout>
-)
+}
 
 export default UsingTypescript
 

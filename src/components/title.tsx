@@ -7,7 +7,7 @@ type Props = {
   tag?: string
 }
 
-const Title: React.FC<Props> = ({ title, tag }) => {
+const Title: React.FC<Props> = function({ title, tag }) {
   const blogTitle = useTitle()
 
   const titleText = `${tag || title || blogTitle}`

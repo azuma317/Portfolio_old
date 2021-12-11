@@ -15,8 +15,8 @@ const navigation = [
   { name: 'Portfolio', href: '/portfolio/' },
 ]
 
-const Header: React.FC<Props> = ({ activePage }) => (
-  <Disclosure as="header">
+const Header: React.FC<Props> = function({ activePage }) {
+  return <Disclosure as="header">
     {({ open }) => (
       <>
         <div tw="mx-auto px-5 max-w-6xl sm:px-0 sm:h-24 md:px-8">
@@ -81,6 +81,6 @@ const Header: React.FC<Props> = ({ activePage }) => (
       </>
     )}
   </Disclosure>
-)
+}
 
 export default Header

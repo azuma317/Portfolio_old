@@ -26,7 +26,7 @@ interface ContextProps {
 
 export const ThemeContext = React.createContext<Partial<ContextProps>>({})
 
-const ThemeProvider: React.FC<Props> = ({ initialTheme, children }) => {
+const ThemeProvider: React.FC<Props> = function({ initialTheme, children }) {
   const [theme, setTheme] = React.useState(getInitialTheme)
 
   const rawSetTheme = (rawTheme: string) => {
