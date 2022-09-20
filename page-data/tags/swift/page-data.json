@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-tags-blog-template-tsx",
-    "path": "/tags/swift/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"Azuma Blog","description":"インフラやiOSアプリ開発についての個人的な知見をためておく場所です。"}},"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/projects/"},"frontmatter":{"createdDate":"August 01, 2020","title":"Projects","description":"個人開発についての内容です。"}}}]}},"pageContext":{"tag":"swift"}},
-    "staticQueryHashes": ["1096143047","2841359383","3868140423"]}
+{"componentChunkName":"component---src-templates-tags-blog-template-tsx","path":"/tags/swift/","result":{"data":{"site":{"siteMetadata":{"title":"Azuma Blog","description":"インフラやiOSアプリ開発についての個人的な知見をためておく場所です。"}},"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/projects/"},"frontmatter":{"createdDate":"August 01, 2020","title":"Projects","description":"個人開発についての内容です。"}}}]}},"pageContext":{"tag":"swift"}},"staticQueryHashes":["1096143047","2841359383","3868140423"]}
