@@ -17,7 +17,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.nodebrew/current/bin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/usr/local/opt/libpq/bin
+export PATH=$HOME/.nodebrew/current/bin:$HOME/.rd/bin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/usr/local/opt/libpq/bin
 
 # setup rbenv
 eval "$(rbenv init -)"
