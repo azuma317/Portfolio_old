@@ -13,8 +13,9 @@ tags: ['brew']
 ```zsh
 $ brew tap homebrew/cask-versions
 $ brew install libpq corretto11 swift-format ffmpeg homebrew/cask/sequel-ace \
-nodebrew node tig ag tmux reattach-to-user-namespace peco watch tree htop peco \
-zplug mint zsh-completions anyenv rbenv git carthage zsh
+nodebrew node tig ag tmux reattach-to-user-namespace peco watch tree htop \
+zplug mint zsh-completions anyenv rbenv git carthage zsh mysql-client neovim
+$ brew install --cask notion drawio rancher keyboardcleantool
 ```
 
 ### brew list

@@ -17,7 +17,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.nodebrew/current/bin:$HOME/.rd/bin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/usr/local/opt/libpq/bin
+export PATH=$HOME/.nodebrew/current/bin:$HOME/.rd/bin:$HOME/bin:/usr/local/opt/mysql-client/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/usr/local/opt/libpq/bin
 
 # setup rbenv
 eval "$(rbenv init -)"
@@ -34,13 +34,16 @@ export ZSH_HOME="${HOME}/.zsh"
 # aliasの読み込み
 . $ZSH_HOME/alias_env
 
+# setoptの読み込み
+. $ZSH_HOME/setopt_env
+
 # Java11
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
 # Java1.8
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
 
 ### zsh-autosuggestionsの設定（補完の色を変更）
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5D6D7E,bg=clear"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#aeb6bf,bg=clear,bold,underline"
 
 ### history 設定
 HISTFILE=~/.zsh_history
@@ -49,6 +52,9 @@ SAVEHIST=10000
 
 # pecoの読み込み
 . $ZSH_HOME/peco_env
+
+export LDFLAGS="-L/usr/local/opt/mysql-client/lib"
+export CPPFLAGS="-I/usr/local/opt/mysql-client/include"
 ```
 
 ### .alias_env(~/.zsh/alias_env)
@@ -83,6 +89,14 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+
+## SSH先検索
+function pssh() {
+  local host=$(cat ~/.ssh/config | grep "Host " | awk '{print $2}' | peco)
+  if [ -n "$host" ]; then
+    ssh $host
+  fi
+}
 
 ## cdrからファイルを検索
 #function peco-get-destination-from-cdr() {
