@@ -15,7 +15,7 @@
     "gatsby": "^4.23.0",
     "gatsby-background-image": "^1.5.3",
     "gatsby-image": "^3.11.0",
-    "gatsby-plugin-google-analytics": "^4.3.0",
+    "gatsby-plugin-google-analytics": "^5.4.0",
     "gatsby-plugin-graphql-codegen": "^3.1.0",
     "gatsby-plugin-htaccess": "^1.4.0",
     "gatsby-plugin-image": "^2.3.0",
